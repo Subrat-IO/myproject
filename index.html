@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <title>MIRROR SPACE | Simply Home</title>
+    <style>
+        /* Add your existing styles here */
+
+        /* Modal Styles */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 10; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+        }
+
+        .modal-content {
+            background: url('your-background-image-url.jpg') no-repeat center center; /* Background image */
+            background-size: cover; /* Cover the entire area */
+            margin: 15% auto; /* 15% from the top and centered */
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%; /* Could be more or less, depending on screen size */
+            max-width: 400px; /* Limit the width */
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            color: white; /* Text color */
+        }
+
+        .close {
+            color: #fff;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: yellow;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .open-modal {
+            background-color: red; /* Button color */
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .open-modal:hover {
+            opacity: 0.8;
+        }
+
+        /* Form Styles */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input {
+            margin: 10px 0;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .book-now {
+            background-color: red;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .book-now:hover {
+            background-color: darkred; /* Change on hover */
+        }
+
+        /* Form Positioning */
+        .form-container {
+            position: absolute; /* Maintain position for desktop */
+            top: 20%; /* Adjust this value as needed */
+            right: 5%; /* Adjust for desktop */
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                position: fixed; /* Center for mobile */
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); /* Center the modal */
+            }
+        }
+        @import url("https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --primary-color: #f5f4f2;
+  --text-dark: #57534e;
+  --text-light: #78716c;
+  --white: #ffffff;
+  --max-width: 1200px;
+  --header-font: "Lora", serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+.link a{
+  color: rgb(0, 0, 0) !important;
+}
+.link a:hover{
+  color: rgb(194, 31, 31) !important;
+}
+.section__container {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 5rem 1rem;
+}
+
+img {
+  width: 100%;
+  display: flex;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+nav {
+  max-width: var(--max-width);
+  margin: auto;
+  padding: 1rem;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.link a {
+  font-weight: 500;
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+
+.nav__logo {
+  text-align: center;
+  cursor: pointer;
+}
+
+.nav__logo img {
+  margin: auto;
+  max-width: 120px;
+  height: 60px;
+  width: 60px;
+}
+
+.nav__logo h4 {
+  font-size: 1.5rem;
+  font-family: var(--header-font);
+  letter-spacing: 2px;
+  color: var(--text-dark);
+}
+
+.nav__logo p {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--text-light);
+}
+
+.header {
+  margin-bottom: 10rem;
+  background-image: url("/home/nirmalya/vs code programs/assets/kitchen-1336160.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.header__container {
+  min-height: 600px;
+  position: relative;
+}
+
+.header__content {
+  position: absolute;
+  bottom: -10rem;
+  padding: 2rem;
+  background: url();
+  background-color: var(--primary-color);
+  border: 10px solid var(--white);
+}
+
+.header__content h4 {
+  position: relative;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  color: var(--text-light);
+}
+.header__content h4::before {
+  position: absolute;
+  content: "";
+  bottom: -1rem;
+  left: 0;
+  height: 2px;
+  width: 40px;
+  background-color: var(--text-light);
+}
+.header__content h1 {
+  width: 100%;
+  max-width: 600px;
+  font-size: 4rem;
+  font-weight: 400;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+}
+
+.header__content h1 span {
+  font-style: italic;
+}
+
+.about__container {
+  padding: 10rem 1rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+.about__content p {
+  margin-bottom: 2rem;
+  color: var(--text-light);
+}
+
+.about__content h4 {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-left: 5rem;
+  font-size: 1.5rem;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+}
+
+.about__content h4::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 2rem;
+  height: 100%;
+  width: 1rem;
+  background-color: var(--primary-color);
+}
+
+.about__image img {
+  margin: auto;
+  max-width: 400px;
+  outline: 2px solid var(--text-light);
+  outline-offset: 1rem;
+}
+
+.banner {
+  padding: 10rem 0;
+  background-image: url("assets/banner.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner__container {
+  text-align: center;
+  color: var(--white);
+  font-family: var(--header-font);
+}
+
+.banner__container h4 {
+  font-size: 4rem;
+  font-weight: 400;
+}
+
+.banner__container p {
+  font-size: 1.5rem;
+}
+
+.display__container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.display__col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.display__content {
+  padding: 4rem 0;
+  flex: 1;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+}
+
+.display__col:nth-child(1) .display__content,
+.display__col:nth-child(3) .display__content {
+  background-color: #edeae3;
+}
+
+.display__col:nth-child(2) .display__content {
+  background-color: #daddd6;
+}
+
+.display__content h4 {
+  font-size: 2.5rem;
+  font-weight: 400;
+}
+
+.display__content p {
+  font-style: italic;
+}
+
+.footer {
+  margin-top: 2rem;
+  position: relative;
+  background-color: var(--primary-color);
+}
+
+.footer__container {
+  text-align: center;
+}
+
+.footer__container img {
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  max-width: 150px;
+}
+
+.footer__container h4 {
+  max-width: 600px;
+  margin: auto;
+  margin-bottom: 3rem;
+  font-size: 3rem;
+  font-weight: 400;
+  font-family: var(--header-font);
+  color: var(--text-dark);
+}
+
+.footer__container p {
+  max-width: 1000px;
+  margin: auto;
+  margin-bottom: 2rem;
+  color: var(--text-light);
+}
+
+.footer__container button {
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+  background-color: var(--white);
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer__container button:hover {
+  color: var(--text-dark);
+}
+
+.footer__bar {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-light);
+}
+
+@media (width < 900px) {
+  .about__container {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 5rem;
+  }
+
+  .about__image {
+    grid-area: 1/1/2/2;
+  }
+
+  .display__container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .display__col:nth-child(3) {
+    display: none;
+  }
+}
+
+@media (width < 600px) {
+  .link {
+    display: none;
+  }
+
+  .header {
+    margin-bottom: 20rem;
+  }
+
+  .header__content {
+    bottom: -20rem;
+  }
+
+  .display__container {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .display__col:nth-child(3) {
+    display: flex;
+  }
+}
+/* Add smooth scrolling for the entire document */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Scroll effect for images */
+img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover effect for images */
+img:hover {
+  opacity: 0.8;
+  transform: translateY(-10px); /* Slight upward movement on hover */
+}
+
+/* Ensure responsiveness and effects apply on mobile as well */
+@media (max-width: 900px) {
+  img {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  img:hover {
+    opacity: 0.8;
+    transform: translateY(-10px);
+  }
+}
+/* Smooth scrolling for the entire document */
+* {
+  scroll-behavior: smooth;
+}
+
+/* Scroll effect for images */
+img {
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover effect for images */
+img:hover {
+  opacity: 0.8;
+  transform: translateY(-10px); /* Slight upward movement on hover */
+}
+
+/* Hover effect for containers */
+.section__container, .display__content, .footer__container {
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+/* Adding box-shadow and slight scaling on hover for containers */
+.section__container:hover, .display__content:hover, .footer__container:hover {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02); /* Slight scaling on hover */
+}
+
+/* Text hover effect */
+h1, h4, p {
+  transition: color 0.3s ease;
+}
+
+/* Hover effect for text elements */
+h1:hover, h4:hover, p:hover {
+  color: var(--text-dark); /* Change to a darker shade on hover */
+}
+
+/* Ensure responsiveness and hover effects apply on mobile as well */
+@media (max-width: 900px) {
+  img, .section__container, .display__content, .footer__container, h1, h4, p {
+    transition: transform 0.3s ease, opacity 0.3s ease, color 0.3s ease;
+  }
+
+  img:hover {
+    opacity: 0.8;
+    transform: translateY(-10px); /* Maintain hover effect for mobile */
+  }
+
+  .section__container:hover, .display__content:hover, .footer__container:hover {
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02); /* Keep container hover effects on mobile */
+  }
+
+  h1:hover, h4:hover, p:hover {
+    color: var(--text-dark); /* Text hover effect on mobile */
+  }
+}
+  
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="nav__links">
+            <li class="link"><a href="/home/nirmalya/vs code programs/aboutpage/about.html">ABOUT US</a></li>
+            <li class="link"><a href="file:///home/nirmalya/Downloads/photosite.html">DESIGN GALLERY</a></li>
+            <li class="nav__logo">
+                <img src="/home/nirmalya/Downloads/ioebnen-removebg-preview.png" alt="logo" />
+                <h4>MIRROR SPACE</h4>
+                <p>ELEVATING INTERIORS</p>
+            </li>
+            <li class="link"><a href="#">SERVICES</a></li>
+            <li class="link"><a href="#">CONTACT</a></li> 
+        </ul>
+    </nav>
+    <header class="header">
+       
+        <div class="section__container header__container">
+            <div class="header__content">
+                <h4>LIVE BEAUTIFULLY</h4>
+                <h1>Design that makes you feel <span>at home.</span></h1>
+            </div>
+        </div>
+
+        <!-- Button to Open the Modal -->
+        <div class="form-container">
+            <button id="openModal" class="open-modal">Book Now</button>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Booking Form</h2>
+                <form action="send_email.php" method="post">
+                    <input type="text" name="full_name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="tel" name="contact_no" placeholder="Contact Number" required>
+                    <button type="submit" class="book-now">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <section class="section__container about__container">
+        <div class="about__content">
+            <p>
+                At Simply Home Decorators, we are passionate about transforming houses
+                into dream homes. With our expertise in interior design, we strive to
+                create spaces that reflect your unique style and personality, while
+                ensuring functionality and comfort.
+            </p>
+            <h4>
+                Our dedicated team works closely with clients to understand vision,
+                preferences, and lifestyle. Whether you're seeking a modern,
+                minimalist, rustic atmosphere, we bring your ideas to life.
+            </h4>
+            <p>
+                From concept to completion, we meticulously curate every aspect of the
+                design process. We carefully select colors, textures, furniture,
+                lighting, and decor elements to achieve the desired ambiance and
+                create a harmonious living environment.
+            </p>
+        </div>
+        <div class="about__image">
+            <img src="/home/nirmalya/Downloads/ventoy-1.0.99/plugin/computer-generated-image-of-arm-chair-in-living-room.jpg" alt="about" />
+        </div>
+    </section>
+
+    <section class="banner">
+        <div class="section__container banner__container">
+            <h4>Interior Design Studio</h4>
+            <p>Completely Covering Bhubaneswar . Odisha</p>
+        </div>
+    </section>
+
+    <section class="section__container display__container">
+        <div class="display__col">
+            <img src="assets/display-1.jpg" alt="display" />
+            <div class="display__content">
+                <p>view our</p>
+                <h4>PORTFOLIO</h4>
+            </div>
+            <img src="assets/display-2.jpg" alt="display" />
+        </div>
+        <div class="display__col">
+            <div>
+                <a href="/home/nirmalya/vs code programs/aboutpage/about.html"><div class="display__content">
+                <h4>ABOUT US</h4>
+                <p>who are we</p>
+            </div></a>
+            </div>
+            <img src="assets/display-3.jpg" alt="display" />
+            <div class="display__content">
+                <h4>SERVICES</h4>
+                <p>what we do</p>
+            </div>
+        </div>
+        <div class="display__col">
+            <img src="assets/display-4.jpg" alt="display" />
+            <div class="display__content">
+                <p>send us a</p>
+                <h4>MESSAGE</h4>
+            </div>
+            <img src="assets/display-5.jpg" alt="display" />
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="section__container footer__container">
+            <img src="assets/logo.png" alt="footer logo" />
+            <h4>Ready to start your home decorating project?</h4>
+            <p>
+                Take the first step towards transforming your home by reaching out to
+                us for a consultation. Let us embark on this exciting journey together
+                to create a space that truly represents your style, personality, and
+                aspirations.
+            </p>
+            <button>SCHEDULE YOUR CALL</button>
+        </div>
+    </footer>
+    <div class="footer__bar">
+        <p>Copyright © 2023 MIRROR SPACE.CO.IN All rights reserved.</p>
+    </div>
+
+    <script>
+        // Get the modal
+        var modal = document.getElementById("myModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("openModal");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
