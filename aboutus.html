@@ -55,35 +55,23 @@ body {
 }
 
 nav {
-  max-width: var(--max-width);
-  margin: auto;
-  padding: 1rem;
-}
-
-.nav__links {
-  list-style: none;
+  background-color: white;
+  height: 60px;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0 5%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-.link a {
-  font-weight: 500;
-  color: var(--text-light);
-  transition: 0.3s;
-}
-
 
 .nav__logo {
-  text-align: center;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 
 .nav__logo img {
-  margin: auto;
-  max-width: 120px;
-  height: 60px;
-  width: 60px;
+  width: 50px;
+  margin-right: 10px;
 }
 
 .nav__logo h4 {
@@ -94,10 +82,50 @@ nav {
 }
 
 .nav__logo p {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 2px;
-  color: var(--text-light);
+  font-size: 12px;
+  margin: 0;
+  color: gray;
+}
+
+ul.nav__links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+ul.nav__links li {
+  margin-left: 40px;
+}
+
+ul.nav__links li a {
+  text-decoration: none;
+  font-size: 16px;
+  color: black;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+ul.nav__links li a:hover {
+  color: #1abc9c;
+}
+
+@media (max-width: 768px) {
+  nav {
+      flex-direction: column;
+      padding: 10px 0;
+  }
+
+  ul.nav__links {
+      flex-direction: column;
+      margin-top: 10px;
+  }
+
+  ul.nav__links li {
+      margin-left: 0;
+      margin-bottom: 10px;
+  }
 }
 
 .header {
@@ -673,19 +701,21 @@ h1:hover, h4:hover, p:hover {
 </head>
 
 <body>
-    <nav>
-        <ul class="nav__links">
-            <li class="link"><a href="index.html">HOME</a></li>
-            <li class="link"><a href="file:///home/nirmalya/Downloads/photosite.html">DESIGN GALLERY</a></li>
-            <li class="nav__logo">
-                <img src="https://github.com/Subrat-IO/myproject/blob/main/ioebnen-removebg-preview.png?raw=true" alt="logo" />
-                <h4>MIRROR SPACE</h4>
-                <p>ELEVATING INTERIORS</p>
-            </li>
-            <li class="link"><a href="#">SERVICES</a></li>
-            <li class="link"><a href="#">CONTACT</a></li>
-        </ul>
-    </nav>
+     <nav>
+    <div class="nav__logo">
+        <img src="https://github.com/Subrat-IO/myproject/blob/main/ioebnen-removebg-preview.png?raw=true" alt="logo" />
+        <div>
+            <h4>MIRROR SPACE</h4>
+            <p>ELEVATING INTERIORS</p>
+        </div>
+    </div>
+    <ul class="nav__links">
+        <li class="link"><a href="https://subrat-io.github.io/myproject/index.html">HOME</a></li>
+        <li class="link"><a href="https://subrat-io.github.io/myproject/aboutus.html">ABOUT US</a></li>
+        <li class="link"><a href="file:///home/nirmalya/Downloads/photosite.html">SERVICES</a></li>
+        <li class="link"><a href="#">CONTACT</a></li>
+    </ul>
+</nav>
     <header class="header">
       
         <div class="section__container header__container">
