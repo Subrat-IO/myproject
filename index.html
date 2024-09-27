@@ -9,6 +9,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <title>MIRROR SPACE | Simply Home</title>
+    <!-- Add this code to your HTML file -->
+
+<select id="mobile-nav" onchange="location = this.value;">
+  <option value="">Select a page</option>
+  <option value="/home/nirmalya/vs code programs/index.html">HOME</option>
+  <option value="file:///home/nirmalya/vs%20code%20programs/aboutpage/aboutus.html">ABOUT US</option>
+  <option value="file:///home/nirmalya/Downloads/photosite.html">SERVICES</option>
+  <option value="#">CONTACT</option>
+</select>
     <style>
         /* Add your existing styles here */
 
@@ -24,7 +33,21 @@
             overflow: auto; /* Enable scroll if needed */
             background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
         }
+#mobile-nav {
+  display: none;
+}
 
+@media (max-width: 768px) {
+  #mobile-nav {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.7); /* 70% transparent white background */
+  }
+}
         .modal-content {
             background: url('your-background-image-url.jpg') no-repeat center center; /* Background image */
             background-size: cover; /* Cover the entire area */
