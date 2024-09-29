@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Photo Blog</title>
+    <title>Mirror Space | Best Interior Services</title>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -287,11 +287,29 @@
         /* Photo Gallery Styles */
         .photo-container {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(3, 1fr) !important;
             gap: 10px;
-            width: 94%;
+            width: 98%;
             margin: 20px auto;
         }
+@media (max-width: 768px) {
+    .photo-container {
+        grid-template-columns: 1fr !important; /* Each image takes the full width */
+    }
+
+    .photo-container div {
+        width: 100% !important; /* Make each image container take full width */
+    }
+
+    .photo-container img {
+        width: 100% !important; /* Ensure images take up the full width */
+        height: auto !important; /* Adjust height to maintain aspect ratio */
+    }
+
+    .overlay {
+        width: 100% !important; /* Adjust the overlay width for mobile view */
+    }
+}
 
         .photo-container div {
             position: relative;
@@ -338,13 +356,13 @@
 
         
             .photo-container {
-                grid-template-columns: 1fr; /* Show one image per row on mobile */
+                grid-template-columns: 3fr; /* Show one image per row on mobile */
             }
 
             .photo-container img {
                 height: auto; /* Adjust image height */
             }
-        }
+        
     </style>
 </head>
 
