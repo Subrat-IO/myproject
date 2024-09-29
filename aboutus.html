@@ -78,79 +78,64 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-nav {
-  background-color: white;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 5%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
+ /* Navbar Styles */
+        nav {
+            background-color: white;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-.nav__logo {
-  display: flex;
-  align-items: center;
-}
+        .nav__logo {
+            display: flex;
+            align-items: center;
+        }
 
-.nav__logo img {
-  width: 50px;
-  margin-right: 10px;
-}
+        .nav__logo img {
+            width: 50px;
+            margin-right: 10px;
+        }
 
-.nav__logo h4 {
-  font-size: 1.5rem;
-  font-family: var(--header-font);
-  letter-spacing: 2px;
-  color: var(--text-dark);
-}
+        .nav__logo h4 {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: rgb(102, 82, 46);
+            font-family: "Gowun Batang", serif;
+        }
 
-.nav__logo p {
-  font-size: 12px;
-  margin: 0;
-  color: gray;
-}
+        .nav__logo p {
+            font-size: 12px;
+            margin: 0;
+            color: gray;
+        }
 
-ul.nav__links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
+        ul.nav__links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
 
-ul.nav__links li {
-  margin-left: 40px;
-}
+        ul.nav__links li {
+            margin-left: 40px;
+        }
 
-ul.nav__links li a {
-  text-decoration: none;
-  font-size: 16px;
-  color: black;
-  font-weight: bold;
-  text-transform: uppercase;
-}
+        ul.nav__links li a {
+            text-decoration: none;
+            font-size: 16px;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
 
-ul.nav__links li a:hover {
-  color: #1abc9c;
-}
+        ul.nav__links li a:hover {
+            color: #1abc9c;
+        }
 
-@media (max-width: 768px) {
-  nav {
-      flex-direction: column;
-      padding: 10px 0;
-  }
-
-  ul.nav__links {
-      flex-direction: column;
-      margin-top: 10px;
-  }
-
-  ul.nav__links li {
-      margin-left: 0;
-      margin-bottom: 10px;
-  }
-}
 
 .header {
   margin-bottom: 10rem;
@@ -725,21 +710,22 @@ h1:hover, h4:hover, p:hover {
 </head>
 
 <body>
-     <nav>
-    <div class="nav__logo">
-        <img src="https://github.com/Subrat-IO/myproject/blob/main/ioebnen-removebg-preview.png?raw=true" alt="logo" />
-        <div>
-            <h4>MIRROR SPACE</h4>
-            <p>ELEVATING INTERIORS</p>
+    <nav>
+        <div class="nav__logo">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/ioebnen-removebg-preview.png?raw=true" alt="logo" />
+            <div>
+                <h4>MIRROR SPACE</h4>
+                <p>ELEVATING INTERIORS</p>
+            </div>
         </div>
-    </div>
-    <ul class="nav__links">
-        <li><a href="https://subrat-io.github.io/myproject/">HOME</a></li>
+        <ul class="nav__links">
+                        <li><a href="https://subrat-io.github.io/myproject/">HOME</a></li>
             <li><a href="https://subrat-io.github.io/myproject/aboutus.html">SERVICES</a></li>
-                        <li><a href="https://subrat-io.github.io/myproject/about.html">ABOUT</a></li> 
-        <li class="link"><a href="#">CONTACT</a></li>
-    </ul>
-</nav>
+                        <li><a href="https://subrat-io.github.io/myproject/about.html">ABOUT</a></li>   
+            
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+    </nav>
     <header class="header">
       
         <div class="section__container header__container">
