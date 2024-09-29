@@ -327,6 +327,16 @@
         .photo-container div:hover img {
             transform: scale(1.1);
         }
+        @media (max-width: 768px) {
+    .slider-container {
+        height: 50vh; /* Adjust the height to fit mobile screens */
+    }
+
+    .slide img {
+        object-fit: cover; /* Ensure the images cover the area */
+        height: 100%; /* Full height for mobile */
+    }
+}
 
         .overlay {
             position: absolute;
