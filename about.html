@@ -10,14 +10,146 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
     <title>MIRROR SPACE | Simply Home</title>
     <!-- Add this code to your HTML file -->
+ <style>
+        /* Global Styles */
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
 
-<select id="mobile-nav" onchange="location = this.value;">
-  <option value="">Select a page</option>
-    <option value="https://subrat-io.github.io/myproject/">HOME</option>
-    <option value="https://subrat-io.github.io/myproject/aboutus.html">SERVICES</option>
-    <option value="https://subrat-io.github.io/myproject/about.html">ABOUT</option>
-  <option value="#">CONTACT</option>
-</select>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: white;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav__logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__logo img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .nav__logo h4 {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: rgb(102, 82, 46);
+            font-family: "Gowun Batang", serif;
+        }
+
+        .nav__logo p {
+            font-size: 12px;
+            margin: 0;
+            color: gray;
+        }
+
+        ul.nav__links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul.nav__links li {
+            margin-left: 40px;
+        }
+
+        ul.nav__links li a {
+            text-decoration: none;
+            font-size: 16px;
+            color: black;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        ul.nav__links li a:hover {
+            color: #1abc9c;
+        }
+
+        /* Responsive Menu */
+        .mobile-menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: black;
+        }
+
+        @media (max-width: 768px) {
+            ul.nav__links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: white;
+                width: 100%;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+                padding: 10px 0;
+                z-index: 9;
+            }
+
+            ul.nav__links li {
+                margin: 20px 0;
+                text-align: center;
+            }
+
+            .mobile-menu-icon {
+                display: block;
+            }
+        }
+
+        /* Toggle active menu */
+        .nav__links.active {
+            display: flex;
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="nav__logo">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/ioebnen-removebg-preview.png?raw=true" alt="logo" />
+            <div>
+                <h4>MIRROR SPACE</h4>
+                <p>ELEVATING INTERIORS</p>
+            </div>
+        </div>
+        <ul class="nav__links">
+            <li><a href="https://subrat-io.github.io/myproject/index.html">HOME</a></li>
+            <li><a href="https://subrat-io.github.io/myproject/aboutus.html">ABOUT US</a></li>
+            <li><a href="file:///home/nirmalya/Downloads/Untitled%20Folder/div.html">SERVICES</a></li>
+            <li><a href="#">CONTACT</a></li>
+        </ul>
+        <span class="mobile-menu-icon" onclick="toggleMenu()">&#9776;</span>
+    </nav>
+
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector('.nav__links');
+            navLinks.classList.toggle('active');
+        }
+    </script>
+
     <style>
         /* Add your existing styles here */
 
@@ -33,21 +165,7 @@
             overflow: auto; /* Enable scroll if needed */
             background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
         }
-#mobile-nav {
-  display: none;
-}
 
-@media (max-width: 768px) {
-  #mobile-nav {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: none;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.7); /* 70% transparent white background */
-  }
-}
         .modal-content {
             background: url('your-background-image-url.jpg') no-repeat center center; /* Background image */
             background-size: cover; /* Cover the entire area */
@@ -172,79 +290,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-nav {
-  background-color: white;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 5%;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-.nav__logo {
-  display: flex;
-  align-items: center;
-}
-
-.nav__logo img {
-  width: 50px;
-  margin-right: 10px;
-}
-
-.nav__logo h4 {
-  font-size: 1.5rem;
-  font-family: var(--header-font);
-  letter-spacing: 2px;
-  color: var(--text-dark);
-}
-
-.nav__logo p {
-  font-size: 12px;
-  margin: 0;
-  color: gray;
-}
-
-ul.nav__links {
-  list-style: none;
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
-ul.nav__links li {
-  margin-left: 40px;
-}
-
-ul.nav__links li a {
-  text-decoration: none;
-  font-size: 16px;
-  color: black;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-
-ul.nav__links li a:hover {
-  color: #1abc9c;
-}
-
-@media (max-width: 768px) {
-  nav {
-      flex-direction: column;
-      padding: 10px 0;
-  }
-
-  ul.nav__links {
-      flex-direction: column;
-      margin-top: 10px;
-  }
-
-  ul.nav__links li {
-      margin-left: 0;
-      margin-bottom: 10px;
-  }
-}
 
 .header {
   margin-bottom: 10rem;
