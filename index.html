@@ -342,202 +342,168 @@
       </form>
   </div>
 </div>
-
-<style>
-    /* Global Styles */
-           
-
-    /* Photo Gallery Styles */
-    .photo-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
-        width: 98%;
-        margin: 20px auto;
-    }
-
-    .photo-container div {
-        position: relative;
-        overflow: hidden;
-        cursor: pointer;
-    }
-
-    .photo-container img {
-        width: 100%;
-        height: 400px;
-        object-fit: cover;
-        transition: transform 0.5s ease;
-    }
-
-    .photo-container div:hover img {
-        transform: scale(1.1);
-    }
-
-    .overlay {
-        position: absolute;
-        bottom: 45%;
-        left: 0;
-        width: 70%;
-        height: 20%;
-        background: rgba(0, 0, 0, 0.7);
-        color: white;
-        text-align: center;
-        padding-top: 20px;
-        transition: height 0.5s ease;
-        transform: translateY(100%);
-    }
-
-    .photo-container div:hover .overlay {
-        transform: translateY(0);
-    }
-
-    .overlay p {
-        margin: 0;
-        padding: 10px;
-    }
-
-    /* Responsive layout for mobile */
-    @media (max-width: 768px) {
-        .photo-container {
-            grid-template-columns: 1fr;
-        }
-
-        .photo-container img {
-            height: auto;
-        }
-
-        .overlay {
-            width: 100%;
-        }
-    }
-
-    .photo-container {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr); /* 3 columns grid */
-        grid-gap: 10px;
-        padding: 20px;
-    }
-
-    .photo-container img {
-        width: 100%;
-        height: 300px; /* Set fixed height for all images */
-        object-fit: cover; /* Ensures the image covers the area without distortion */
-    }
-
-    /* Adjusting the grid layout on smaller screens */
-    @media screen and (max-width: 768px) {
-        .photo-container {
-            grid-template-columns: repeat(1, 1fr); /* 2 columns on tablets and medium screens */
-        }
-    }
-
-    @media screen and (max-width: 480px) {
-        .photo-container {
-            grid-template-columns: repeat(1, 1fr); /* 1 column on small screens */
-        }
-        
-        .photo-container img {
-            height: 300px; /* Keeping image height same on mobile */
-        }
-    }
-</style>
 </head>
 
 <body>
+     
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500&display=swap" rel="stylesheet">
+    <style>
+       
+        /* Heading styles */
+        .imagetext {
+            margin-top: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            color: #333; /* Dark text color */
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow */
+        }
 
+        .highl {
+            color: #3fac57; /* Highlight color */
+            text-transform: uppercase;
+        }
 
-<div class="photo-container">
-    <!-- Image 1 -->
-    <div>
-        <a href="new (4th copy).html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/pexels-pixabay-37347.jpg?raw=true" alt="Photo 1">
-        </a>
-        <div class="overlay">
-            <p>OFFICE INTERIOR</p>
-        </div>
-    </div>
+        /* Container for the images */
+        .image-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+           
+            justify-content: space-around; /* Evenly spaced images */
+        }
 
-    <!-- Image 2 -->
-    <div>
-        <a href="new (3rd copy).html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/pexels-notswervo-2398375.jpg?raw=true" alt="Photo 2">
-        </a>
-        <div class="overlay">
-            <p>KITCHEN INTERIOR</p>
-        </div>
-    </div>
+        /* Individual image container */
+        .image-container {
+            position: relative;
+            flex-basis: 30%; /* Ensure 3 per row */
+            max-width: 30%;
+            height: 250px;
+            border-radius: 20px;
+            margin-top: 10px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+        }
 
-    <!-- Image 3 -->
-    <div>
-        <a href="new (5th copy).html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/pexels-fotoaibe-1571457.jpg?raw=true" alt="Photo 3">
-        </a>
-        <div class="overlay">
-            <p>LIVING ROOM INTERIOR</p>
-        </div>
-    </div>
+        /* Image styling */
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
 
-    <!-- Image 4 -->
-    <div>
-        <a href="new (6th copy).html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/pexels-curtis-adams-1694007-4221395.jpg?raw=true" alt="Photo 4">
-        </a>
-        <div class="overlay">
-            <p>DINNING INTERIOR</p>
-        </div>
-    </div>
+        /* Overlay text */
+        .image-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            opacity: 1;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
+            transition: all 0.5s ease;
+        }
 
-    <!-- Image 5 -->
-    <div>
-        <a href="new.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094733.jpg?raw=true" alt="Photo 5">
-        </a>
-        <div class="overlay">
-            <p>BATHROOM INTERIOR</p>
-        </div>
-    </div>
+        /* Hover effect: move text to the middle */
+        .image-container:hover img {
+            transform: scale(1.1); /* Image zoom on hover */
+        }
 
-    <!-- Image 6 -->
-    <div>
-        <a href="new (7th copy).html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/pexels-curtis-adams-1694007-4092029.jpg?raw=true" alt="Photo 6">
-        </a>
-        <div class="overlay">
-            <p>DRAWING ROOM INTERIOR</p>
-        </div>
-    </div>
+        .image-container:hover .image-overlay {
+            top: 50%;
+            bottom: auto;
+            transform: translate(-50%, -50%);
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7); /* Darker background when hovered */
+            opacity: 1;
+        }
 
-    <!-- Image 7 -->
-    <div>
-        <a href="new (8th copy).html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/ai-generated-8709663.png?raw=true" alt="Photo 7">
-        </a>
-        <div class="overlay">
-            <p>BEDROOM</p>
-        </div>
-    </div>
+        /* Responsive design */
+        @media (max-width: 1200px) {
+            .image-container {
+                flex-basis: 45%; /* Adjust to 2 per row on smaller screens */
+                max-width: 45%;
+            }
+        }
 
-    <!-- Image 8 -->
-    <div>
-        <a href="new (another copy).html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/pexels-curtis-adams-1694007-3935329.jpg?raw=true" alt="Photo 8">
-        </a>
-        <div class="overlay">
-            <p>CUSTOMIZED INTERIOR</p>
-        </div>
-    </div>
+        @media (max-width: 768px) {
+            .image-container {
+                flex-basis: 100%; /* 1 per row on mobile */
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
 
-    <!-- Image 9 -->
-    <div>
-        <a href="new (copy).html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/pexels-cmoon-27453081.jpg?raw=true" alt="Photo 9">
-        </a>
-        <div class="overlay">
-            <p>REMODELLINGS</p>
-        </div>
-    </div>
-</div>
-
+    <section>
+        <h1 class="imagetext"> SOME OF OUR <span class="highl">HIGHLIGHT</span> SERVICES</h1>
+        <section class="image-row">
+            <div class="image-container">
+                <a href="new (3rd copy).html">
+                    <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true" alt="Bathroom Interiors">
+                    <div class="image-overlay">BATHROOM INTERIORS</div>
+                </a>
+            </div>
+            <div class="new (4th copy).html">
+                <a href="#kitchen">
+                    <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true" alt="Kitchen Interiors">
+                    <div class="image-overlay">KITCHEN INTERIORS</div>
+                </a>
+            </div>
+            <div class="new (5th copy).html">
+                <a href="#office">
+                    <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true" alt="Office Interiors">
+                    <div class="image-overlay">OFFICE INTERIOR</div>
+                </a>
+            </div>
+            <div class="new (6th copy).html">
+                <a href="#house">
+                    <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true" alt="House Interiors">
+                    <div class="image-overlay">HOUSE INTERIOR</div>
+                </a>
+            </div>
+            <div class="new (7th copy).html">
+                <a href="#customized">
+                    <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true" alt="Customized Interior Services">
+                    <div class="image-overlay">CUSTOMIZED INTERIOR SERVICES</div>
+                </a>
+            </div>
+            <div class="new (8th copy).html">
+                <a href="#remodellings">
+                    <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true" alt="Remodellings">
+                    <div class="image-overlay">REMODELLINGS</div>
+                </a>
+            </div>
+            <div class="new (another copy).html">
+                <a href="#commercial">
+                    <img src="https://github.com/Subrat-IO/myproject/blob/main/COMMERCIAL.jpeg?raw=true" alt="Commercial Interiors">
+                    <div class="image-overlay">COMMERCIAL INTERIOR</div>
+                </a>
+            </div>
+            <div class="new (copy).html">
+                <a href="#residential">
+                    <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true" alt="Residential Interiors">
+                    <div class="image-overlay">RESIDENTIAL INTERIOR</div>
+                </a>
+            </div>
+            <div class="new.html">
+                <a href="#hall">
+                    <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true" alt="Hall Interiors">
+                    <div class="image-overlay">HALL INTERIOR</div>
+                </a>
+            </div>
+        </section>
+    </section>
 
 
     <script>
@@ -604,6 +570,7 @@
     <p style="margin-top: 20px; font-family: Gowun Batang serif; ">&copy; 2024 Mirror Space. All rights reserved.</p>
 </footer>
 <style>footer {
+    margin-top: 50px;
     background-color: white; /* Light background */
     color: #2c3e50; /* Text color matching navbar */
     padding: 20px 5%; /* Padding around the footer */
