@@ -306,6 +306,186 @@
 </head>
 
 <body>
+    <p><!-- Contact Form Popup --></p>
+<div id="chatbotForm" class="chatbot-form">
+    <span id="closeForm" class="close-btn">×</span>
+    <h2 class="form-title">Contact Us</h2>
+    <p class="form-subtitle">We'd love to hear from you! Please fill out the form below:</p>
+    <form action="https://www.bricknbar.com/form/send_form.php" method="POST" id="form" class="contact-form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" name="name" id="name" required="" placeholder="Enter your name">
+        </div>
+        <div class="form-group">
+            <label for="contact">Contact No</label>
+            <input type="tel" name="contact" id="contact" required="" placeholder="Enter your contact number">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required="" placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+            <label for="message">Message</label>
+            <textarea name="message" id="message" required="" placeholder="Your message"></textarea>
+        </div>
+        <button type="submit" class="submit-btn">Submit</button>
+    </form>
+    <div id="result"></div>
+</div>
+
+<style>
+    /* Chatbot form styles */
+    .chatbot-form {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #f7f7f7;
+        padding: 20px;
+        width: 95%;
+        max-width: 420px;
+        border-radius: 10px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        z-index: 1000;
+    }
+    .chatbot-form.show {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: rgb(190, 79, 79); /* Set the close button color to black */
+    }
+    .form-title {
+        font-size: 1.6rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+        text-align: center;
+    }
+    .form-subtitle {
+        font-size: 1rem;
+        margin-bottom: 15px;
+        color: #666;
+        text-align: center;
+    }
+    .form-group {
+        margin-bottom: 15px;
+    }
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        background-color: #fff;
+        transition: border-color 0.3s ease;
+    }
+    input:focus,
+    textarea:focus {
+        border-color: #ff6f61;
+        outline: none;
+        box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
+    }
+    .submit-btn {
+        background-color: #ff6f61;
+        color: white;
+        font-weight: bold;
+        padding: 14px;
+        border-radius: 5px;
+        width: 100%;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .submit-btn:hover {
+        background-color: #ff4a3b;
+    }
+    /* Result message styles */
+    .success-message {
+        color: #28a745;
+        font-weight: bold;
+        margin-top: 10px;
+        text-align: center;
+    }
+    .error-message {
+        color: #dc3545;
+        font-size: 0.9rem;
+        margin-top: 5px;
+        text-align: center;
+    }
+    /* Responsive Design */
+    @media (max-width: 600px) {
+        .chatbot-form {
+            width: 95%;
+            max-width: 450px;
+            padding: 25px;
+        }
+        .form-title {
+            font-size: 1.6rem;
+        }
+        input,
+        textarea {
+            padding: 14px;
+            font-size: 1.2rem;
+        }
+        .submit-btn {
+            padding: 16px;
+            font-size: 1.2rem;
+        }
+    }
+</style>
+
+<script>
+    // Show the form after the page loads
+    window.addEventListener('load', function() {
+        const formPopup = document.getElementById('chatbotForm');
+        formPopup.classList.add('show');
+    });
+
+    // Close the form when the close button is clicked
+    document.querySelector('.close-btn').onclick = function() {
+        const formPopup = document.getElementById('chatbotForm');
+        formPopup.classList.remove('show');
+    };
+
+    // Form submission handler
+    const form = document.getElementById('form');
+    const result = document.getElementById('result');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the default form submission
+        const formData = new FormData(form);
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'https://www.bricknbar.com/form/send_form.php', true); // Use the correct public URL
+        xhr.onload = function() {
+            if (xhr.status === 200) {
+                result.innerHTML = '<p class="success-message">' + xhr.response + '</p>'; // Show response from PHP
+                form.reset(); // Reset form fields
+                setTimeout(() => {
+                    const formPopup = document.getElementById('chatbotForm');
+                    formPopup.classList.remove('show'); // Optionally hide the form after submission
+                }, 3000); // Hide the form after 3 seconds
+            } else {
+                result.innerHTML = '<p class="error-message">There was an error. Please try again later.</p>';
+            }
+        };
+        xhr.send(formData); // Send the form data
+    });
+</script>
     
     <!-- Image Slider -->
     <div class="slider-container">
