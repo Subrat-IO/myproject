@@ -311,7 +311,7 @@
     <span id="closeForm" class="close-btn">×</span>
     <h2 class="form-title">Contact Us</h2>
     <p class="form-subtitle">We'd love to hear from you! Please fill out the form below:</p>
-    <form action="https://www.bricknbar.com/form/send_form.php" method="POST" id="form" class="contact-form">
+    <form action="https://www.bricknbar.com/form/send_email.php" method="POST" id="form" class="contact-form">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" required="" placeholder="Enter your name">
@@ -470,7 +470,7 @@
         event.preventDefault(); // Prevent the default form submission
         const formData = new FormData(form);
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://www.bricknbar.com/form/send_form.php', true); // Use the correct public URL
+        xhr.open('POST', 'https://www.bricknbar.com/form/send_email.php', true); // Use the correct public URL
         xhr.onload = function() {
             if (xhr.status === 200) {
                 result.innerHTML = '<p class="success-message">' + xhr.response + '</p>'; // Show response from PHP
