@@ -347,10 +347,12 @@
         border-radius: 10px;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
         opacity: 0;
+        display: none; /* Hidden by default */
         transition: opacity 0.5s ease, transform 0.5s ease;
         z-index: 1000;
     }
     .chatbot-form.show {
+        display: block; /* Show the form */
         opacity: 1;
         transform: translate(-50%, -50%);
     }
@@ -360,7 +362,7 @@
         right: 10px;
         font-size: 1.5rem;
         cursor: pointer;
-        color: rgb(190, 79, 79); /* Set the close button color to black */
+        color: rgb(190, 79, 79); /* Set the close button color */
     }
     .form-title {
         font-size: 1.6rem;
@@ -456,10 +458,13 @@
         formPopup.classList.add('show');
     });
 
-    // Close the form when the close button is clicked
+    // Close the form and remove it from the DOM
     document.querySelector('.close-btn').onclick = function() {
         const formPopup = document.getElementById('chatbotForm');
         formPopup.classList.remove('show');
+        setTimeout(() => {
+            formPopup.style.display = 'none'; // Ensure the form is hidden completely
+        }, 500); // Small delay for a smooth transition
     };
 
     // Form submission handler
@@ -486,6 +491,7 @@
         xhr.send(formData); // Send the form data
     });
 </script>
+
     
     <!-- Image Slider -->
     <div class="slider-container">
