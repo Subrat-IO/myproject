@@ -470,7 +470,7 @@
         event.preventDefault(); // Prevent the default form submission
         const formData = new FormData(form);
         const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://www.bricknbar.com/form/send_email.php', true); // Use the correct public URL
+        xhr.open('POST', 'https://www.bricknbar.com/form/send_form.php', true); // Use the correct public URL
         xhr.onload = function() {
             if (xhr.status === 200) {
                 result.innerHTML = '<p class="success-message">' + xhr.response + '</p>'; // Show response from PHP
