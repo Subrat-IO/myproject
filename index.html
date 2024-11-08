@@ -326,23 +326,6 @@
     </div>
 
     <!-- Booking Button -->
-    <button class="form-popup-button" onclick="toggleForm()">Book Now</button>
-
-    <!-- Form Popup -->
-   <!-- Form Popup -->
-<div class="form-popup" id="myForm">
-  <span class="form-popup-close" onclick="toggleForm()">&times;</span>
-  <div class="form-popup-content">
-      <h2>Booking Form</h2>
-      <form>
-          <input type="text" placeholder="Name" required>
-          <input type="email" placeholder="Email" required>
-          <input type="text" placeholder="Phone" required>
-          <input type="date" required>
-          <button type="submit" class="book-now">Submit</button>
-      </form>
-  </div>
-</div>
 </head>
 
 <body>
@@ -352,9 +335,68 @@
 </head>
 
 <section>
-    <h1 class="highlighted-text" style="font-size: 18px; margin-top:5px ;">SOME OF OUR <span class="highlighted-word">HIGHLIGHT</span> SERVICES</h1>
     <h3 style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: 8px;">
       modular kitchen designs
+      <span><a href="" class="see-all-link">see all</a></span>
+    </h3>
+    <div class="carousel-container">
+      <button class="carousel-arrow left-arrow custom-arrow">&#10094;</button>
+      <section class="image-carousel">
+        <div class="carousel-item">
+          <a href="bathroom.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true" alt="Bathroom Interiors">
+            <div class="carousel-overlay">BATHROOM INTERIORS</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="KITCHENINTERIOR.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true" alt="Kitchen Interiors">
+            <div class="carousel-overlay">KITCHEN INTERIORS</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="OFFICE.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true" alt="Office Interiors">
+            <div class="carousel-overlay">OFFICE INTERIOR</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="houseinterior.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true" alt="House Interiors">
+            <div class="carousel-overlay">HOUSE INTERIOR</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="hallinterior.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true" alt="Customized Interior Services">
+            <div class="carousel-overlay">CUSTOMIZED INTERIOR SERVICES</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="remodellings.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true" alt="Remodellings">
+            <div class="carousel-overlay">REMODELLINGS</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="residential.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true" alt="Residential Interiors">
+            <div class="carousel-overlay">RESIDENTIAL INTERIOR</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="new (8th copy).html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true" alt="Hall Interiors">
+            <div class="carousel-overlay">HALL INTERIOR</div>
+          </a>
+        </div>
+      </section>
+      <button class="carousel-arrow right-arrow custom-arrow">&#10095;</button>
+    </div>
+  </section>
+  <section>
+    <h3 style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: 8px;">
+    Bathroom Designs
       <span><a href="" class="see-all-link">see all</a></span>
     </h3>
     <div class="carousel-container">
@@ -736,10 +778,7 @@
             showSlides();
         }
 
-        function toggleForm() {
-            const formPopup = document.getElementById("myForm");
-            formPopup.style.display = formPopup.style.display === "block" ? "none" : "block";
-        }
+       
     </script>
     <!-- Footer Section -->
 <footer style="background-color: rgb(224, 219, 208); color: #2c3e50; padding: 20px 5%; text-align: center;">
