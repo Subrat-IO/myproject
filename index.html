@@ -539,106 +539,13 @@
 <body>
      
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <style>
-       
-        /* Heading styles */
-        .imagetext {
-            margin-top: 10px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            color: #333; /* Dark text color */
-            text-align: center;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow */
-        }
-
-        .highl {
-            color: #3fac57; /* Highlight color */
-            text-transform: uppercase;
-        }
-
-        /* Container for the images */
-        .image-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-           
-            justify-content: space-around; /* Evenly spaced images */
-        }
-
-        /* Individual image container */
-        .image-container {
-            position: relative;
-            flex-basis: 30%; /* Ensure 3 per row */
-            max-width: 30%;
-            height: 250px;
-            border-radius: 20px;
-            margin-top: 10px;
-            overflow: hidden;
-            transition: all 0.5s ease;
-        }
-
-        /* Image styling */
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        /* Overlay text */
-        .image-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-            opacity: 1;
-            width: 100%;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
-            transition: all 0.5s ease;
-        }
-
-        /* Hover effect: move text to the middle */
-        .image-container:hover img {
-            transform: scale(1.1); /* Image zoom on hover */
-        }
-
-        .image-container:hover .image-overlay {
-            top: 50%;
-            bottom: auto;
-            transform: translate(-50%, -50%);
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Darker background when hovered */
-            opacity: 1;
-        }
-
-        /* Responsive design */
-        @media (max-width: 1200px) {
-            .image-container {
-                flex-basis: 45%; /* Adjust to 2 per row on smaller screens */
-                max-width: 45%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .image-container {
-                flex-basis: 100%; /* 1 per row on mobile */
-                max-width: 100%;
-            }
-        }
-    </style>
+ 
 </head>
 
-    <section>
-        <h1 class="imagetext"> SOME OF OUR <span class="highl">HIGHLIGHT</span> SERVICES</h1>
+<section>
+    <h1 class="imagetext">SOME OF OUR <span class="highl">HIGHLIGHT</span> SERVICES</h1>
+    <div class="slider-container">
+        <button class="slider-arrow left-arrow">&#10094;</button>
         <section class="image-row">
             <div class="image-container">
                 <a href="bathroom.html">
@@ -689,7 +596,117 @@
                 </a>
             </div>
         </section>
-    </section>
+        <button class="slider-arrow right-arrow">&#10095;</button>
+    </div>
+  </section>
+  
+  <style>
+   /* General styling */
+  .slider-container {
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+      margin: auto;
+  }
+  
+  .image-row {
+      display: flex;
+      transition: transform 0.5s ease;
+      gap: 10px; /* Gap between images */
+  }
+  
+  .image-container {
+      flex: 0 0 16.66%; /* 6 images per row on large screens */
+      max-width: 16.66%;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+  }
+  
+  .image-container img {
+      width: 100%;
+      height: 150px; /* Fixed height for all images */
+      object-fit: cover;
+      display: block;
+  }
+  
+  .image-container a {
+      display: block;
+      position: relative;
+  }
+  
+  .image-overlay {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 16px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+  }
+  
+  /* Hover effect for text */
+  .image-container:hover .image-overlay {
+      opacity: 1;
+  }
+  
+  /* Slider arrow buttons */
+  .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: #fff;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      font-size: 18px;
+      z-index: 1;
+  }
+  
+  .left-arrow {
+      left: 10px;
+  }
+  
+  .right-arrow {
+      right: 10px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+      .image-container {
+          flex: 0 0 100%;
+          max-width: 100%;
+      }
+  }
+  
+  </style>
+  <script>let currentIndex = 0;
+  
+    function slide(direction) {
+      const slider = document.querySelector(".image-row");
+      const totalImages = document.querySelectorAll(".image-container").length;
+      const imagesPerView = window.innerWidth > 768 ? 6 : 1;
+  
+      // Calculate the maximum index
+      const maxIndex = totalImages - imagesPerView;
+  
+      if (direction === 'left') {
+        currentIndex = Math.max(currentIndex - 1, 0);
+      } else if (direction === 'right') {
+        currentIndex = Math.min(currentIndex + 1, maxIndex);
+      }
+  
+      // Update slider position
+      const imageWidth = slider.querySelector(".image-container").offsetWidth;
+      slider.style.transform = `translateX(-${currentIndex * imageWidth}px)`;
+    }
+  
+    document.querySelector(".left-arrow").onclick = () => slide('left');
+    document.querySelector(".right-arrow").onclick = () => slide('right');
+  </script>
 
 <section class="nsa-sub-sections">
     <div class="nsa-sub-section">
