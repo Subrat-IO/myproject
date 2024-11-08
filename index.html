@@ -539,157 +539,191 @@
 <body>
      
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500&display=swap" rel="stylesheet">
-    <style>
-       
-        /* Heading styles */
-        .imagetext {
-            margin-top: 10px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.5rem;
-            color: #333; /* Dark text color */
-            text-align: center;
-            margin-bottom: 20px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Text shadow */
-        }
-
-        .highl {
-            color: #3fac57; /* Highlight color */
-            text-transform: uppercase;
-        }
-
-        /* Container for the images */
-        .image-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-           
-            justify-content: space-around; /* Evenly spaced images */
-        }
-
-        /* Individual image container */
-        .image-container {
-            position: relative;
-            flex-basis: 30%; /* Ensure 3 per row */
-            max-width: 30%;
-            height: 250px;
-            border-radius: 20px;
-            margin-top: 10px;
-            overflow: hidden;
-            transition: all 0.5s ease;
-        }
-
-        /* Image styling */
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        /* Overlay text */
-        .image-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            text-align: center;
-            opacity: 1;
-            width: 100%;
-            height: 40px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark background */
-            transition: all 0.5s ease;
-        }
-
-        /* Hover effect: move text to the middle */
-        .image-container:hover img {
-            transform: scale(1.1); /* Image zoom on hover */
-        }
-
-        .image-container:hover .image-overlay {
-            top: 50%;
-            bottom: auto;
-            transform: translate(-50%, -50%);
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.7); /* Darker background when hovered */
-            opacity: 1;
-        }
-
-        /* Responsive design */
-        @media (max-width: 1200px) {
-            .image-container {
-                flex-basis: 45%; /* Adjust to 2 per row on smaller screens */
-                max-width: 45%;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .image-container {
-                flex-basis: 100%; /* 1 per row on mobile */
-                max-width: 100%;
-            }
-        }
-    </style>
+ 
 </head>
 
-    <section>
-        <h1 class="imagetext"> SOME OF OUR <span class="highl">HIGHLIGHT</span> SERVICES</h1>
-        <section class="image-row">
-            <div class="image-container">
-                <a href="bathroom.html">
-                    <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true" alt="Bathroom Interiors">
-                    <div class="image-overlay">BATHROOM INTERIORS</div>
-                </a>
-            </div>
-            <div class="image-container">
-                <a href="KITCHENINTERIOR.html">
-                    <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true" alt="Kitchen Interiors">
-                    <div class="image-overlay">KITCHEN INTERIORS</div>
-                </a>
-            </div>
-            <div class="image-container">
-                <a href="OFFICE.html">
-                    <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true" alt="Office Interiors">
-                    <div class="image-overlay">OFFICE INTERIOR</div>
-                </a>
-            </div>
-            <div class="image-container">
-                <a href="houseinterior.html">
-                    <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true" alt="House Interiors">
-                    <div class="image-overlay">HOUSE INTERIOR</div>
-                </a>
-            </div>
-            <div class="image-container">
-                <a href="hallinterior.html">
-                    <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true" alt="Customized Interior Services">
-                    <div class="image-overlay">CUSTOMIZED INTERIOR SERVICES</div>
-                </a>
-            </div>
-            <div class="image-container">
-                <a href="remodellings.html">
-                    <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true" alt="Remodellings">
-                    <div class="image-overlay">REMODELLINGS</div>
-                </a>
-            </div>
-            <div class="image-container">
-                <a href="residential.html">
-                    <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true" alt="Residential Interiors">
-                    <div class="image-overlay">RESIDENTIAL INTERIOR</div>
-                </a>
-            </div>
-            <div class="image-container">
-                <a href="new (8th copy).html">
-                    <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true" alt="Hall Interiors">
-                    <div class="image-overlay">HALL INTERIOR</div>
-                </a>
-            </div>
-        </section>
-    </section>
+<section>
+    <h1 class="highlighted-text">SOME OF OUR <span class="highlighted-word">HIGHLIGHT</span> SERVICES</h1>
+    <div class="carousel-container">
+      <button class="carousel-arrow left-arrow custom-arrow">&#10094;</button>
+      <section class="image-carousel">
+        <div class="carousel-item">
+          <a href="bathroom.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true" alt="Bathroom Interiors">
+            <div class="carousel-overlay">BATHROOM INTERIORS</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="KITCHENINTERIOR.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true" alt="Kitchen Interiors">
+            <div class="carousel-overlay">KITCHEN INTERIORS</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="OFFICE.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true" alt="Office Interiors">
+            <div class="carousel-overlay">OFFICE INTERIOR</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="houseinterior.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true" alt="House Interiors">
+            <div class="carousel-overlay">HOUSE INTERIOR</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="hallinterior.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true" alt="Customized Interior Services">
+            <div class="carousel-overlay">CUSTOMIZED INTERIOR SERVICES</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="remodellings.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true" alt="Remodellings">
+            <div class="carousel-overlay">REMODELLINGS</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="residential.html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true" alt="Residential Interiors">
+            <div class="carousel-overlay">RESIDENTIAL INTERIOR</div>
+          </a>
+        </div>
+        <div class="carousel-item">
+          <a href="new (8th copy).html">
+            <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true" alt="Hall Interiors">
+            <div class="carousel-overlay">HALL INTERIOR</div>
+          </a>
+        </div>
+      </section>
+      <button class="carousel-arrow right-arrow custom-arrow">&#10095;</button>
+    </div>
+  </section>
+  
+  <style>
+  /* General styling */
+  .carousel-container {
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+      margin: auto;
+  }
+  
+  .image-carousel {
+      display: flex;
+      transition: transform 0.5s ease;
+      gap: 20px;
+  }
+  
+  .carousel-item {
+      flex: 0 0 24%; /* 4 items per row */
+      max-width: 24%;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      border-radius: 10px;
+  }
+  
+  .carousel-item img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      border-radius: 10px;
+  }
+  
+  .carousel-item a {
+      display: block;
+      position: relative;
+  }
+  
+  .carousel-overlay {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #fff;
+      font-size: 16px;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 5px 10px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+  }
+  
+  .carousel-item:hover .carousel-overlay {
+      opacity: 1;
+  }
+  
+  /* Slider arrow buttons */
+  .carousel-container .custom-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: white !important; /* Ensures background color stays white */
+      color: #000 !important; /* Keeps text color black */
+      border: none;
+      padding: 15px;
+      cursor: pointer;
+      font-size: 20px;
+      border-radius: 50%;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+  
+  .carousel-container .left-arrow.custom-arrow {
+      left: 10px;
+  }
+  
+  .carousel-container .right-arrow.custom-arrow {
+      right: 10px;
+  }
+  
+  .carousel-container .custom-arrow:hover {
+      background: #f0f0f0 !important;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+      .carousel-item {
+          flex: 0 0 100%; /* 1 item per row */
+          max-width: 100%;
+      }
+      .carousel-item img {
+          height: 250px; /* Adjusted height for mobile */
+      }
+  }
+  </style>
+  
+  <script>
+  let currentIndex = 0;
+  
+  function slide(direction) {
+      const slider = document.querySelector(".image-carousel");
+      const totalImages = document.querySelectorAll(".carousel-item").length;
+      const imagesPerView = window.innerWidth > 768 ? 4 : 1;
+  
+      // Calculate the maximum index
+      const maxIndex = totalImages - imagesPerView;
+  
+      if (direction === 'left') {
+          currentIndex = Math.max(currentIndex - 1, 0);
+      } else if (direction === 'right') {
+          currentIndex = Math.min(currentIndex + 1, maxIndex);
+      }
+  
+      // Update slider position
+      const imageWidth = slider.querySelector(".carousel-item").offsetWidth;
+      slider.style.transform = `translateX(-${currentIndex * (imageWidth + 20)}px)`;
+  }
+  
+  document.querySelector(".left-arrow").onclick = () => slide('left');
+  document.querySelector(".right-arrow").onclick = () => slide('right');
+  </script>
+  
 
 <section class="nsa-sub-sections">
     <div class="nsa-sub-section">
