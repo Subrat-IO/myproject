@@ -307,197 +307,6 @@
 
 <body>
 <!-- Contact Form Popup -->
-<div id="chatbotForm" class="chatbot-form">
-    <span id="closeForm" class="close-btn">&times;</span>
-    <h2 class="form-title">Contact Us</h2>
-    <p class="form-subtitle">We'd love to hear from you! Please fill out the form below:</p>
-    <form action="https://www.bricknbar.com/form/send_form.php" method="POST" id="form" class="contact-form">
-        <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" name="name" id="name" required placeholder="Enter your name">
-        </div>
-        <div class="form-group">
-            <label for="contact">Contact No</label>
-            <input type="tel" name="contact" id="contact" required placeholder="Enter your contact number">
-        </div>
-        <div class="form-group">
-            <label for="location">Location</label>
-            <input type="text" name="location" id="location" required placeholder="Enter your location">
-        </div>
-        <div class="form-group">
-            <label for="message">Message</label>
-            <textarea name="message" id="message" required placeholder="Your message"></textarea>
-        </div>
-        <button type="submit" class="submit-btn">Submit</button>
-    </form>
-    <div id="result"></div>
-</div>
-
-
-<style>
-    /* Chatbot form styles */
-    .chatbot-form {
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #f7f7f7;
-        padding: 15px;
-        width: 90%;
-        max-width: 400px;
-        border-radius: 10px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        opacity: 0;
-        transition: opacity 0.5s ease, transform 0.5s ease;
-        z-index: 1000;
-    }
-
-    .chatbot-form.show {
-        opacity: 1;
-        transform: translate(-50%, -50%);
-    }
-
-    .close-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        font-size: 1.5rem;
-        cursor: pointer;
-    }
-
-    .form-title {
-        font-size: 1.4rem;
-        font-weight: bold;
-        margin-bottom: 10px;
-        color: #333;
-        text-align: center;
-    }
-
-    .form-subtitle {
-        font-size: 0.9rem;
-        margin-bottom: 15px;
-        color: #666;
-        text-align: center;
-    }
-
-    .form-group {
-        margin-bottom: 10px;
-    }
-
-    label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 5px;
-    }
-
-    input[type="text"],
-    input[type="tel"],
-    textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        font-size: 1rem;
-        background-color: #fff;
-        transition: border-color 0.3s ease;
-    }
-
-    input:focus,
-    textarea:focus {
-        border-color: #ff6f61;
-        outline: none;
-        box-shadow: 0 0 5px rgba(255, 111, 97, 0.5);
-    }
-
-    .submit-btn {
-        background-color: #ff6f61;
-        color: white;
-        font-weight: bold;
-        padding: 12px;
-        border-radius: 5px;
-        width: 100%;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
-
-    .submit-btn:hover {
-        background-color: #ff4a3b;
-    }
-
-    /* Result message styles */
-    .success-message {
-        color: #28a745;
-        font-weight: bold;
-        margin-top: 10px;
-        text-align: center;
-    }
-
-    .error-message {
-        color: #dc3545;
-        font-size: 0.9rem;
-        margin-top: 5px;
-        text-align: center;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 480px) {
-        .chatbot-form {
-            width: 85%;
-            max-width: 350px;
-            padding: 10px;
-        }
-        .form-title {
-            font-size: 1.4rem;
-        }
-        .form-subtitle {
-            font-size: 0.8rem;
-        }
-        input,
-        textarea {
-            padding: 8px;
-            font-size: 0.9rem;
-        }
-        .submit-btn {
-            padding: 10px;
-            font-size: 0.9rem;
-        }
-    }
-</style>
-
-<script>
-    // Show the form after the page loads
-    window.addEventListener('load', function() {
-        const formPopup = document.getElementById('chatbotForm');
-        formPopup.classList.add('show');
-    });
-
-    // Close the form when the close button is clicked
-    document.querySelector('.close-btn').onclick = function() {
-        const formPopup = document.getElementById('chatbotForm');
-        formPopup.classList.remove('show');
-    };
-
-    // Form submission handler
-    const form = document.getElementById('form');
-    const result = document.getElementById('result');
-
-    form.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const formData = new FormData(form);
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', 'https://www.bricknbar.com/form/send_form.php', true); // Change URL to your PHP file
-        xhr.onload = function() {
-            if (xhr.status === 200) {
-                result.innerHTML = '<p class="success-message">' + xhr.response + '</p>'; // Show response from PHP
-                form.reset();
-            } else {
-                result.innerHTML = '<p class="error-message">There was an error. Please try again later.</p>';
-            }
-        };
-        xhr.send(formData);
-    });
-</script>
-
     
     <!-- Image Slider -->
     <div class="slider-container">
@@ -543,7 +352,11 @@
 </head>
 
 <section>
-    <h1 class="highlighted-text">SOME OF OUR <span class="highlighted-word">HIGHLIGHT</span> SERVICES</h1>
+    <h1 class="highlighted-text" style="font-size: 18px; margin-top:5px ;">SOME OF OUR <span class="highlighted-word">HIGHLIGHT</span> SERVICES</h1>
+    <h3 style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: 8px;">
+      modular kitchen designs
+      <span><a href="" class="see-all-link">see all</a></span>
+    </h3>
     <div class="carousel-container">
       <button class="carousel-arrow left-arrow custom-arrow">&#10094;</button>
       <section class="image-carousel">
@@ -686,6 +499,17 @@
       background: #f0f0f0 !important;
   }
   
+  /* Styling for the "see all" link */
+  .see-all-link {
+      color: red;
+      text-decoration: none;
+      font-weight: bold;
+  }
+  
+  .see-all-link:hover {
+      text-decoration: underline;
+  }
+  
   /* Responsive adjustments */
   @media (max-width: 768px) {
       .carousel-item {
@@ -697,6 +521,7 @@
       }
   }
   </style>
+  
   
   <script>
   let currentIndex = 0;
