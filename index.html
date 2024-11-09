@@ -8,8 +8,13 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
- <style>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
         /* Global Styles */
         body {
             font-family: 'Raleway', sans-serif;
@@ -22,6 +27,27 @@
             padding: 0;
             margin: 0;
             box-sizing: border-box;
+        }
+
+        /* Top Links */
+        .top-links {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 5%;
+            background-color: #fff;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .top-links .left,
+        .top-links .right {
+            display: flex;
+            gap: 15px;
+        }
+
+        .top-links a {
+            text-decoration: none;
+            color: #555;
         }
 
         /* Navbar Styles */
@@ -51,7 +77,6 @@
             font-size: 1.5rem;
             letter-spacing: 2px;
             color: rgb(102, 82, 46);
-            font-family: "Gowun Batang", serif;
         }
 
         .nav__logo p {
@@ -66,23 +91,30 @@
             align-items: center;
             margin: 0;
             padding: 0;
+            gap: 20px;
         }
-
-        ul.nav__links li {
-            margin-left: 40px;
-        }
-
+.center-links a{
+    text-decoration: none !important;
+    color: red;
+}
         ul.nav__links li a {
             text-decoration: none;
             font-size: 16px;
             color: black;
             font-weight: bold;
-            text-transform: uppercase;
         }
 
         ul.nav__links li a:hover {
             color: #1abc9c;
         }
+
+        /* Center Links */
+        .center-links {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #555;
+                }
 
         /* Responsive Menu */
         .mobile-menu-icon {
@@ -92,39 +124,88 @@
             color: black;
         }
 
-        @media (max-width: 768px) {
-            ul.nav__links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                background-color: white;
-                width: 100%;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-                padding: 10px 0;
-                z-index: 9;
-            }
+        /* Slide-in menu for mobile */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 20;
+            overflow-y: auto;
+        }
 
-            ul.nav__links li {
-                margin: 20px 0;
-                text-align: center;
+        /* Open slide-menu */
+        .slide-menu.open {
+            left: 0;
+        }
+
+        .slide-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+
+        /* Close button styles */
+        .close-button {
+            font-size: 24px;
+            cursor: pointer;
+            align-self: flex-end;
+            color: #333;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+
+            ul.nav__links,
+            .center-links {
+                display: none;
             }
 
             .mobile-menu-icon {
                 display: block;
             }
-        }
 
-        /* Toggle active menu */
-        .nav__links.active {
-            display: flex;
-        }
+            /* Show only the first and last link in top-links */
+            .top-links .left a:not(:first-child),
+            .top-links .right a:not(:last-child) {
+                display: none;
+            }
 
+            .slide-menu ul {
+                list-style: none;
+                padding: 0;
+                margin-top: 20px;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <!-- Top Links -->
+    <div class="top-links">
+        <div class="right" style="font-weight: 500;">
+            <a href="#">Be A Partner</a>
+           
+            <a href="#">Customer Suppourt</a>
+            <a href="#" style="color: red;">Contact Us</a>
+        </div>
+        <div class="left">
+            <a href="#">Explore More</a>
+            <a href="#">Our Whatsapp</a>
+        </div>
+       
+    </div>
+
+    <!-- Main Navigation -->
     <nav>
         <div class="nav__logo">
             <img src="ioebnen-removebg-preview.png" alt="logo" />
@@ -133,19 +214,58 @@
                 <p>ELEVATING INTERIORS</p>
             </div>
         </div>
+        <div class="center-links">
+            <a href="#">Design Gallery</a>
+            <a href="#">Offerings</a>
+            <a href="#">Our Cities</a>
+            <a href="#">Ideology</a>
+            <a href="#">Customer Feedback</a>
+            <a href="#"> Our Blog</a>
+
+        </div>
+        <!-- Main nav links (hidden in mobile view) -->
         <ul class="nav__links">
-            <li><a href="https://subrat-io.github.io/myproject/">HOME</a></li>
-            <li><a href="https://subrat-io.github.io/myproject/aboutus.html">SERVICES</a></li>
-                        <li><a href="https://subrat-io.github.io/myproject/about.html">ABOUT</a></li> 
-        <li class="link"><a href="#">CONTACT</a></li>
+            <li><a href="https://subrat-io.github.io/myproject/">Home</a></li>
+            <li><a href="https://subrat-io.github.io/myproject/aboutus.html">Services</a></li>
+            <li><a href="https://subrat-io.github.io/myproject/about.html">About</a></li>
+            <li><a href="#">Contact</a></li>
         </ul>
+
+        <!-- Center Links -->
+
+
+        <!-- Mobile Menu Icon -->
         <span class="mobile-menu-icon" onclick="toggleMenu()">&#9776;</span>
     </nav>
 
+    <!-- Slide-in Menu (Mobile) -->
+    <div class="slide-menu" id="slideMenu">
+        <span class="close-button" onclick="toggleMenu()">&times;</span>
+        <a href="https://subrat-io.github.io/myproject/">Home</a>
+        <a href="https://subrat-io.github.io/myproject/aboutus.html">Services</a>
+        <a href="https://subrat-io.github.io/myproject/about.html">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Design Gallery</a>
+        <a href="#">Blog</a>
+        <a href="#">Offerings</a>
+        <a href="#">Our Cities</a>
+        <a href="#">Ideology</a>
+        <a href="#">Customer Feedback</a>
+
+        <!-- Main nav links added to slide-menu -->
+        <ul>
+            <li><a href="https://subrat-io.github.io/myproject/">Home</a></li>
+            <li><a href="https://subrat-io.github.io/myproject/aboutus.html">Services</a></li>
+            <li><a href="https://subrat-io.github.io/myproject/about.html">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+
+    <!-- JavaScript for Menu Toggle -->
     <script>
         function toggleMenu() {
-            const navLinks = document.querySelector('.nav__links');
-            navLinks.classList.toggle('active');
+            const slideMenu = document.getElementById('slideMenu');
+            slideMenu.classList.toggle('open');
         }
     </script>
     <style>
@@ -164,12 +284,14 @@
         }
 
         /* Navbar Styles */
- 
-      
+
+
         /* Image Slider Container */
         .slider-container {
-            width: 100%; /* Full width */
-            height: 100vh; /* Full height */
+            width: 100%;
+            /* Full width */
+            height: 100vh;
+            /* Full height */
             position: relative;
             overflow: hidden;
         }
@@ -177,17 +299,20 @@
         .slide-wrapper {
             display: flex;
             transition: transform 0.5s ease-in-out;
-            height: 100%; /* Ensure the slides fill the container */
+            height: 100%;
+            /* Ensure the slides fill the container */
         }
 
         .slide {
             min-width: 100%;
-            height: 100%; /* Ensure the slide takes full height */
+            height: 100%;
+            /* Ensure the slide takes full height */
         }
 
         .slide img {
             width: 100%;
-            height: 100%; /* Full height */
+            height: 100%;
+            /* Full height */
             object-fit: cover;
         }
 
@@ -213,818 +338,940 @@
         }
 
         /* Booking Button */
-        .form-popup-button {
-            position: fixed;
-            top: 60px;
-            right: 20px;
-            background-color: red;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
 
-        /* Form Modal Styles */
-        .form-popup {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            display: none;
-            width: 300px;
-            z-index: 1000;
+        .overlay {
+            width: 100% !important;
+            /* Adjust the overlay width for mobile view */
         }
-
-        .form-popup-content h2 {
-            font-size: 1.5rem;
-            text-align: center;
-        }
-
-        .form-popup-content form {
-            display: flex;
-            flex-direction: column;
-            background-color: rgba(255, 255, 255, 0.1) !important; /* 90% transparent */
-            border: none; /* Optional: remove border if not needed */
-        }
-
-        .form-popup-content input {
-            margin: 10px 0;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            font-size: 16px;
-            background-color: rgba(255, 255, 255, 0.7); /* Semi-transparent input background */
-        }
-
-        .book-now {
-            background-color: red;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        .book-now:hover {
-            background-color: darkred;
-        }
-
-        .form-popup-close {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 18px;
-            cursor: pointer;
-        }
-
-  
-    .overlay {
-        width: 100% !important; /* Adjust the overlay width for mobile view */
-    }
 
 
         @media (max-width: 768px) {
-    .slider-container {
-        height: 50vh; /* Adjust the height to fit mobile screens */
-    }
+            .slider-container {
+                height: 50vh;
+                /* Adjust the height to fit mobile screens */
+            }
 
-    .slide img {
-        object-fit: cover; /* Ensure the images cover the area */
-        height: 100%; /* Full height for mobile */
-    }
-}
-
-        
+            .slide img {
+                object-fit: cover;
+                /* Ensure the images cover the area */
+                height: 100%;
+                /* Full height for mobile */
+            }
+        }
     </style>
-</head>
+    </head>
 
-<body>
-<!-- Contact Form Popup -->
-    
-    <!-- Image Slider -->
-    <div class="slider-container">
-        <div class="slide-wrapper">
-            <div class="slide">
-                <img src="https://github.com/Subrat-IO/myproject/blob/main/living-room-6676759.jpg?raw=true" alt="Image 1">
+    <body>
+        <!-- Contact Form Popup -->
+
+        <!-- Image Slider -->
+        <div class="slider-container">
+            <div class="slide-wrapper">
+                <div class="slide">
+                    <img src="https://github.com/Subrat-IO/myproject/blob/main/living-room-6676759.jpg?raw=true"
+                        alt="Image 1">
+                </div>
+                <div class="slide">
+                    <img src="https://github.com/Subrat-IO/myproject/blob/main/chairs-2181994.jpg?raw=true"
+                        alt="Image 2">
+                </div>
+                <div class="slide">
+                    <img src="https://github.com/Subrat-IO/myproject/blob/main/wall-416060_1920.jpg?raw=true"
+                        alt="Image 3">
+                </div>
             </div>
-            <div class="slide">
-                <img src="https://github.com/Subrat-IO/myproject/blob/main/chairs-2181994.jpg?raw=true" alt="Image 2">
-            </div>
-            <div class="slide">
-                <img src="https://github.com/Subrat-IO/myproject/blob/main/wall-416060_1920.jpg?raw=true" alt="Image 3">
-            </div>
+            <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+            <button class="next" onclick="moveSlide(1)">&#10095;</button>
         </div>
-        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="next" onclick="moveSlide(1)">&#10095;</button>
-    </div>
 
-    <!-- Booking Button -->
-</head>
+        <!-- Booking Button -->
+        </head>
 
-<body>
-     
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500&display=swap" rel="stylesheet">
- 
-</head>
-<section>
-    <h1 class="highlighted-text" style="font-size: 16px; text-align: center; color: red; font-family: Roboto, Helvetica, sans-serif; margin-top: 10px;">WHY WE ARE THE BEST</h1>
-    <div class="icon-slider-container">
-      <div class="icon-slider">
-        <div class="icon-item">
-          <img src="png-clipart-quality-control-logo-others-miscellaneous-emblem-removebg-preview.png" alt="Quality">
-          <p>Quality Assurance</p>
-        </div>
-        <div class="icon-item">
-          <img src="pngtree-best-price-icon-design-vector-png-image_6673126-removebg-preview.png" alt="Affordable">
-          <p>Affordable Prices</p>
-        </div>
-        <div class="icon-item">
-          <img src="https://via.placeholder.com/50" alt="Timely">
-          <p>Timely Delivery</p>
-        </div>
-        <div class="icon-item">
-          <img src="https://via.placeholder.com/50" alt="Custom">
-          <p>Custom Solutions</p>
-        </div>
-        <div class="icon-item">
-          <img src="https://via.placeholder.com/50" alt="Expertise">
-          <p>Expert Team</p>
-        </div>
-        <div class="icon-item">
-          <img src="https://via.placeholder.com/50" alt="Support">
-          <p>24/7 Support</p>
-        </div>
-        <!-- Duplicates for a smooth continuous scrolling effect -->
-        <div class="icon-item">
-          <img src="https://via.placeholder.com/50" alt="Quality">
-          <p>Quality Assurance</p>
-        </div>
-        <div class="icon-item">
-          <img src="https://via.placeholder.com/50" alt="Affordable">
-          <p>Affordable Prices</p>
-        </div>
-        <div class="icon-item">
-          <img src="https://via.placeholder.com/50" alt="Timely">
-          <p>Timely Delivery</p>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-  <style>
-  /* General Styling */
-  .icon-slider-container {
-      overflow: hidden;
-      max-width: 100%;
-      margin: auto;
-      position: relative;
-      padding: 20px 0;
-  }
-  
-  .icon-slider {
-      display: flex;
-      align-items: center;
-      gap: 40px;
-      animation: scroll 20s linear infinite;
-  }
-  
-  .icon-item {
-      text-align: center;
-      min-width: 120px; /* Ensures each icon and text block has space */
-  }
-  
-  .icon-item img {
-      width: 50px;
-      height: 50px;
-      object-fit: cover;
-  }
-  
-  .icon-item p {
-      margin-top: 8px;
-      font-size: 14px;
-      color: #333;
-  }
-  
-  /* Auto-scrolling animation */
-  @keyframes scroll {
-      0% {
-          transform: translateX(0);
-      }
-      100% {
-          transform: translateX(-50%);
-      }
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-      .icon-item {
-          min-width: 100px;
-      }
-      .icon-item p {
-          font-size: 12px;
-      }
-  }
-  </style>
-  
-<section>
-    <h3 style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: 8px;">
-      modular kitchen designs
-      <span><a href="" class="see-all-link">see all</a></span>
-    </h3>
-    <div class="carousel-container">
-      <button class="carousel-arrow left-arrow custom-arrow">&#10094;</button>
-      <section class="image-carousel">
-        <div class="carousel-item">
-          <a href="bathroom.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true" alt="Bathroom Interiors">
-            <div class="carousel-overlay">BATHROOM INTERIORS</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="KITCHENINTERIOR.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true" alt="Kitchen Interiors">
-            <div class="carousel-overlay">KITCHEN INTERIORS</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="OFFICE.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true" alt="Office Interiors">
-            <div class="carousel-overlay">OFFICE INTERIOR</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="houseinterior.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true" alt="House Interiors">
-            <div class="carousel-overlay">HOUSE INTERIOR</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="hallinterior.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true" alt="Customized Interior Services">
-            <div class="carousel-overlay">CUSTOMIZED INTERIOR SERVICES</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="remodellings.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true" alt="Remodellings">
-            <div class="carousel-overlay">REMODELLINGS</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="residential.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true" alt="Residential Interiors">
-            <div class="carousel-overlay">RESIDENTIAL INTERIOR</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="new (8th copy).html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true" alt="Hall Interiors">
-            <div class="carousel-overlay">HALL INTERIOR</div>
-          </a>
-        </div>
-      </section>
-      <button class="carousel-arrow right-arrow custom-arrow">&#10095;</button>
-    </div>
-  </section>
-  <section>
-    <h3 style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: 8px;">
-    Bathroom Designs
-      <span><a href="" class="see-all-link">see all</a></span>
-    </h3>
-    <div class="carousel-container">
-      <button class="carousel-arrow left-arrow custom-arrow">&#10094;</button>
-      <section class="image-carousel">
-        <div class="carousel-item">
-          <a href="bathroom.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true" alt="Bathroom Interiors">
-            <div class="carousel-overlay">BATHROOM INTERIORS</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="KITCHENINTERIOR.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true" alt="Kitchen Interiors">
-            <div class="carousel-overlay">KITCHEN INTERIORS</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="OFFICE.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true" alt="Office Interiors">
-            <div class="carousel-overlay">OFFICE INTERIOR</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="houseinterior.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true" alt="House Interiors">
-            <div class="carousel-overlay">HOUSE INTERIOR</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="hallinterior.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true" alt="Customized Interior Services">
-            <div class="carousel-overlay">CUSTOMIZED INTERIOR SERVICES</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="remodellings.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true" alt="Remodellings">
-            <div class="carousel-overlay">REMODELLINGS</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="residential.html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true" alt="Residential Interiors">
-            <div class="carousel-overlay">RESIDENTIAL INTERIOR</div>
-          </a>
-        </div>
-        <div class="carousel-item">
-          <a href="new (8th copy).html">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true" alt="Hall Interiors">
-            <div class="carousel-overlay">HALL INTERIOR</div>
-          </a>
-        </div>
-      </section>
-      <button class="carousel-arrow right-arrow custom-arrow">&#10095;</button>
-    </div>
-  </section>
-  
-  <style>
-  /* General styling */
-  .carousel-container {
-      position: relative;
-      overflow: hidden;
-      max-width: 100%;
-      margin: auto;
-  }
-  
-  .image-carousel {
-      display: flex;
-      transition: transform 0.5s ease;
-      gap: 20px;
-  }
-  
-  .carousel-item {
-      flex: 0 0 24%; /* 4 items per row */
-      max-width: 24%;
-      position: relative;
-      overflow: hidden;
-      box-sizing: border-box;
-      border-radius: 10px;
-  }
-  
-  .carousel-item img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      display: block;
-      border-radius: 10px;
-  }
-  
-  .carousel-item a {
-      display: block;
-      position: relative;
-  }
-  
-  .carousel-overlay {
-      position: absolute;
-      bottom: 10px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #fff;
-      font-size: 16px;
-      background-color: rgba(0, 0, 0, 0.5);
-      padding: 5px 10px;
-      border-radius: 5px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-  }
-  
-  .carousel-item:hover .carousel-overlay {
-      opacity: 1;
-  }
-  
-  /* Slider arrow buttons */
-  .carousel-container .custom-arrow {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: white !important; /* Ensures background color stays white */
-      color: #000 !important; /* Keeps text color black */
-      border: none;
-      padding: 15px;
-      cursor: pointer;
-      font-size: 20px;
-      border-radius: 50%;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-      z-index: 1;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-  }
-  
-  .carousel-container .left-arrow.custom-arrow {
-      left: 10px;
-  }
-  
-  .carousel-container .right-arrow.custom-arrow {
-      right: 10px;
-  }
-  
-  .carousel-container .custom-arrow:hover {
-      background: #f0f0f0 !important;
-  }
-  
-  /* Styling for the "see all" link */
-  .see-all-link {
-      color: red;
-      text-decoration: none;
-      font-weight: bold;
-  }
-  
-  .see-all-link:hover {
-      text-decoration: underline;
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-      .carousel-item {
-          flex: 0 0 100%; /* 1 item per row */
-          max-width: 100%;
-      }
-      .carousel-item img {
-          height: 250px; /* Adjusted height for mobile */
-      }
-  }
-  </style>
-  
-  
-  <script>
-  let currentIndex = 0;
-  
-  function slide(direction) {
-      const slider = document.querySelector(".image-carousel");
-      const totalImages = document.querySelectorAll(".carousel-item").length;
-      const imagesPerView = window.innerWidth > 768 ? 4 : 1;
-  
-      // Calculate the maximum index
-      const maxIndex = totalImages - imagesPerView;
-  
-      if (direction === 'left') {
-          currentIndex = Math.max(currentIndex - 1, 0);
-      } else if (direction === 'right') {
-          currentIndex = Math.min(currentIndex + 1, maxIndex);
-      }
-  
-      // Update slider position
-      const imageWidth = slider.querySelector(".carousel-item").offsetWidth;
-      slider.style.transform = `translateX(-${currentIndex * (imageWidth + 20)}px)`;
-  }
-  
-  document.querySelector(".left-arrow").onclick = () => slide('left');
-  document.querySelector(".right-arrow").onclick = () => slide('right');
-  </script>
-  
+        <body>
 
-<section class="nsa-sub-sections">
-    <div class="nsa-sub-section">
-        <h2 class="nsa-sub-section-title">Subsection 1</h2>
-        <p class="nsa-sub-section-content">Description or content for subsection 1.</p>
-    </div>
-    <div class="nsa-sub-section">
-        <h2 class="nsa-sub-section-title">Subsection 2</h2>
-        <p class="nsa-sub-section-content">Description or content for subsection 2.</p>
-    </div>
-    <div class="nsa-sub-section">
-        <h2 class="nsa-sub-section-title">Subsection 3</h2>
-        <p class="nsa-sub-section-content">Description or content for subsection 3.</p>
-    </div>
-    <div class="nsa-sub-section">
-        <h2 class="nsa-sub-section-title">Subsection 4</h2>
-        <p class="nsa-sub-section-content">Description or content for subsection 4.</p>
-    </div>
-    <div class="nsa-sub-section">
-        <h2 class="nsa-sub-section-title">Subsection 5</h2>
-        <p class="nsa-sub-section-content">Description or content for subsection 5.</p>
-    </div>
-    <div class="nsa-sub-section">
-        <h2 class="nsa-sub-section-title">Subsection 6</h2>
-        <p class="nsa-sub-section-content">Description or content for subsection 6.</p>
-    </div>
-</section>
+            <link
+                href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Poppins:wght@500&display=swap"
+                rel="stylesheet">
 
-<!-- CSS Styles for Sections -->
-<style>
-    /* Nirmalya Sai Annex (nsa) Styles */
+            </head>
+            <section>
+                <h1 class="highlighted-text"
+                    style="font-size: 16px; text-align: center; color: red; font-family: Roboto, Helvetica, sans-serif; margin-top: 30px;">
+                    WHY WE ARE THE BEST</h1>
+                <div class="icon-slider-container">
+                    <div class="icon-slider">
+                        <div class="icon-item">
+                            <img src="https://via.placeholder.com/50" alt="Quality">
+                            <p>Quality Assurance</p>
+                        </div>
+                        <div class="icon-item">
+                            <img src="https://via.placeholder.com/50" alt="Affordable">
+                            <p>Affordable Prices</p>
+                        </div>
+                        <div class="icon-item">
+                            <img src="https://via.placeholder.com/50" alt="Timely">
+                            <p>Timely Delivery</p>
+                        </div>
+                        <div class="icon-item">
+                            <img src="https://via.placeholder.com/50" alt="Custom">
+                            <p>Custom Solutions</p>
+                        </div>
+                        <div class="icon-item">
+                            <img src="https://via.placeholder.com/50" alt="Expertise">
+                            <p>Expert Team</p>
+                        </div>
+                        <div class="icon-item">
+                            <img src="https://via.placeholder.com/50" alt="Support">
+                            <p>24/7 Support</p>
+                        </div>
+                        <!-- Duplicates for a smooth continuous scrolling effect -->
+                        <div class="icon-item">
+                            <img src="https://via.placeholder.com/50" alt="Quality">
+                            <p>Quality Assurance</p>
+                        </div>
+                        <div class="icon-item">
+                            <img src="https://via.placeholder.com/50" alt="Affordable">
+                            <p>Affordable Prices</p>
+                        </div>
+                        <div class="icon-item">
+                            <img src="https://via.placeholder.com/50" alt="Timely">
+                            <p>Timely Delivery</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-    /* Header */
-    .nsa-header {
-        background-color: #ffffff;
-        color: #4abd33;
-        padding: 20px;
-        text-align: center;
-       
-        top: 0;
-        z-index: 10;
-        box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
-        font-family: 'Raleway', sans-serif;
-    }
+            <style>
+                /* General Styling */
+                .icon-slider-container {
+                    overflow: hidden;
+                    max-width: 100%;
+                    margin: auto;
+                    position: relative;
+                    padding: 20px 0;
+                }
 
-    .nsa-header-title {
-        margin: 0;
-        font-size: 3rem;
-        font-weight: 800;
-        text-transform: uppercase;
-    }
+                .icon-slider {
+                    display: flex;
+                    align-items: center;
+                    gap: 40px;
+                    animation: scroll 20s linear infinite;
+                }
 
-    .nsa-header-subtitle {
-        font-size: 1.2rem;
-        font-weight: 500;
-    }
+                .icon-item {
+                    text-align: center;
+                    min-width: 120px;
+                    /* Ensures each icon and text block has space */
+                }
 
-    /* Grid layout for the sections */
-    .nsa-sub-sections {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 20px;
-        padding: 40px;
-        opacity: 0;
-        transform: translateY(50px);
-        animation: nsa-fadeInUp 1s forwards ease-out;
-        animation-delay: 0.5s;
-    }
+                .icon-item img {
+                    width: 50px;
+                    height: 50px;
+                    object-fit: cover;
+                }
 
-    /* Style for each sub-section box */
-    .nsa-sub-section {
-        background-color: #fff;
-        border: 1px solid #ddd;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-        cursor: pointer;
-        position: relative;
-        overflow: hidden;
-        opacity: 0;
-        transform: translateY(50px);
-        transition: transform 0.3s ease, opacity 0.6s ease;
-    }
+                .icon-item p {
+                    margin-top: 8px;
+                    font-size: 14px;
+                    color: #333;
+                }
 
-    .nsa-sub-section.visible {
-        opacity: 1;
-        transform: translateY(0);
-    }
+                /* Auto-scrolling animation */
+                @keyframes scroll {
+                    0% {
+                        transform: translateX(0);
+                    }
 
-    /* Title within each sub-section */
-    .nsa-sub-section-title {
-        margin-top: 0;
-        font-size: 1.8rem;
-        font-family: 'Raleway', sans-serif;
-        font-weight: 700;
-    }
+                    100% {
+                        transform: translateX(-50%);
+                    }
+                }
 
-    .nsa-sub-section-content {
-        font-family: 'Poppins', sans-serif;
-        font-size: 1rem;
-    }
+                /* Responsive adjustments */
+                @media (max-width: 768px) {
+                    .icon-item {
+                        min-width: 100px;
+                    }
 
-    /* Hover effects for each sub-section */
-    .nsa-sub-section:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        background-color: #f0f0f0;
-    }
+                    .icon-item p {
+                        font-size: 12px;
+                    }
+                }
+            </style>
 
-    /* Section hover effect with a subtle overlay */
-    .nsa-sub-section:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: rgba(0, 0, 0, 0.05);
-        z-index: 1;
-        transition: background-color 0.3s ease;
-    }
 
-    .nsa-sub-section:hover:before {
-        background-color: rgba(0, 0, 0, 0.1);
-    }
+            <section>
+                <h1 class="highlighted-text">Some Of Our Highlights </h1>
+                <h3 style="display: flex; justify-content: space-between; margin-top: 50px;margin-bottom: 30px;">
+                    Our End to End Offerings
+                    <span><a href="" class="see-all-link">see all</a></span>
+                </h3>
+                <div class="carousel-container">
+                    <button class="carousel-arrow left-arrow custom-arrow">&#10094;</button>
+                    <section class="image-carousel">
+                        <div class="carousel-item">
+                            <a href="bathroom.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true"
+                                    alt="Bathroom Interiors">
+                                <div class="carousel-overlay">BATHROOM INTERIORS</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="KITCHENINTERIOR.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true"
+                                    alt="Kitchen Interiors">
+                                <div class="carousel-overlay">KITCHEN INTERIORS</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="OFFICE.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true"
+                                    alt="Office Interiors">
+                                <div class="carousel-overlay">OFFICE INTERIOR</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="houseinterior.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true"
+                                    alt="House Interiors">
+                                <div class="carousel-overlay">HOUSE INTERIOR</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="hallinterior.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true"
+                                    alt="Customized Interior Services">
+                                <div class="carousel-overlay">CUSTOMIZED INTERIOR SERVICES</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="remodellings.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true"
+                                    alt="Remodellings">
+                                <div class="carousel-overlay">REMODELLINGS</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="residential.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true"
+                                    alt="Residential Interiors">
+                                <div class="carousel-overlay">RESIDENTIAL INTERIOR</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="new (8th copy).html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true"
+                                    alt="Hall Interiors">
+                                <div class="carousel-overlay">HALL INTERIOR</div>
+                            </a>
+                        </div>
+                    </section>
+                    <button class="carousel-arrow right-arrow custom-arrow">&#10095;</button>
+                </div>
+            </section>
 
-    /* Fade-in animation */
-    @keyframes nsa-fadeInUp {
-        0% {
-            transform: translateY(50px);
-            opacity: 0;
-        }
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
+            <section>
 
-    /* Media query for responsiveness */
-    @media (max-width: 768px) {
-        .nsa-sub-sections {
-            grid-template-columns: 1fr;
-            padding: 20px;
-        }
-    }
-</style>
+                <h3 style="display: flex; justify-content: space-between; margin-top: 50px;margin-bottom: 30px;">
+                    Bathroom Interiors
+                    <span><a href="" class="see-all-link">see all</a></span>
+                </h3>
+                <div class="carousel-container">
+                    <button class="carousel-arrow left-arrow custom-arrow">&#10094;</button>
+                    <section class="image-carousel">
+                        <div class="carousel-item">
+                            <a href="bathroom.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true"
+                                    alt="Bathroom Interiors">
+                                <div class="carousel-overlay">BATHROOM INTERIORS</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="KITCHENINTERIOR.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true"
+                                    alt="Kitchen Interiors">
+                                <div class="carousel-overlay">KITCHEN INTERIORS</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="OFFICE.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true"
+                                    alt="Office Interiors">
+                                <div class="carousel-overlay">OFFICE INTERIOR</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="houseinterior.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true"
+                                    alt="House Interiors">
+                                <div class="carousel-overlay">HOUSE INTERIOR</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="hallinterior.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true"
+                                    alt="Customized Interior Services">
+                                <div class="carousel-overlay">CUSTOMIZED INTERIOR SERVICES</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="remodellings.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true"
+                                    alt="Remodellings">
+                                <div class="carousel-overlay">REMODELLINGS</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="residential.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true"
+                                    alt="Residential Interiors">
+                                <div class="carousel-overlay">RESIDENTIAL INTERIOR</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="new (8th copy).html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true"
+                                    alt="Hall Interiors">
+                                <div class="carousel-overlay">HALL INTERIOR</div>
+                            </a>
+                        </div>
+                    </section>
+                    <button class="carousel-arrow right-arrow custom-arrow">&#10095;</button>
+                </div>
+            </section>
+            <section>
 
-<!-- JavaScript for Scroll Animations -->
-<script>
-    // Function to reveal sections when they are in view
-    const sections = document.querySelectorAll('.nsa-sub-section');
+                <h3 style="display: flex; justify-content: space-between; margin-top: 50px;margin-bottom: 30px;">
+                    Kitchen Interiors
+                    <span><a href="" class="see-all-link">see all</a></span>
+                </h3>
+                <div class="carousel-container">
+                    <button class="carousel-arrow left-arrow custom-arrow">&#10094;</button>
+                    <section class="image-carousel">
+                        <div class="carousel-item">
+                            <a href="bathroom.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true"
+                                    alt="Bathroom Interiors">
+                                <div class="carousel-overlay">BATHROOM INTERIORS</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="KITCHENINTERIOR.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true"
+                                    alt="Kitchen Interiors">
+                                <div class="carousel-overlay">KITCHEN INTERIORS</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="OFFICE.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true"
+                                    alt="Office Interiors">
+                                <div class="carousel-overlay">OFFICE INTERIOR</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="houseinterior.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true"
+                                    alt="House Interiors">
+                                <div class="carousel-overlay">HOUSE INTERIOR</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="hallinterior.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true"
+                                    alt="Customized Interior Services">
+                                <div class="carousel-overlay">CUSTOMIZED INTERIOR SERVICES</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="remodellings.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true"
+                                    alt="Remodellings">
+                                <div class="carousel-overlay">REMODELLINGS</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="residential.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true"
+                                    alt="Residential Interiors">
+                                <div class="carousel-overlay">RESIDENTIAL INTERIOR</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="new (8th copy).html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true"
+                                    alt="Hall Interiors">
+                                <div class="carousel-overlay">HALL INTERIOR</div>
+                            </a>
+                        </div>
+                    </section>
+                    <button class="carousel-arrow right-arrow custom-arrow">&#10095;</button>
+                </div>
+            </section>
+            <section>
 
-    const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-            if (sectionTop < windowHeight - 100) {
-                section.classList.add('visible');
-            }
-        });
-    };
+                <h3 style="display: flex; justify-content: space-between; margin-top: 50px;margin-bottom: 30px;">
+                    Bathroom Interiors
+                    <span><a href="" class="see-all-link">see all</a></span>
+                </h3>
+                <div class="carousel-container">
+                    <button class="carousel-arrow left-arrow custom-arrow">&#10094;</button>
+                    <section class="image-carousel">
+                        <div class="carousel-item">
+                            <a href="bathroom.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true"
+                                    alt="Bathroom Interiors">
+                                <div class="carousel-overlay">BATHROOM INTERIORS</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="KITCHENINTERIOR.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true"
+                                    alt="Kitchen Interiors">
+                                <div class="carousel-overlay">KITCHEN INTERIORS</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="OFFICE.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true"
+                                    alt="Office Interiors">
+                                <div class="carousel-overlay">OFFICE INTERIOR</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="houseinterior.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true"
+                                    alt="House Interiors">
+                                <div class="carousel-overlay">HOUSE INTERIOR</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="hallinterior.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true"
+                                    alt="Customized Interior Services">
+                                <div class="carousel-overlay">CUSTOMIZED INTERIOR SERVICES</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="remodellings.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true"
+                                    alt="Remodellings">
+                                <div class="carousel-overlay">REMODELLINGS</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="residential.html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true"
+                                    alt="Residential Interiors">
+                                <div class="carousel-overlay">RESIDENTIAL INTERIOR</div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="new (8th copy).html">
+                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true"
+                                    alt="Hall Interiors">
+                                <div class="carousel-overlay">HALL INTERIOR</div>
+                            </a>
+                        </div>
+                    </section>
+                    <button class="carousel-arrow right-arrow custom-arrow">&#10095;</button>
+                </div>
+            </section>
 
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-</script>
-    <script>
-        let slideIndex = 0;
-        showSlides();
+            <style>
+                /* General styling */
+                .carousel-container {
+                    position: relative;
+                    overflow: hidden;
+                    max-width: 97%;
+                    margin: auto;
+                }
 
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex - 1].style.display = "block";
-            setTimeout(showSlides, 100000); // Change image every 3 seconds
-        }
+                .highlighted-text {
+                    text-align: center;
+                    margin-top: 30px;
+                    font-family: "Playfair Display", serif;
+                }
 
-        function moveSlide(n) {
-            slideIndex += n - 1; // Adjust the index for navigation
-            showSlides();
-        }
+                .image-carousel {
+                    display: flex;
+                    transition: transform 0.5s ease;
+                    gap: 25px;
+                }
 
-       
-    </script>
-    <!-- Footer Section -->
-    <footer class="footer-container">
-        <div class="footer-content">
-          <!-- About Section -->
-          <div class="footer-section">
-            <h4>About Mirror Space</h4>
-            <p>At Mirror Space, we are dedicated to providing innovative interior solutions that elevate your space. From modular designs to customized solutions, we aim to bring your vision to life.</p>
-          </div>
-      
-          <!-- Quick Links Section -->
-          <div class="footer-section">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Our Services</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact</a></li>
-              <li><a href="#">FAQs</a></li>
-            </ul>
-          </div>
-      
-          <!-- Customer Service Section -->
-          <div class="footer-section">
-            <h4>Customer Service</h4>
-            <ul>
-              <li><a href="#">Returns & Refunds</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Terms of Service</a></li>
-              <li><a href="#">Help & Support</a></li>
-            </ul>
-          </div>
-      
-          <!-- Contact Section -->
-          <div class="footer-section">
-            <h4>Contact Us</h4>
-            <p>Email: support@mirrorspace.com</p>
-            <p>Phone: +1 (123) 456-7890</p>
-            <div class="social-icons">
-              <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
-              <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
-              <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
-              <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
-            </div>
-          </div>
-        </div>
-      
-        <!-- Footer Bottom -->
-        <div class="footer-bottom">
-          <p>&copy; 2024 Mirror Space. All Rights Reserved.</p>
-          <p>Designed with ❤️ by Mirror Space Team</p>
-        </div>
-      </footer>
-      
-      <style>
-      /* Footer Container */
-      .footer-container {
-          background-color: #333;
-          color: #fff;
-          padding: 40px 0;
-          font-family: Arial, sans-serif;
-      }
-      
-      .footer-content {
-          display: flex;
-          justify-content: space-between;
-          max-width: 1200px;
-          margin: auto;
-          flex-wrap: wrap;
-          gap: 20px;
-      }
-      
-      .footer-section {
-          flex: 1;
-          min-width: 200px;
-      }
-      
-      .footer-section h4 {
-          font-size: 18px;
-          margin-bottom: 10px;
-          color: #ffbd59; /* Highlight color */
-      }
-      
-      .footer-section p, .footer-section ul {
-          font-size: 14px;
-          line-height: 1.6;
-      }
-      
-      .footer-section ul {
-          list-style: none;
-          padding: 0;
-      }
-      
-      .footer-section ul li {
-          margin-bottom: 8px;
-      }
-      
-      .footer-section ul li a {
-          color: #b0b0b0;
-          text-decoration: none;
-      }
-      
-      .footer-section ul li a:hover {
-          color: #ffbd59;
-      }
-      
-      .social-icons a {
-          display: inline-block;
-          margin-right: 10px;
-          width: 24px;
-          height: 24px;
-      }
-      
-      .social-icons img {
-          width: 100%;
-          height: auto;
-      }
-      
-      /* Footer Bottom */
-      .footer-bottom {
-          text-align: center;
-          padding-top: 20px;
-          font-size: 14px;
-          border-top: 1px solid #444;
-          color: #b0b0b0;
-      }
-      .footer-bottom p {
-          margin: 5px 0;
-      }
-      
-      .footer-bottom p a {
-          color: #ffbd59;
-          text-decoration: none;
-      }
-      .footer-bottom p a:hover {
-          text-decoration: underline;
-      }
-      
-      /* Responsive Design */
-      @media (max-width: 768px) {
-          .footer-content {
-              flex-direction: column;
-              text-align: center;
-          }
-      }
-      </style>
-      
-</body>
+                .carousel-item {
+                    flex: 0 0 24%;
+                    /* 4 items per row */
+                    max-width: 24%;
+                    position: relative;
+                    overflow: hidden;
+                    box-sizing: border-box;
+                    border-radius: 30px;
+                }
+
+                .carousel-item img {
+                    width: 100%;
+                    height: 220px;
+                    object-fit: cover;
+                    display: block;
+                    border-radius: 10px;
+                }
+
+                .carousel-item a {
+                    display: block;
+                    position: relative;
+                }
+
+                .carousel-overlay {
+                    position: absolute;
+                    bottom: 10px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    color: #fff;
+                    font-size: 16px;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    padding: 5px 10px;
+                    border-radius: 5px;
+                    opacity: 0;
+                    transition: opacity 0.3s ease;
+                }
+
+                .carousel-item:hover .carousel-overlay {
+                    opacity: 1;
+                }
+
+                /* Slider arrow buttons */
+                .carousel-container .custom-arrow {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    background: white !important;
+                    /* Ensures background color stays white */
+                    color: #000 !important;
+                    /* Keeps text color black */
+                    border: none;
+                    padding: 15px;
+                    cursor: pointer;
+                    font-size: 20px;
+                    border-radius: 50%;
+                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+                    z-index: 1;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .carousel-container .left-arrow.custom-arrow {
+                    left: 10px;
+                }
+
+                .carousel-container .right-arrow.custom-arrow {
+                    right: 10px;
+                }
+
+                .carousel-container .custom-arrow:hover {
+                    background: #f0f0f0 !important;
+                }
+
+                /* Styling for the "see all" link */
+                .see-all-link {
+                    color: red;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+
+                .see-all-link:hover {
+                    text-decoration: underline;
+                }
+
+                /* Responsive adjustments */
+                @media (max-width: 768px) {
+                    .carousel-item {
+                        flex: 0 0 100%;
+                        /* 1 item per row */
+                        max-width: 100%;
+                    }
+
+                    .carousel-item img {
+                        height: 250px;
+                        /* Adjusted height for mobile */
+                    }
+                }
+            </style>
+
+
+            <script>
+                document.querySelectorAll(".carousel-container").forEach((carouselContainer) => {
+                    const slider = carouselContainer.querySelector(".image-carousel");
+                    const leftArrow = carouselContainer.querySelector(".left-arrow");
+                    const rightArrow = carouselContainer.querySelector(".right-arrow");
+                    const totalItems = carouselContainer.querySelectorAll(".carousel-item").length;
+                    let currentIndex = 0;
+
+                    const slide = (direction) => {
+                        const itemsPerView = window.innerWidth > 768 ? 4 : 1;
+                        const maxIndex = totalItems - itemsPerView;
+                        const itemWidth = slider.querySelector(".carousel-item").offsetWidth;
+
+                        if (direction === 'left') {
+                            currentIndex = Math.max(currentIndex - 1, 0);
+                        } else if (direction === 'right') {
+                            currentIndex = Math.min(currentIndex + 1, maxIndex);
+                        }
+
+                        slider.style.transform = `translateX(-${currentIndex * (itemWidth + 20)}px)`;
+                    };
+
+                    leftArrow.addEventListener("click", () => slide('left'));
+                    rightArrow.addEventListener("click", () => slide('right'));
+                });
+            </script>
+
+
+
+
+
+            <section class="nsa-sub-sections">
+                <div class="nsa-sub-section">
+                    <h2 class="nsa-sub-section-title">Subsection 1</h2>
+                    <p class="nsa-sub-section-content">Description or content for subsection 1.</p>
+                </div>
+                <div class="nsa-sub-section">
+                    <h2 class="nsa-sub-section-title">Subsection 2</h2>
+                    <p class="nsa-sub-section-content">Description or content for subsection 2.</p>
+                </div>
+                <div class="nsa-sub-section">
+                    <h2 class="nsa-sub-section-title">Subsection 3</h2>
+                    <p class="nsa-sub-section-content">Description or content for subsection 3.</p>
+                </div>
+                <div class="nsa-sub-section">
+                    <h2 class="nsa-sub-section-title">Subsection 4</h2>
+                    <p class="nsa-sub-section-content">Description or content for subsection 4.</p>
+                </div>
+                <div class="nsa-sub-section">
+                    <h2 class="nsa-sub-section-title">Subsection 5</h2>
+                    <p class="nsa-sub-section-content">Description or content for subsection 5.</p>
+                </div>
+                <div class="nsa-sub-section">
+                    <h2 class="nsa-sub-section-title">Subsection 6</h2>
+                    <p class="nsa-sub-section-content">Description or content for subsection 6.</p>
+                </div>
+            </section>
+
+            <!-- CSS Styles for Sections -->
+            <style>
+                /* Nirmalya Sai Annex (nsa) Styles */
+
+                /* Header */
+                .nsa-header {
+                    background-color: #ffffff;
+                    color: #4abd33;
+                    padding: 20px;
+                    text-align: center;
+
+                    top: 0;
+                    z-index: 10;
+                    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
+                    font-family: 'Raleway', sans-serif;
+                }
+
+                .nsa-header-title {
+                    margin: 0;
+                    font-size: 3rem;
+                    font-weight: 800;
+                    text-transform: uppercase;
+                }
+
+                .nsa-header-subtitle {
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                }
+
+                /* Grid layout for the sections */
+                .nsa-sub-sections {
+                    display: grid;
+                    grid-template-columns: repeat(3, 1fr);
+                    gap: 20px;
+                    padding: 40px;
+                    opacity: 0;
+                    transform: translateY(50px);
+                    animation: nsa-fadeInUp 1s forwards ease-out;
+                    animation-delay: 0.5s;
+                }
+
+                /* Style for each sub-section box */
+                .nsa-sub-section {
+                    background-color: #fff;
+                    border: 1px solid #ddd;
+                    padding: 20px;
+                    border-radius: 10px;
+                    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+                    cursor: pointer;
+                    position: relative;
+                    overflow: hidden;
+                    opacity: 0;
+                    transform: translateY(50px);
+                    transition: transform 0.3s ease, opacity 0.6s ease;
+                }
+
+                .nsa-sub-section.visible {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+
+                /* Title within each sub-section */
+                .nsa-sub-section-title {
+                    margin-top: 0;
+                    font-size: 1.8rem;
+                    font-family: 'Raleway', sans-serif;
+                    font-weight: 700;
+                }
+
+                .nsa-sub-section-content {
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 1rem;
+                }
+
+                /* Hover effects for each sub-section */
+                .nsa-sub-section:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+                    background-color: #f0f0f0;
+                }
+
+                /* Section hover effect with a subtle overlay */
+                .nsa-sub-section:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: rgba(0, 0, 0, 0.05);
+                    z-index: 1;
+                    transition: background-color 0.3s ease;
+                }
+
+                .nsa-sub-section:hover:before {
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+
+                /* Fade-in animation */
+                @keyframes nsa-fadeInUp {
+                    0% {
+                        transform: translateY(50px);
+                        opacity: 0;
+                    }
+
+                    100% {
+                        transform: translateY(0);
+                        opacity: 1;
+                    }
+                }
+
+                /* Media query for responsiveness */
+                @media (max-width: 768px) {
+                    .nsa-sub-sections {
+                        grid-template-columns: 1fr;
+                        padding: 20px;
+                    }
+                }
+            </style>
+
+            <!-- JavaScript for Scroll Animations -->
+            <script>
+                // Function to reveal sections when they are in view
+                const sections = document.querySelectorAll('.nsa-sub-section');
+
+                const revealOnScroll = () => {
+                    const windowHeight = window.innerHeight;
+                    sections.forEach(section => {
+                        const sectionTop = section.getBoundingClientRect().top;
+                        if (sectionTop < windowHeight - 100) {
+                            section.classList.add('visible');
+                        }
+                    });
+                };
+
+                window.addEventListener('scroll', revealOnScroll);
+                window.addEventListener('load', revealOnScroll);
+            </script>
+            <script>
+                let slideIndex = 0;
+                showSlides();
+
+                function showSlides() {
+                    let i;
+                    let slides = document.getElementsByClassName("slide");
+                    for (i = 0; i < slides.length; i++) {
+                        slides[i].style.display = "none";
+                    }
+                    slideIndex++;
+                    if (slideIndex > slides.length) { slideIndex = 1 }
+                    slides[slideIndex - 1].style.display = "block";
+                    setTimeout(showSlides, 100000); // Change image every 3 seconds
+                }
+
+                function moveSlide(n) {
+                    slideIndex += n - 1; // Adjust the index for navigation
+                    showSlides();
+                }
+
+
+            </script>
+            <!-- Footer Section -->
+            <footer class="footer-container">
+                <div class="footer-content">
+                    <!-- About Section -->
+                    <div class="footer-section">
+                        <h4>About Mirror Space</h4>
+                        <p>At Mirror Space, we are dedicated to providing innovative interior solutions that elevate
+                            your space. From modular designs to customized solutions, we aim to bring your vision to
+                            life.</p>
+                    </div>
+
+                    <!-- Quick Links Section -->
+                    <div class="footer-section">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Our Services</a></li>
+                            <li><a href="#">About Us</a></li>
+                            <li><a href="#">Contact</a></li>
+                            <li><a href="#">FAQs</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Customer Service Section -->
+                    <div class="footer-section">
+                        <h4>Customer Service</h4>
+                        <ul>
+                            <li><a href="#">Returns & Refunds</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Help & Support</a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Contact Section -->
+                    <div class="footer-section">
+                        <h4>Contact Us</h4>
+                        <p>Email: support@mirrorspace.com</p>
+                        <p>Phone: +1 (123) 456-7890</p>
+                        <div class="social-icons">
+                            <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                            <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                            <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                            <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="footer-bottom">
+                    <p>&copy; 2024 Mirror Space. All Rights Reserved.</p>
+                    <p>Designed with ❤️ by Mirror Space Team</p>
+                </div>
+            </footer>
+
+            <style>
+                /* Footer Container */
+                .footer-container {
+                    background-color: #333;
+                    color: #fff;
+                    padding: 40px 0;
+                    font-family: Arial, sans-serif;
+                }
+
+                .footer-content {
+                    display: flex;
+                    justify-content: space-between;
+                    max-width: 1200px;
+                    margin: auto;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                }
+
+                .footer-section {
+                    flex: 1;
+                    min-width: 200px;
+                }
+
+                .footer-section h4 {
+                    font-size: 18px;
+                    margin-bottom: 10px;
+                    color: #ffbd59;
+                    /* Highlight color */
+                }
+
+                .footer-section p,
+                .footer-section ul {
+                    font-size: 14px;
+                    line-height: 1.6;
+                }
+
+                .footer-section ul {
+                    list-style: none;
+                    padding: 0;
+                }
+
+                .footer-section ul li {
+                    margin-bottom: 8px;
+                }
+
+                .footer-section ul li a {
+                    color: #b0b0b0;
+                    text-decoration: none;
+                }
+
+                .footer-section ul li a:hover {
+                    color: #ffbd59;
+                }
+
+                .social-icons a {
+                    display: inline-block;
+                    margin-right: 10px;
+                    width: 24px;
+                    height: 24px;
+                }
+
+                .social-icons img {
+                    width: 100%;
+                    height: auto;
+                }
+
+                /* Footer Bottom */
+                .footer-bottom {
+                    text-align: center;
+                    padding-top: 20px;
+                    font-size: 14px;
+                    border-top: 1px solid #444;
+                    color: #b0b0b0;
+                }
+
+                .footer-bottom p {
+                    margin: 5px 0;
+                }
+
+                .footer-bottom p a {
+                    color: #ffbd59;
+                    text-decoration: none;
+                }
+
+                .footer-bottom p a:hover {
+                    text-decoration: underline;
+                }
+
+                /* Responsive Design */
+                @media (max-width: 768px) {
+                    .footer-content {
+                        flex-direction: column;
+                        text-align: center;
+                    }
+                }
+            </style>
+
+        </body>
 
 </html>
