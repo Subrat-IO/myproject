@@ -15,145 +15,263 @@
  <!-- Add this code to your HTML file -->
 
  <style>
-        /* Global Styles */
-        body {
-            font-family: 'Raleway', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
+    /* Global Styles */
+    body {
+        font-family: 'Raleway', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
 
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
 
-        /* Navbar Styles */
-        nav {
-            background-color: white;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 5%;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 10;
-        }
+    /* Top Links */
+    .top-links {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 5%;
+        background-color: #fff;
+        font-size: 14px;
+        color: #555;
+        border-bottom: 1px solid #eee;
+    }
 
-        .nav__logo {
-            display: flex;
-            align-items: center;
-        }
+    .top-links .left,
+    .top-links .right {
+        display: flex;
+        gap: 35px;
+    }
 
-        .nav__logo img {
-            width: 50px;
-            margin-right: 10px;
-        }
+    .top-links a {
+        text-decoration: none;
+        color: #555;
+    }
 
-        .nav__logo h4 {
-            font-size: 1.5rem;
-            letter-spacing: 2px;
-            color: rgb(102, 82, 46);
-            font-family: "Gowun Batang", serif;
-        }
+    /* Navbar Styles */
+    nav {
+        background-color: white;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 5%;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        position: relative;
+        z-index: 10;
+        border-bottom: 1px solid #eee;
+    }
 
-        .nav__logo p {
-            font-size: 12px;
-            margin: 0;
-            color: gray;
-        }
+    .nav__logo {
+        display: flex;
+        align-items: center;
+    }
 
-        ul.nav__links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-        }
+    .nav__logo img {
+        width: 50px;
+        margin-right: 10px;
+    }
 
-        ul.nav__links li {
-            margin-left: 40px;
-        }
+    .nav__logo h4 {
+        font-size: 1.5rem;
+        letter-spacing: 2px;
+        color: rgb(102, 82, 46);
+    }
 
-        ul.nav__links li a {
-            text-decoration: none;
-            font-size: 16px;
-            color: black;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
+    .nav__logo p {
+        font-size: 12px;
+        margin: 0;
+        color: gray;
+    }
 
-        ul.nav__links li a:hover {
-            color: #1abc9c;
-        }
+    ul.nav__links {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        gap: 20px;
+    }
 
-        /* Responsive Menu */
-        .mobile-menu-icon {
+    .center-links a {
+        text-decoration: none !important;
+        color: red;
+    }
+
+    ul.nav__links li a {
+        text-decoration: none;
+        font-size: 16px;
+        color: black;
+        font-weight: bold;
+    }
+
+    ul.nav__links li a:hover {
+        color: #1abc9c;
+    }
+
+    /* Center Links */
+    .center-links {
+        display: flex;
+        gap: 20px;
+        font-size: 14px;
+        color: #8a1a1a !important;
+    }
+
+    /* Responsive Menu */
+    .mobile-menu-icon {
+        display: none;
+        font-size: 28px;
+        cursor: pointer;
+        color: black;
+    }
+
+    /* Slide-in menu for mobile */
+    .slide-menu {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        transition: left 0.3s ease;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        z-index: 20;
+        overflow-y: auto;
+    }
+
+    /* Open slide-menu */
+    .slide-menu.open {
+        left: 0;
+    }
+
+    .slide-menu a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        padding: 10px 0;
+    }
+
+    /* Close button styles */
+    .close-button {
+        font-size: 24px;
+        cursor: pointer;
+        align-self: flex-end;
+        color: #333;
+    }
+
+    /* Responsive Styling */
+    @media (max-width: 768px) {
+
+        ul.nav__links,
+        .center-links {
             display: none;
-            font-size: 28px;
-            cursor: pointer;
-            color: black;
         }
 
-        @media (max-width: 768px) {
-            ul.nav__links {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 0;
-                background-color: white;
-                width: 100%;
-                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-                padding: 10px 0;
-                z-index: 9;
-            }
-
-            ul.nav__links li {
-                margin: 20px 0;
-                text-align: center;
-            }
-
-            .mobile-menu-icon {
-                display: block;
-            }
+        .mobile-menu-icon {
+            display: block;
         }
 
-        /* Toggle active menu */
-        .nav__links.active {
-            display: flex;
+        /* Show only the first and last link in top-links */
+        .top-links .left a:not(:first-child),
+        .top-links .right a:not(:last-child) {
+            display: none;
         }
 
-    </style>
+        .slide-menu ul {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+    }
+</style>
 </head>
 
 <body>
-    <nav>
-        <div class="nav__logo">
-            <img src="https://github.com/Subrat-IO/myproject/blob/main/ioebnen-removebg-preview.png?raw=true" alt="logo" />
-            <div>
-                <h4>MIRROR SPACE</h4>
-                <p>ELEVATING INTERIORS</p>
-            </div>
-        </div>
-        <ul class="nav__links">
-           <li><a href="https://subrat-io.github.io/myproject/">HOME</a></li>
-            <li><a href="https://subrat-io.github.io/myproject/aboutus.html">SERVICES</a></li>
-            <li><a href="https://subrat-io.github.io/myproject/about.html">ABOUT</a></li> 
-         <li><a href="#">CONTACT</a></li> 
-        
-        </ul>
-        <span class="mobile-menu-icon" onclick="toggleMenu()">&#9776;</span>
-    </nav>
+<!-- Top Links -->
+<div class="top-links">
+    <div class="right" style="font-weight: 500;">
+        <a href="#">Be A Partner</a>
 
-    <script>
-        function toggleMenu() {
-            const navLinks = document.querySelector('.nav__links');
-            navLinks.classList.toggle('active');
-        }
-    </script>
+        <a href="#">Customer Suppourt</a>
+        <a href="#" style="color: red;">Contact Us</a>
+    </div>
+    <div class="left">
+        <a href="#">Explore More</a>
+        <a href="#">Our Whatsapp</a>
+    </div>
+
+</div>
+
+<!-- Main Navigation -->
+<nav>
+    <div class="nav__logo">
+        <img src="ioebnen-removebg-preview.png" alt="logo" />
+        <div>
+            <h4>MIRROR SPACE</h4>
+            <p>ELEVATING INTERIORS</p>
+        </div>
+    </div>
+    <div class="center-links">
+        <a href="#">Design Gallery</a>
+        <a href="#">Offerings</a>
+        <a href="#">Our Cities</a>
+        <a href="#">Ideology</a>
+        <a href="#">Customer Feedback</a>
+        <a href="#"> Our Blog</a>
+
+    </div>
+    <!-- Main nav links (hidden in mobile view) -->
+    <ul class="nav__links">
+        <li><a href="https://subrat-io.github.io/myproject/">Home</a></li>
+        <li><a href="https://subrat-io.github.io/myproject/aboutus.html">Services</a></li>
+        <li><a href="https://subrat-io.github.io/myproject/about.html">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+
+    <!-- Center Links -->
+
+
+    <!-- Mobile Menu Icon -->
+    <span class="mobile-menu-icon" onclick="toggleMenu()">&#9776;</span>
+</nav>
+
+<!-- Slide-in Menu (Mobile) -->
+<div class="slide-menu" id="slideMenu">
+    <span class="close-button" onclick="toggleMenu()">&times;</span>
+    <a href="https://subrat-io.github.io/myproject/">Home</a>
+    <a href="https://subrat-io.github.io/myproject/aboutus.html">Services</a>
+    <a href="https://subrat-io.github.io/myproject/about.html">About</a>
+    <a href="#">Contact</a>
+    <a href="#">Design Gallery</a>
+    <a href="#">Blog</a>
+    <a href="#">Offerings</a>
+    <a href="#">Our Cities</a>
+    <a href="#">Ideology</a>
+    <a href="#">Customer Feedback</a>
+
+    <!-- Main nav links added to slide-menu -->
+    <ul>
+        <li><a href="https://subrat-io.github.io/myproject/">Home</a></li>
+        <li><a href="https://subrat-io.github.io/myproject/aboutus.html">Services</a></li>
+        <li><a href="https://subrat-io.github.io/myproject/about.html">About</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+</div>
+
+<!-- JavaScript for Menu Toggle -->
+<script>
+    function toggleMenu() {
+        const slideMenu = document.getElementById('slideMenu');
+        slideMenu.classList.toggle('open');
+    }
+</script>
     <style>
         @import url("https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Poppins:wght@400;500;600&display=swap");
 
@@ -972,101 +1090,159 @@ h1:hover, h4:hover, p:hover {
         }
     </script>
     <!-- Footer Section -->
-<footer style="background-color: rgb(224, 219, 208) !important; color: #2c3e50 !important; padding: 40px 5% !important; text-align: center !important; display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: center !important;">
-  <div class="footer__logo" style="display: flex !important; flex-direction: column !important; align-items: center !important;">
-      <img src="https://github.com/Subrat-IO/myproject/blob/main/ioebnen-removebg-preview.png?raw=true" alt="Logo" style="width: 80px !important; margin-bottom: 10px !important;">
-      <h4 style="margin: 0 !important;">MIRROR SPACE</h4>
-      <p style="margin: 5px 0 !important;">ELEVATING INTERIORS</p>
-  </div>
+ <!-- Footer Section -->
+ <footer class="footer-container">
+    <div class="footer-content">
+        <!-- About Section -->
+        <div class="footer-section">
+            <h4>About Mirror Space</h4>
+            <p>At Mirror Space, we are dedicated to providing innovative interior solutions that elevate
+                your space. From modular designs to customized solutions, we aim to bring your vision to
+                life.</p>
+        </div>
 
-  <div class="footer__socials" style="margin: 10px 0 !important; display: flex !important; justify-content: center !important;">
-      <a href="#" target="_blank" style="margin: 0 10px !important;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Facebook_f_logo_%282019%29.svg" alt="Facebook" style="width: 30px !important; height: 30px !important;">
-      </a>
-      <a href="#" target="_blank" style="margin: 0 10px !important;">
-          <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_bird_logo_2012.svg" alt="Twitter" style="width: 30px !important; height: 30px !important;">
-      </a>
-      <a href="#" target="_blank" style="margin: 0 10px !important;">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram" style="width: 30px !important; height: 30px !important;">
-      </a>
-  </div>
+        <!-- Quick Links Section -->
+        <div class="footer-section">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">FAQs</a></li>
+            </ul>
+        </div>
 
-  <div class="footer__contact" style="margin: 10px 0 !important; text-align: center !important;">
-      <p>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Phone_icon.svg" alt="Phone" style="width: 20px !important; height: 20px !important; vertical-align: middle !important;">
-          Call us: <a href="tel:+919777727782" style="color: #2c3e50 !important;">+91 97777 72782</a>
-      </p>
-      <p>
-          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Email_icon.svg" alt="Email" style="width: 20px !important; height: 20px !important; vertical-align: middle !important;">
-          Email: <a href="mailto:info@mirrorspace.com" style="color: #2c3e50 !important;">info@mirrorspace.com</a>
-      </p>
-  </div>
+        <!-- Customer Service Section -->
+        <div class="footer-section">
+            <h4>Customer Service</h4>
+            <ul>
+                <li><a href="#">Returns & Refunds</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms of Service</a></li>
+                <li><a href="#">Help & Support</a></li>
+            </ul>
+        </div>
 
-  <button style="background-color: #1abc9c !important; color: white !important; padding: 10px 20px !important; border: none !important; border-radius: 4px !important; cursor: pointer !important; transition: background-color 0.3s ease !important; margin-top: 15px !important;">
-      <a href="tel:+919777727782" style="color: white !important; text-decoration: none !important;">Schedule Your Demo</a>
-  </button>
+        <!-- Contact Section -->
+        <div class="footer-section">
+            <h4>Contact Us</h4>
+            <p>Email: support@mirrorspace.com</p>
+            <p>Phone: +1 (123) 456-7890</p>
+            <div class="social-icons">
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            </div>
+        </div>
+    </div>
 
-  <p style="margin-top: 20px !important;">&copy; 2024 Mirror Space. All rights reserved.</p>
+    <!-- Footer Bottom -->
+    <div class="footer-bottom">
+        <p>&copy; 2024 Mirror Space. All Rights Reserved.</p>
+        <p>Designed with ❤️ by Mirror Space Team</p>
+    </div>
 </footer>
 
 <style>
-footer {
-  background-color: white !important; /* Light background */
-  color: #2c3e50 !important;
-  margin-top: 30px; /* Text color matching navbar */
-  padding: 20px 5% !important; /* More padding for aesthetics */
-  text-align: center !important; /* Center the text */
-  display: flex !important; /* Flexbox layout */
-  flex-direction: column !important; /* Align items vertically */
-  align-items: center !important; /* Center items horizontally */
-  justify-content: center !important; /* Center items vertically */
-}
+    /* Footer Container */
+    .footer-container {
+        background-color: #333;
+        color: #fff;
+        padding: 10px 0;
+        padding-top: 15px !important;
+        font-family: Arial, sans-serif;
+    }
 
-.footer__logo img {
-  width: 80px !important; /* Logo size */
-  margin-bottom: 10px !important; /* Space below logo */
-}
+    .footer-content {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: auto;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
 
-.footer__socials img {
-  width: 30px !important; /* Social media icon size */
-  height: 30px !important; /* Social media icon height */
-}
+    .footer-section {
+        flex: 1;
+        min-width: 200px;
+    }
 
-.footer__socials {
-  display: flex !important; /* Flexbox for horizontal layout */
-  justify-content: center !important; /* Center icons */
-}
+    .footer-section h4 {
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #ffbd59;
+        /* Highlight color */
+    }
 
-.footer__contact img {
-  width: 20px !important; /* Icon size */
-  height: 20px !important; /* Icon height */
-  vertical-align: middle !important; /* Align icon vertically with text */
-}
+    .footer-section p,
+    .footer-section ul {
+        font-size: 14px;
+        line-height: 1.6;
+    }
 
-button {
-  background-color: #1abc9c !important; /* Button background color */
-  color: white !important; /* Button text color */
-  padding: 10px 20px !important; /* Button padding */
-  border: none !important; /* No border */
-  border-radius: 4px !important; /* Rounded corners */
-  cursor: pointer !important; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease !important; /* Smooth background color transition */
-  margin-top: 15px !important; /* Space above the button */
-}
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+    }
 
-button:hover {
-  background-color: #16a085 !important; /* Darker shade on hover */
-}
+    .footer-section ul li {
+        margin-bottom: 8px;
+    }
 
-a {
-  color: #2c3e50 !important; /* Link color matching navbar */
-  text-decoration: none !important; /* No underline */
-}
+    .footer-section ul li a {
+        color: #b0b0b0;
+        text-decoration: none;
+    }
 
-a:hover {
-  text-decoration: underline !important; /* Underline on hover */
-}
+    .footer-section ul li a:hover {
+        color: #ffbd59;
+    }
+
+    .social-icons a {
+        display: inline-block;
+        margin-right: 10px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .social-icons img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* Footer Bottom */
+    .footer-bottom {
+        text-align: center;
+        padding-top: 10px;
+        font-size: 14px;
+        border-top: 1px solid #444;
+        color: #b0b0b0;
+    }
+
+    .footer-bottom p {
+        margin: 5px 0;
+    }
+
+    .footer-bottom p a {
+        color: #ffbd59;
+        text-decoration: none;
+    }
+
+    .footer-bottom p a:hover {
+        text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+        .footer-content {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
 </style>
+
 
 </body>
 </html>
