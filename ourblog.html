@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mirrorspace.blog</title>
+</head>
+
+<body>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Raleway', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        /* Top Links */
+        .top-links {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 5%;
+            background-color: #fff;
+            font-size: 14px;
+            color: #555;
+            border-bottom: 1px solid #eee;
+        }
+
+        .top-links .left,
+        .top-links .right {
+            display: flex;
+            gap: 35px;
+        }
+
+        .top-links a {
+            text-decoration: none;
+            color: #555;
+        }
+
+        /* Navbar Styles */
+        nav {
+            background-color: white;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 10;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav__logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav__logo img {
+            width: 50px;
+            margin-right: 10px;
+        }
+
+        .nav__logo h4 {
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            color: rgb(102, 82, 46);
+        }
+
+        .nav__logo p {
+            font-size: 12px;
+            margin: 0;
+            color: gray;
+        }
+
+        ul.nav__links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            gap: 20px;
+        }
+
+        .center-links a {
+            text-decoration: none !important;
+            color: red;
+        }
+
+        ul.nav__links li a {
+            text-decoration: none;
+            font-size: 16px;
+            color: black;
+            font-weight: bold;
+        }
+
+        ul.nav__links li a:hover {
+            color: #1abc9c;
+        }
+
+        /* Center Links */
+        .center-links {
+            display: flex;
+            gap: 20px;
+            font-size: 14px;
+            color: #555;
+        }
+
+        /* Responsive Menu */
+        .mobile-menu-icon {
+            display: none;
+            font-size: 28px;
+            cursor: pointer;
+            color: black;
+        }
+
+        /* Slide-in menu for mobile */
+        .slide-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 20;
+            overflow-y: auto;
+        }
+
+        /* Open slide-menu */
+        .slide-menu.open {
+            left: 0;
+        }
+
+        .slide-menu a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            padding: 10px 0;
+        }
+
+        /* Close button styles */
+        .close-button {
+            font-size: 24px;
+            cursor: pointer;
+            align-self: flex-end;
+            color: #333;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+
+            ul.nav__links,
+            .center-links {
+                display: none;
+            }
+
+            .mobile-menu-icon {
+                display: block;
+            }
+
+            /* Show only the first and last link in top-links */
+            .top-links .left a:not(:first-child),
+            .top-links .right a:not(:last-child) {
+                display: none;
+            }
+
+            .slide-menu ul {
+                list-style: none;
+                padding: 0;
+                margin-top: 20px;
+            }
+        }
+    </style>
+    </head>
+
+    <body>
+        <!-- Top Links -->
+        <div class="top-links">
+            <div class="right" style="font-weight: 500;">
+                <a href="#">Be A Partner</a>
+
+                <a href="#">Customer Suppourt</a>
+                <a href="#" style="color: red;">Contact Us</a>
+            </div>
+            <div class="left">
+                <a href="#">Explore More</a>
+                <a href="#">Our Whatsapp</a>
+            </div>
+
+        </div>
+
+        <!-- Main Navigation -->
+        <nav>
+            <div class="nav__logo">
+                <img src="ioebnen-removebg-preview.png" alt="logo" />
+                <div>
+                    <h4>MIRROR SPACE</h4>
+                    <p>ELEVATING INTERIORS</p>
+                </div>
+            </div>
+            <div class="center-links">
+                <a href="#">Design Gallery</a>
+                <a href="#">Offerings</a>
+                <a href="#">Our Cities</a>
+                <a href="#">Ideology</a>
+                <a href="#">Customer Feedback</a>
+                <a href="#"> Our Blog</a>
+
+            </div>
+            <!-- Main nav links (hidden in mobile view) -->
+            <ul class="nav__links">
+                <li><a href="https://subrat-io.github.io/myproject/">Home</a></li>
+                <li><a href="https://subrat-io.github.io/myproject/aboutus.html">Services</a></li>
+                <li><a href="https://subrat-io.github.io/myproject/about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+
+            <!-- Center Links -->
+
+
+            <!-- Mobile Menu Icon -->
+            <span class="mobile-menu-icon" onclick="toggleMenu()">&#9776;</span>
+        </nav>
+
+        <!-- Slide-in Menu (Mobile) -->
+        <div class="slide-menu" id="slideMenu">
+            <span class="close-button" onclick="toggleMenu()">&times;</span>
+            <a href="https://subrat-io.github.io/myproject/">Home</a>
+            <a href="https://subrat-io.github.io/myproject/aboutus.html">Services</a>
+            <a href="https://subrat-io.github.io/myproject/about.html">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Design Gallery</a>
+            <a href="#">Blog</a>
+            <a href="#">Offerings</a>
+            <a href="#">Our Cities</a>
+            <a href="#">Ideology</a>
+            <a href="#">Customer Feedback</a>
+
+            <!-- Main nav links added to slide-menu -->
+            <ul>
+                <li><a href="https://subrat-io.github.io/myproject/">Home</a></li>
+                <li><a href="https://subrat-io.github.io/myproject/aboutus.html">Services</a></li>
+                <li><a href="https://subrat-io.github.io/myproject/about.html">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- JavaScript for Menu Toggle -->
+        <script>
+            function toggleMenu() {
+                const slideMenu = document.getElementById('slideMenu');
+                slideMenu.classList.toggle('open');
+            }
+        </script>
+
+        <style>
+            /* Section Styles */
+            section {
+                background-color: #fff;
+                padding: 30px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                margin-bottom: 40px;
+            }
+
+            /* Heading Styles inside Section */
+            section h1 {
+                font-family: 'Merriweather', serif;
+                color: #3b5998;
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+            }
+
+            /* Subheading Styles inside Section */
+            section h2 {
+                color: #3b5998;
+                font-size: 1.75rem;
+                margin-top: 30px;
+                margin-bottom: 10px;
+                font-weight: bold;
+            }
+
+            /* Paragraph Styles inside Section */
+            section p {
+                font-size: 1rem;
+                margin-bottom: 20px;
+                line-height: 1.8;
+                color: #555;
+            }
+
+            /* Image Styles inside Section */
+            section img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+                margin: 20px 0;
+            }
+
+            /* Blockquote Styles inside Section */
+            section blockquote {
+                font-style: italic;
+                color: #888;
+                border-left: 4px solid #3b5998;
+                padding-left: 16px;
+                margin: 20px 0;
+            }
+
+            /* Button Styles inside Section */
+            section button {
+                background-color: #3b5998;
+                color: #fff;
+                border: none;
+                padding: 10px 20px;
+                font-size: 1rem;
+                cursor: pointer;
+                border-radius: 4px;
+                transition: background-color 0.3s;
+            }
+
+            section button:hover {
+                background-color: #2a4370;
+            }
+        </style>
+        <section id="interior-excellence">
+            <h1>Transform Your Home with Interior Excellence</h1>
+            <p>At BricknBar.com and Mirrorspace.in, we believe that every space has the potential to be extraordinary.
+                Our commitment to innovative, sophisticated, and client-centric design solutions sets us apart in the
+                realm of interior design. Whether you're aiming to revamp a single room or transform an entire home, our
+                services are tailored to bring your vision to life.</p>
+
+            <h2>1. Personalized Interior Solutions</h2>
+            <p>Your home should be a reflection of who you are, encapsulating your personality, preferences, and
+                lifestyle. Both BricknBar.com and Mirrorspace.in excel at crafting bespoke interior solutions that cater
+                to individual tastes. With a keen eye for detail and a passion for creativity, our design teams are
+                adept at converting blank spaces into artful representations of your unique style.</p>
+
+            <p>Imagine walking into your living room and feeling an instant sense of connection, not just because it’s
+                visually striking, but because every piece tells your story. From minimalist Scandinavian aesthetics
+                with clean lines and soft hues to bold, eclectic spaces filled with vibrant colors and textures, our
+                expert designers take the time to understand your vision and bring it to life. Each project is a
+                testament to our dedication to client satisfaction and innovation in design.</p>
+
+            <p>Our commitment extends beyond surface aesthetics. We delve deep into understanding your lifestyle. Do you
+                enjoy hosting friends and family? We’ll create a welcoming space with ample seating, open floor plans,
+                and strategically placed accent lighting to foster social interactions. Are you a book lover? Picture a
+                cozy nook by a window, complete with plush cushions, a warm-toned reading lamp, and custom bookshelves
+                that fit seamlessly into your living space.</p>
+
+            <h2>2. Functional & Stylish Spaces</h2>
+            <p>Great design isn't just about aesthetics—it’s also about function. At BricknBar and Mirrorspace.in, we
+                prioritize creating spaces that not only look good but work seamlessly with your daily life. Our designs
+                enhance usability and comfort without compromising on style.</p>
+
+            <p>Consider the kitchen, the heart of the home. Our team crafts kitchens that are both visually appealing
+                and functional, using a layout that maximizes space and promotes ease of movement. Custom cabinets,
+                strategically placed lighting, and smart storage solutions ensure that the space is optimized for
+                efficiency. We know that in a fast-paced world, having a home that supports your lifestyle is essential.
+            </p>
+
+            <p>The same philosophy applies to other areas, such as home offices, which have become increasingly vital.
+                We design workspaces that inspire productivity, integrating ergonomic furniture and thoughtful decor
+                that energizes and motivates. Our living rooms strike the perfect balance between relaxation and
+                sophistication, incorporating elements like ambient lighting and multi-functional furniture that adapts
+                to various needs—from entertaining guests to enjoying a cozy movie night.</p>
+
+            <p>Bedrooms are another area where functionality meets luxury. We emphasize comfort while showcasing
+                sophisticated aesthetics. Soft, plush fabrics, layered textures, and strategically placed lighting
+                create a warm and inviting atmosphere. Our custom headboards and built-in storage solutions are designed
+                to make your bedroom not only a place to rest but also a sanctuary of elegance and practicality.</p>
+
+            <p>Bathrooms are transformed into spa-like retreats with the incorporation of high-quality fixtures,
+                carefully chosen tiles, and mood-enhancing lighting. Walk-in showers with glass enclosures, standalone
+                bathtubs, and sleek vanities are just a few of the features that add both function and luxury to this
+                essential space.</p>
+
+            <h2>3. Premium Materials & Craftsmanship</h2>
+            <p>Quality materials are the backbone of lasting interior designs. BricknBar and Mirrorspace.in are
+                committed to sourcing only the finest materials to ensure that your interiors not only look exquisite
+                but also stand the test of time. From custom-made wooden cabinets to high-quality marble countertops,
+                every material we use reflects our dedication to excellence.</p>
+
+            <p>Craftsmanship is equally important. We collaborate with skilled artisans who pay attention to every
+                detail, from intricate flooring patterns to hand-crafted furniture pieces. This level of meticulous
+                attention ensures that the outcome is not just a room but an experience—a harmonious blend of beauty,
+                durability, and luxury.</p>
+
+            <img src="your-image-url.jpg" alt="Beautifully designed interior space">
+
+            <h2>4. Seamless Integration of Technology</h2>
+            <p>In an era where smart homes are becoming the norm, our design philosophy includes seamlessly integrating
+                technology to make your living space not just beautiful but also smart and efficient. Imagine coming
+                home to an environment where the lights, temperature, and even the music adapt to your preferences. With
+                automated systems and voice-activated controls, we make modern living more convenient than ever.</p>
+
+            <p>Our designers incorporate smart solutions like built-in charging stations, climate control systems, and
+                adaptable lighting to ensure that your home is future-proof. We take care to conceal these technological
+                elements so that they complement, rather than disrupt, the aesthetics of your space. The result is a
+                perfect blend of classic design principles and modern functionality.</p>
+
+            <p>Smart kitchens equipped with appliances that can be controlled remotely, built-in speakers for ambient
+                sound throughout the house, and smart mirrors with integrated screens for news updates or
+                tutorials—these are just some of the ways we add a touch of the future to your home.</p>
+
+            <p>Security is another key aspect of a tech-integrated home. We incorporate discreet security systems,
+                complete with cameras and motion sensors, that blend seamlessly with the design. This ensures peace of
+                mind without the intrusive look of bulky hardware.</p>
+
+            <h2>5. Sustainable and Eco-Friendly Practices</h2>
+            <p>Sustainability is at the heart of everything we do. At BricknBar.com and Mirrorspace.in, we are conscious
+                of our environmental impact and aim to design spaces that are both beautiful and eco-friendly. This
+                includes using sustainable materials, such as reclaimed wood and recycled metals, and incorporating
+                energy-efficient appliances and lighting.</p>
+
+            <p>We also design homes with natural ventilation and ample daylight in mind, reducing the need for
+                artificial heating, cooling, and lighting. Our eco-friendly approach ensures that your home not only
+                benefits your lifestyle but also has a minimal ecological footprint.</p>
+
+            <p>Our commitment to sustainability extends to our partnerships with suppliers who practice ethical
+                production methods and prioritize eco-friendly materials. We believe that a beautiful home should not
+                come at the expense of the planet, which is why we continuously look for ways to reduce waste and
+                implement green practices in our projects.</p>
+
+            <h2>6. A Collaborative Design Process</h2>
+            <p>What sets BricknBar.com and Mirrorspace.in apart is our commitment to a collaborative design process. We
+                believe that the best results are achieved when clients and designers work closely together. Our design
+                journey starts with in-depth consultations where we learn about your preferences, lifestyle, and
+                aspirations for the space.</p>
+
+            <p>This partnership continues throughout the entire project, with regular updates and feedback sessions to
+                ensure that the final result meets your expectations. Our clients often remark on the seamless
+                communication and mutual trust that develops during this process, making the design experience not only
+                productive but also enjoyable.</p>
+
+            <p>The design process at Mirrorspace.in is driven by client engagement. We start with mood boards and 3D
+                visualizations that help clients envision the final outcome. This interactive approach allows for
+                adjustments and real-time feedback, ensuring that the final product aligns perfectly with client
+                expectations.</p>
+
+            <h2>7. Revitalizing Spaces with a Touch of Art</h2>
+            <p>Incorporating art into your living space adds a unique touch that speaks to your personality. At
+                Mirrorspace.in, we integrate custom art pieces and curated decor that amplify the visual impact of your
+                interiors. Our designers work with local artists to create custom wall art, sculptures, and murals that
+                add a touch of exclusivity to your home.</p>
+
+            <p>BricknBar.com also offers access to an extensive range of decorative elements, from statement light
+                fixtures to intricate wall hangings, ensuring that your space is as lively and dynamic as you want it to
+                be.</p>
+
+            <p>Art is not just an accessory; it is an integral part of the design. A statement piece can tie the room
+                together and serve as a conversation starter. Whether it’s a modern abstract painting, a classic
+                sculpture, or a unique piece of textile art, we help you choose pieces that reflect your style and
+                enhance the overall theme of your home.</p>
+
+            <h2>Let’s Bring Your Vision to Life</h2>
+            <p>At BricknBar.com and Mirrorspace.in, we are passionate about creating spaces that resonate with our
+                clients' dreams and aspirations. Contact us today and take the first step toward transforming your home
+                into a place that embodies luxury, comfort, and individuality.</p>
+        </section>
+
+
+        <!-- Footer Section -->
+        <footer class="footer-container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-section">
+                    <h4>About Mirror Space</h4>
+                    <p>At Mirror Space, we are dedicated to providing innovative interior solutions that elevate
+                        your space. From modular designs to customized solutions, we aim to bring your vision to
+                        life.</p>
+                </div>
+
+                <!-- Quick Links Section -->
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Our Services</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <!-- Customer Service Section -->
+                <div class="footer-section">
+                    <h4>Customer Service</h4>
+                    <ul>
+                        <li><a href="#">Returns & Refunds</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Help & Support</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p>Email: support@mirrorspace.com</p>
+                    <p>Phone: +1 (123) 456-7890</p>
+                    <div class="social-icons">
+                        <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                        <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                        <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                        <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mirror Space. All Rights Reserved.</p>
+                <p>Designed with ❤️ by Mirror Space Team</p>
+            </div>
+        </footer>
+
+        <style>
+            /* Footer Container */
+            .footer-container {
+                background-color: #333;
+                color: #fff;
+                padding: 10px 0;
+                padding-top: 15px !important;
+                font-family: Arial, sans-serif;
+            }
+
+            .footer-content {
+                display: flex;
+                justify-content: space-between;
+                max-width: 1200px;
+                margin: auto;
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .footer-section {
+                flex: 1;
+                min-width: 200px;
+            }
+
+            .footer-section h4 {
+                font-size: 18px;
+                margin-bottom: 10px;
+                color: #ffbd59;
+                /* Highlight color */
+            }
+
+            .footer-section p,
+            .footer-section ul {
+                font-size: 14px;
+                line-height: 1.6;
+            }
+
+            .footer-section ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .footer-section ul li {
+                margin-bottom: 8px;
+            }
+
+            .footer-section ul li a {
+                color: #b0b0b0;
+                text-decoration: none;
+            }
+
+            .footer-section ul li a:hover {
+                color: #ffbd59;
+            }
+
+            .social-icons a {
+                display: inline-block;
+                margin-right: 10px;
+                width: 24px;
+                height: 24px;
+            }
+
+            .social-icons img {
+                width: 100%;
+                height: auto;
+            }
+
+            /* Footer Bottom */
+            .footer-bottom {
+                text-align: center;
+                padding-top: 10px;
+                font-size: 14px;
+                border-top: 1px solid #444;
+                color: #b0b0b0;
+            }
+
+            .footer-bottom p {
+                margin: 5px 0;
+            }
+
+            .footer-bottom p a {
+                color: #ffbd59;
+                text-decoration: none;
+            }
+
+            .footer-bottom p a:hover {
+                text-decoration: underline;
+            }
+
+            /* Responsive Design */
+            @media (max-width: 768px) {
+                .footer-content {
+                    flex-direction: column;
+                    text-align: center;
+                }
+            }
+        </style>
+    </body>
+
+</html>
