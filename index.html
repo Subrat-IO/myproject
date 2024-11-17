@@ -525,432 +525,458 @@
 
 
 
-            <section>
-                <h1 class="highlighted-text">Some Of Our Highlights </h1>
-                <h3 style="display: flex; justify-content: space-between; margin-top: 50px;margin-bottom: 30px;">
-                    Our End to End Offerings
-                    <span><a href="" class="see-all-link">see all</a></span>
-                </h3>
-                <div class="carousel-container">
-                    <button class="carousel-arrow left-arrow custom-arrow">&#10094;</button>
-                    <section class="image-carousel">
-                        <div class="carousel-item">
-                            <a href="bathroom.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true"
-                                    alt="Bathroom Interiors">
-                                <div class="carousel-overlay">BATHROOM INTERIORS</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="KITCHENINTERIOR.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true"
-                                    alt="Kitchen Interiors">
-                                <div class="carousel-overlay">KITCHEN INTERIORS</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="OFFICE.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true"
-                                    alt="Office Interiors">
-                                <div class="carousel-overlay">OFFICE INTERIOR</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="houseinterior.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true"
-                                    alt="House Interiors">
-                                <div class="carousel-overlay">HOUSE INTERIOR</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="hallinterior.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true"
-                                    alt="Customized Interior Services">
-                                <div class="carousel-overlay">CUSTOMIZED INTERIOR SERVICES</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="remodellings.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true"
-                                    alt="Remodellings">
-                                <div class="carousel-overlay">REMODELLINGS</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="residential.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true"
-                                    alt="Residential Interiors">
-                                <div class="carousel-overlay">RESIDENTIAL INTERIOR</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="new (8th copy).html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true"
-                                    alt="Hall Interiors">
-                                <div class="carousel-overlay">HALL INTERIOR</div>
-                            </a>
-                        </div>
-                    </section>
-                    <button class="carousel-arrow right-arrow custom-arrow">&#10095;</button>
+<style>
+    /* General styles */
+    .imagehy {
+        font-family: 'Roboto', sans-serif;
+       
+    }
+
+    .slider-section {
+        margin: 20px 0;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .image-slider-container {
+        position: relative;
+        overflow: hidden;
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+
+    .image-slider-container.appear {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .image-slider {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 10px;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .image-slider::-webkit-scrollbar {
+        display: none;
+    }
+
+    .slider-image-container {
+        flex: 0 0 auto;
+        width: 300px;
+        height: 250px;
+        position: relative;
+        scroll-snap-align: center;
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .slider-image-container:hover {
+        transform: scale(1.05);
+    }
+
+    .slider-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .image-text {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 10px;
+        /* margin-top: 30px; */
+        background: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        text-align: center;
+        font-size: 14px;
+        opacity: 0;
+        transform: translateY(100%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+    }
+
+    .slider-image-container:hover .image-text {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .arrow-button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        z-index: 10;
+        transition: background-color 0.3s ease;
+    }
+
+    .arrow-button:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .arrow-left {
+        left: 10px;
+    }
+
+    .arrow-right {
+        right: 10px;
+    }
+
+    @media (max-width: 768px) {
+        .slider-image-container {
+            width: 70%;
+            height: 230px;
+        }
+
+        .arrow-button {
+            width: 30px;
+            height: 30px;
+        }
+    }
+</style>
+<script>
+    // Scroll-to-appear effect
+    window.addEventListener('scroll', function () {
+        const sliders = document.querySelectorAll('.image-slider-container');
+        sliders.forEach(slider => {
+            const sliderPosition = slider.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+
+            if (sliderPosition < screenPosition) {
+                slider.classList.add('appear');
+            }
+        });
+    });
+
+    // Scroll functionality for arrow buttons
+    function scrollSlider(sliderId, direction) {
+        const slider = document.getElementById(sliderId).querySelector('.image-slider');
+        const scrollAmount = slider.offsetWidth / 4; // Adjust based on visible images
+        slider.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth',
+        });
+    }
+    // Scroll functionality for arrow buttons
+    function scrollSlider(sliderId, direction) {
+        const slider = document.getElementById(sliderId).querySelector('.image-slider');
+        const scrollAmount = slider.offsetWidth / 4; // Adjust based on visible images
+        slider.scrollBy({
+            left: direction * scrollAmount,
+            behavior: 'smooth',
+        });
+    }
+
+</script>
+</head>
+
+<body>
+<section class="imagehy">
+    <section class="slider-section">
+        <h1 class="highlighted-text">Some Of Our Highlights</h1>
+        <h3 style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: 20px;">
+            Our End-to-End Offerings
+            <span><a href="" class="see-all-link">see all</a></span>
+        </h3>
+        <div class="image-slider-container" id="slider1">
+            <button class="arrow-button arrow-left" onclick="scrollSlider('slider1', -1)">&#10094;</button>
+            <div class="image-slider">
+                <div class="slider-image-container">
+                    <a href="bathroom.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true"
+                            alt="Bathroom Interiors" class="slider-image">
+                        <div class="image-text">Bathroom Interiors</div>
+                    </a>
                 </div>
-            </section>
-
-            <section>
-
-                <h3 style="display: flex; justify-content: space-between; margin-top: 50px;margin-bottom: 30px;">
-                    Bathroom Interiors
-                    <span><a href="" class="see-all-link">see all</a></span>
-                </h3>
-                <div class="carousel-container">
-                    <button class="carousel-arrow left-arrow custom-arrow">&#10094;</button>
-                    <section class="image-carousel">
-                        <div class="carousel-item">
-                            <a href="bathroom.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true"
-                                    alt="Bathroom Interiors">
-                                <div class="carousel-overlay">BATHROOM INTERIORS</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="KITCHENINTERIOR.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true"
-                                    alt="Kitchen Interiors">
-                                <div class="carousel-overlay">KITCHEN INTERIORS</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="OFFICE.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true"
-                                    alt="Office Interiors">
-                                <div class="carousel-overlay">OFFICE INTERIOR</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="houseinterior.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true"
-                                    alt="House Interiors">
-                                <div class="carousel-overlay">HOUSE INTERIOR</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="hallinterior.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true"
-                                    alt="Customized Interior Services">
-                                <div class="carousel-overlay">CUSTOMIZED INTERIOR SERVICES</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="remodellings.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true"
-                                    alt="Remodellings">
-                                <div class="carousel-overlay">REMODELLINGS</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="residential.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true"
-                                    alt="Residential Interiors">
-                                <div class="carousel-overlay">RESIDENTIAL INTERIOR</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="new (8th copy).html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true"
-                                    alt="Hall Interiors">
-                                <div class="carousel-overlay">HALL INTERIOR</div>
-                            </a>
-                        </div>
-                    </section>
-                    <button class="carousel-arrow right-arrow custom-arrow">&#10095;</button>
+                <div class="slider-image-container">
+                    <a href="KITCHENINTERIOR.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true"
+                            alt="Kitchen Interiors" class="slider-image">
+                        <div class="image-text">Kitchen Interiors</div>
+                    </a>
                 </div>
-            </section>
-            <section>
-
-                <h3 style="display: flex; justify-content: space-between; margin-top: 50px;margin-bottom: 30px;">
-                    Kitchen Interiors
-                    <span><a href="" class="see-all-link">see all</a></span>
-                </h3>
-                <div class="carousel-container">
-                    <button class="carousel-arrow left-arrow custom-arrow">&#10094;</button>
-                    <section class="image-carousel">
-                        <div class="carousel-item">
-                            <a href="bathroom.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true"
-                                    alt="Bathroom Interiors">
-                                <div class="carousel-overlay">BATHROOM INTERIORS</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="KITCHENINTERIOR.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true"
-                                    alt="Kitchen Interiors">
-                                <div class="carousel-overlay">KITCHEN INTERIORS</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="OFFICE.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true"
-                                    alt="Office Interiors">
-                                <div class="carousel-overlay">OFFICE INTERIOR</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="houseinterior.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true"
-                                    alt="House Interiors">
-                                <div class="carousel-overlay">HOUSE INTERIOR</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="hallinterior.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true"
-                                    alt="Customized Interior Services">
-                                <div class="carousel-overlay">CUSTOMIZED INTERIOR SERVICES</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="remodellings.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true"
-                                    alt="Remodellings">
-                                <div class="carousel-overlay">REMODELLINGS</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="residential.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true"
-                                    alt="Residential Interiors">
-                                <div class="carousel-overlay">RESIDENTIAL INTERIOR</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="new (8th copy).html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true"
-                                    alt="Hall Interiors">
-                                <div class="carousel-overlay">HALL INTERIOR</div>
-                            </a>
-                        </div>
-                    </section>
-                    <button class="carousel-arrow right-arrow custom-arrow">&#10095;</button>
+                <div class="slider-image-container">
+                    <a href="OFFICE.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true"
+                            alt="Office Interiors" class="slider-image">
+                        <div class="image-text">Office Interior</div>
+                    </a>
                 </div>
-            </section>
-            <section>
-
-                <h3 style="display: flex; justify-content: space-between; margin-top: 50px;margin-bottom: 30px;">
-                    Bathroom Interiors
-                    <span><a href="" class="see-all-link">see all</a></span>
-                </h3>
-                <div class="carousel-container">
-                    <button class="carousel-arrow left-arrow custom-arrow">&#10094;</button>
-                    <section class="image-carousel">
-                        <div class="carousel-item">
-                            <a href="bathroom.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true"
-                                    alt="Bathroom Interiors">
-                                <div class="carousel-overlay">BATHROOM INTERIORS</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="KITCHENINTERIOR.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true"
-                                    alt="Kitchen Interiors">
-                                <div class="carousel-overlay">KITCHEN INTERIORS</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="OFFICE.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true"
-                                    alt="Office Interiors">
-                                <div class="carousel-overlay">OFFICE INTERIOR</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="houseinterior.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true"
-                                    alt="House Interiors">
-                                <div class="carousel-overlay">HOUSE INTERIOR</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="hallinterior.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true"
-                                    alt="Customized Interior Services">
-                                <div class="carousel-overlay">CUSTOMIZED INTERIOR SERVICES</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="remodellings.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true"
-                                    alt="Remodellings">
-                                <div class="carousel-overlay">REMODELLINGS</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="residential.html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true"
-                                    alt="Residential Interiors">
-                                <div class="carousel-overlay">RESIDENTIAL INTERIOR</div>
-                            </a>
-                        </div>
-                        <div class="carousel-item">
-                            <a href="new (8th copy).html">
-                                <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true"
-                                    alt="Hall Interiors">
-                                <div class="carousel-overlay">HALL INTERIOR</div>
-                            </a>
-                        </div>
-                    </section>
-                    <button class="carousel-arrow right-arrow custom-arrow">&#10095;</button>
+                <div class="slider-image-container">
+                    <a href="houseinterior.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true"
+                            alt="House Interiors" class="slider-image">
+                        <div class="image-text">House Interior</div>
+                    </a>
                 </div>
-            </section>
-
-            <style>
-                /* General styling */
-                .carousel-container {
-                    position: relative;
-                    overflow: hidden;
-                    max-width: 97%;
-                    margin: auto;
-                }
-
-                .highlighted-text {
-                    text-align: center;
-                    margin-top: 30px;
-                    font-family: "Playfair Display", serif;
-                }
-
-                .image-carousel {
-                    display: flex;
-                    transition: transform 0.5s ease;
-                    gap: 25px;
-                }
-
-                .carousel-item {
-                    flex: 0 0 24%;
-                    /* 4 items per row */
-                    max-width: 24%;
-                    position: relative;
-                    overflow: hidden;
-                    box-sizing: border-box;
-                    border-radius: 30px;
-                }
-
-                .carousel-item img {
-                    width: 100%;
-                    height: 220px;
-                    object-fit: cover;
-                    display: block;
-                    border-radius: 10px;
-                }
-
-                .carousel-item a {
-                    display: block;
-                    position: relative;
-                }
-
-                .carousel-overlay {
-                    position: absolute;
-                    bottom: 10px;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    color: #fff;
-                    font-size: 16px;
-                    background-color: rgba(0, 0, 0, 0.5);
-                    padding: 5px 10px;
-                    border-radius: 5px;
-                    opacity: 0;
-                    transition: opacity 0.3s ease;
-                }
-
-                .carousel-item:hover .carousel-overlay {
-                    opacity: 1;
-                }
-
-                /* Slider arrow buttons */
-                .carousel-container .custom-arrow {
-                    position: absolute;
-                    top: 50%;
-                    transform: translateY(-50%);
-                    background: white !important;
-                    /* Ensures background color stays white */
-                    color: #000 !important;
-                    /* Keeps text color black */
-                    border: none;
-                    padding: 15px;
-                    cursor: pointer;
-                    font-size: 20px;
-                    border-radius: 50%;
-                    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-                    z-index: 1;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                }
-
-                .carousel-container .left-arrow.custom-arrow {
-                    left: 10px;
-                }
-
-                .carousel-container .right-arrow.custom-arrow {
-                    right: 10px;
-                }
-
-                .carousel-container .custom-arrow:hover {
-                    background: #f0f0f0 !important;
-                }
-
-                /* Styling for the "see all" link */
-                .see-all-link {
-                    color: red;
-                    text-decoration: none;
-                    font-weight: bold;
-                }
-
-                .see-all-link:hover {
-                    text-decoration: underline;
-                }
-
-                /* Responsive adjustments */
-                @media (max-width: 768px) {
-                    .carousel-item {
-                        flex: 0 0 100%;
-                        /* 1 item per row */
-                        max-width: 100%;
-                    }
-
-                    .carousel-item img {
-                        height: 250px;
-                        /* Adjusted height for mobile */
-                    }
-                }
-            </style>
+                <div class="slider-image-container">
+                    <a href="hallinterior.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true"
+                            alt="Customized Interior Services" class="slider-image">
+                        <div class="image-text">Customized Interior Services</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="remodellings.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true"
+                            alt="Remodellings" class="slider-image">
+                        <div class="image-text">Remodellings</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="residential.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true"
+                            alt="Residential Interiors" class="slider-image">
+                        <div class="image-text">Residential Interior</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="new (8th copy).html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true"
+                            alt="Hall Interiors" class="slider-image">
+                        <div class="image-text">Hall Interior</div>
+                    </a>
+                </div>
+            </div>
+            <button class="arrow-button arrow-right" onclick="scrollSlider('slider1', 1)">&#10095;</button>
+        </div>
+    </section>
 
 
-            <script>
-                document.querySelectorAll(".carousel-container").forEach((carouselContainer) => {
-                    const slider = carouselContainer.querySelector(".image-carousel");
-                    const leftArrow = carouselContainer.querySelector(".left-arrow");
-                    const rightArrow = carouselContainer.querySelector(".right-arrow");
-                    const totalItems = carouselContainer.querySelectorAll(".carousel-item").length;
-                    let currentIndex = 0;
 
-                    const slide = (direction) => {
-                        const itemsPerView = window.innerWidth > 768 ? 4 : 1;
-                        const maxIndex = totalItems - itemsPerView;
-                        const itemWidth = slider.querySelector(".carousel-item").offsetWidth;
 
-                        if (direction === 'left') {
-                            currentIndex = Math.max(currentIndex - 1, 0);
-                        } else if (direction === 'right') {
-                            currentIndex = Math.min(currentIndex + 1, maxIndex);
-                        }
 
-                        slider.style.transform = `translateX(-${currentIndex * (itemWidth + 20)}px)`;
-                    };
 
-                    leftArrow.addEventListener("click", () => slide('left'));
-                    rightArrow.addEventListener("click", () => slide('right'));
-                });
-            </script>
+
+
+    <section class="slider-section">
+
+        <h3 style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: 20px;">
+            Our End-to-End Offerings
+            <span><a href="" class="see-all-link">see all</a></span>
+        </h3>
+        <div class="image-slider-container" id="slider2">
+            <button class="arrow-button arrow-left" onclick="scrollSlider('slider2', -1)">&#10094;</button>
+            <div class="image-slider">
+                <!-- Image content here -->
+                <div class="slider-image-container">
+                    <a href="bathroom.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true"
+                            alt="Bathroom Interiors" class="slider-image">
+                        <div class="image-text">Bathroom Interiors</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="KITCHENINTERIOR.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true"
+                            alt="Kitchen Interiors" class="slider-image">
+                        <div class="image-text">Kitchen Interiors</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="OFFICE.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true"
+                            alt="Office Interiors" class="slider-image">
+                        <div class="image-text">Office Interior</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="houseinterior.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true"
+                            alt="House Interiors" class="slider-image">
+                        <div class="image-text">House Interior</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="hallinterior.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true"
+                            alt="Customized Interior Services" class="slider-image">
+                        <div class="image-text">Customized Interior Services</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="remodellings.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true"
+                            alt="Remodellings" class="slider-image">
+                        <div class="image-text">Remodellings</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="residential.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true"
+                            alt="Residential Interiors" class="slider-image">
+                        <div class="image-text">Residential Interior</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="new (8th copy).html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true"
+                            alt="Hall Interiors" class="slider-image">
+                        <div class="image-text">Hall Interior</div>
+                    </a>
+                </div>
+            </div>
+            <button class="arrow-button arrow-right" onclick="scrollSlider('slider2', 1)">&#10095;</button>
+        </div>
+    </section>
+    <section class="slider-section">
+
+        <h3 style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: 20px;">
+            Our End-to-End Offerings
+            <span><a href="" class="see-all-link">see all</a></span>
+        </h3>
+        <div class="image-slider-container" id="slider3">
+            <button class="arrow-button arrow-left" onclick="scrollSlider('slider3', -1)">&#10094;</button>
+            <div class="image-slider">
+                <!-- Image content here -->
+                <div class="slider-image-container">
+                    <a href="bathroom.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true"
+                            alt="Bathroom Interiors" class="slider-image">
+                        <div class="image-text">Bathroom Interiors</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="KITCHENINTERIOR.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true"
+                            alt="Kitchen Interiors" class="slider-image">
+                        <div class="image-text">Kitchen Interiors</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="OFFICE.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true"
+                            alt="Office Interiors" class="slider-image">
+                        <div class="image-text">Office Interior</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="houseinterior.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true"
+                            alt="House Interiors" class="slider-image">
+                        <div class="image-text">House Interior</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="hallinterior.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true"
+                            alt="Customized Interior Services" class="slider-image">
+                        <div class="image-text">Customized Interior Services</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="remodellings.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true"
+                            alt="Remodellings" class="slider-image">
+                        <div class="image-text">Remodellings</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="residential.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true"
+                            alt="Residential Interiors" class="slider-image">
+                        <div class="image-text">Residential Interior</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="new (8th copy).html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true"
+                            alt="Hall Interiors" class="slider-image">
+                        <div class="image-text">Hall Interior</div>
+                    </a>
+                </div>
+            </div>
+            <button class="arrow-button arrow-right" onclick="scrollSlider('slider3', 1)">&#10095;</button>
+        </div>
+    </section>
+    <section class="slider-section">
+
+        <h3 style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: 20px;">
+            Our End-to-End Offerings
+            <span><a href="" class="see-all-link">see all</a></span>
+        </h3>
+        <div class="image-slider-container" id="slider4">
+            <button class="arrow-button arrow-left" onclick="scrollSlider('slider4', -1)">&#10094;</button>
+            <div class="image-slider">
+                <!-- Image content here -->
+                <div class="slider-image-container">
+                    <a href="bathroom.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true"
+                            alt="Bathroom Interiors" class="slider-image">
+                        <div class="image-text">Bathroom Interiors</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="KITCHENINTERIOR.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true"
+                            alt="Kitchen Interiors" class="slider-image">
+                        <div class="image-text">Kitchen Interiors</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="OFFICE.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true"
+                            alt="Office Interiors" class="slider-image">
+                        <div class="image-text">Office Interior</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="houseinterior.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true"
+                            alt="House Interiors" class="slider-image">
+                        <div class="image-text">House Interior</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="hallinterior.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true"
+                            alt="Customized Interior Services" class="slider-image">
+                        <div class="image-text">Customized Interior Services</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="remodellings.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true"
+                            alt="Remodellings" class="slider-image">
+                        <div class="image-text">Remodellings</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="residential.html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true"
+                            alt="Residential Interiors" class="slider-image">
+                        <div class="image-text">Residential Interior</div>
+                    </a>
+                </div>
+                <div class="slider-image-container">
+                    <a href="new (8th copy).html">
+                        <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true"
+                            alt="Hall Interiors" class="slider-image">
+                        <div class="image-text">Hall Interior</div>
+                    </a>
+                </div>
+            </div>
+            <button class="arrow-button arrow-right" onclick="scrollSlider('slider4', 1)">&#10095;</button>
+        </div>
+    </section>
+</section>
+
 
 
 
