@@ -14,6 +14,17 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pacifico&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+
     <style>
         /* Global Styles */
         body {
@@ -44,6 +55,8 @@
         .top-links .right {
             display: flex;
             gap: 35px;
+            font-weight: 100;
+
         }
 
         .top-links a {
@@ -62,6 +75,7 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 10;
+
             border-bottom: 1px solid #eee;
         }
 
@@ -94,6 +108,8 @@
             margin: 0;
             padding: 0;
             gap: 20px;
+            font-weight: 100;
+
         }
 
         .center-links a {
@@ -106,6 +122,8 @@
             font-size: 16px;
             color: black;
             font-weight: bold;
+            font-weight: 200;
+
         }
 
         ul.nav__links li a:hover {
@@ -222,7 +240,7 @@
             <a href="#">Design Gallery</a>
             <a href="about.html">Offerings</a>
             <a href="about.html">Our Cities</a>
-            <a href="ourblog.html">Ideology</a>
+            <a href="#ideology1">Ideology</a>
             <a href="#feedback-section-link">Customer Feedback</a>
             <a href="ourblog.html"> Our Blog</a>
 
@@ -401,8 +419,8 @@
             </head>
             <section class="icon-slider-section">
                 <h1 class="highlighted-text"
-                    style="font-size: 16px; text-align: center; color: red; font-weight: 100; font-family: Roboto, Helvetica, sans-serif; margin-top: 30px;">
-                    WHY WE ARE THE BEST
+                    style="font-size: 30px;  font-weight: 100 !important; text-align: center; color: red; margin-top: 30px;">
+                    Why Choose Us
                 </h1>
                 <div class="icon-slider-container">
                     <div class="icon-slider">
@@ -420,11 +438,12 @@
                             <p>Timely Delivery</p>
                         </div>
                         <div class="icon-item">
-                            <img src="images-removebg-preview.png" alt="Custom">
+                            <img src="https://thumbs.dreamstime.com/b/agile-flexible-297101689.jpg" alt="Custom">
                             <p>Custom Solutions</p>
                         </div>
                         <div class="icon-item">
-<img src=" 3611425-200-removebg-preview.png"                               alt="Expertise">
+                            <img src="data:image/png;base64,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"
+                                alt="Expertise">
                             <p>Expert Team</p>
                         </div>
                         <div class="icon-item">
@@ -444,7 +463,7 @@
                                 alt="No Hidden Charges">
                             <p>No Hidden Charges</p>
                         </div>
-            
+
                         <!-- Duplicate items for smooth scrolling -->
                         <div class="icon-item">
                             <img src="quality-removebg-preview.png" alt="Quality">
@@ -466,7 +485,7 @@
                     </div>
                 </div>
             </section>
-            
+
             <style>
                 /* General Styling */
                 .icon-slider-container {
@@ -479,62 +498,65 @@
                     transform: translateY(20px);
                     transition: opacity 1s ease, transform 1s ease;
                 }
-            
+.highlighted-text{
+    font-family: "Playfair Display", serif !important;
+}
                 .icon-slider-container.visible {
                     opacity: 1;
                     transform: translateY(0);
                 }
-            
+
                 .icon-slider {
                     display: flex;
                     align-items: center;
                     gap: 40px;
                     animation: scroll 8s linear infinite;
                 }
-            
+
                 .icon-item {
                     text-align: center;
                     min-width: 120px;
                 }
-            
+
                 .icon-item img {
                     width: 91px;
                     height: 91px;
                     object-fit: cover;
                 }
-            
+
                 .icon-item p {
                     margin-top: 8px;
                     font-size: 14px;
                     color: #333;
                 }
-            
+
                 /* Auto-scrolling animation */
                 @keyframes scroll {
                     0% {
                         transform: translateX(0);
                     }
+
                     100% {
                         transform: translateX(-50%);
                     }
                 }
-            
+
                 /* Responsive adjustments */
                 @media (max-width: 768px) {
                     .icon-item {
                         min-width: 100px;
                     }
-            
+
                     .icon-item p {
                         font-size: 12px;
                     }
                 }
             </style>
-            
+
             <script>
                 document.addEventListener("DOMContentLoaded", () => {
                     const section = document.querySelector(".icon-slider-container");
-            
+
                     const observer = new IntersectionObserver(
                         ([entry]) => {
                             if (entry.isIntersecting) {
@@ -543,11 +565,11 @@
                         },
                         { threshold: 0.1 }
                     );
-            
+
                     observer.observe(section);
                 });
             </script>
-            
+
 
 
 
@@ -670,6 +692,10 @@
                     color: rgb(190, 68, 68);
                 }
 
+                .highlighted-text {
+                    font-family: "Playfair Display", serif;
+                }
+
                 @media (max-width: 768px) {
                     .slider-image-container {
                         width: 70%;
@@ -721,7 +747,9 @@
             <body>
                 <section class="imagehy">
                     <section class="slider-section">
-                        <h1 class="highlighted-text">Some Of Our Highlights</h1>
+                        <h1 class="highlighted-text"
+                            style="text-align: center; font-size: 25px;  font-weight: 100; color: #da4112;">Some Of Our
+                            Highlights</h1>
                         <h3
                             style="display: flex; justify-content: space-between; margin-top: 30px; margin-bottom: 20px; font-weight: 200; color: rgb(112, 27, 27);">
                             Our End to End Offerings
@@ -1026,10 +1054,13 @@
 
 
                 <section>
-                    <h2 class="ourwork" style="margin-top: 30px; text-align: center;">What our work tells about us</h2>
+                    <h2 class="ourwork"
+                        style="margin-top: 30px; text-align: center;  font-weight: 200; color: #da4112;">What our work
+                        tells about us</h2>
                     <div class="section-container">
                         <div class="section">
-                            <img  src="https://cdn.pixabay.com/photo/2024/09/17/11/19/real-estate-9053405_640.jpg" alt="Modular Kitchen">
+                            <img src="https://cdn.pixabay.com/photo/2024/09/17/11/19/real-estate-9053405_640.jpg"
+                                alt="Modular Kitchen">
                             <div class="content">
                                 <h2>Modular Kitchen Renovation</h2>
                                 <p>We work according to the top-notch styles and customer requirements. We use the best
@@ -1070,6 +1101,10 @@
                         flex-direction: column;
                         gap: 30px;
                         /* margin: 20px;    */
+                    }
+
+                    .ourwork {
+                        font-family: "Playfair Display", serif;
                     }
 
                     .section {
@@ -1406,6 +1441,256 @@
 
 
                     </script>
+                   <style>
+                    /* Styling for the process container */
+                    .process-container {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: flex-start;
+                        gap: 20px;
+                        padding: 20px;
+                        background-color: #f5e6d1;
+                        border-radius: 20px;
+                        margin: 20px;
+                        position: relative;
+                        opacity: 0;
+                        transform: translateY(20px);
+                        transition: opacity 1s ease-out, transform 1s ease-out;
+                    }
+                
+                    .process-container.visible {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                
+                    /* Heading styling */
+                    .section-heading {
+                        font-size: 35px;
+                        font-weight: 200;
+                        font-family: "Playfair Display", serif;
+                        color: #c94f24;
+                        text-align: center;
+                        margin-bottom: 20px;
+                    }
+                
+                    /* Step Indicator and Dotted Line */
+                    .step-indicator {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 20px;
+                        position: sticky;
+                        top: 20px;
+                    }
+                
+                    .step-circle {
+                        width: 50px;
+                        height: 50px;
+                        background-color: #c94f24;
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-radius: 50%;
+                        font-weight: bold;
+                        font-size: 16px;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                    }
+                
+                    .step-circle.active {
+                        background-color: #333;
+                    }
+                
+                    .step-line {
+                        width: 4px;
+                        height: 80px;
+                        background-color: transparent;
+                        border-left: 2px dotted #c94f24;
+                    }
+                
+                    /* Process Steps */
+                    .process-steps {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 20px;
+                        position: relative;
+                        opacity: 0;
+                        transform: translateY(20px);
+                        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+                    }
+                
+                    .process-steps.active {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                
+                    .process-step {
+                        display: none;
+                        flex-direction: row;
+                        align-items: center;
+                        gap: 20px;
+                    }
+                
+                    .process-step.active {
+                        display: flex;
+                        animation: fadeIn 0.6s ease-out forwards;
+                    }
+                
+                    /* Image styling */
+                    .process-step img {
+                        width: 380px;
+                        height: 380px;
+                        border-radius: 20px;
+                        
+                    }
+                
+                    /* Text styling */
+                    .process-step-text {
+                        flex: 1;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 10px;
+                        text-align: center;
+                    }
+                
+                    .process-title {
+                        font-size: 20px;
+                        color: #333;
+                        font-weight: bold;
+                    }
+                
+                    .process-description {
+                        font-size: 16px;
+                        color: #666;
+                    }
+                
+                    /* Keyframe for fade-in effect */
+                    @keyframes fadeIn {
+                        from {
+                            opacity: 0;
+                            transform: translateY(20px);
+                        }
+                
+                        to {
+                            opacity: 1;
+                            transform: translateY(0);
+                        }
+                    }
+                
+                    /* Responsive styling */
+                    @media (max-width: 768px) {
+                        .process-container {
+                            flex-direction: column;
+                            align-items: center;
+                        }
+                
+                        .step-line {
+                            display: none;
+                        }
+                
+                        .step-indicator {
+                            flex-direction: row;
+                            gap: 10px;
+                        }
+                
+                        .process-step {
+                            flex-direction: column;
+                            align-items: center;
+                        }
+                
+                        .process-step img {
+                            width: 120px;
+                            height: 120px;
+                        }
+                    }
+                </style>
+                
+                <div id="ideology1">
+                    <!-- Section Heading -->
+                    <h2 class="section-heading">How We Work</h2>
+                
+                    <div class="process-container" id="process-container">
+                
+                        <!-- Step Indicator and Dotted Line -->
+                        <div class="step-indicator">
+                            <div class="step-circle active" onclick="showStep(1)">1</div>
+                            <div class="step-line"></div>
+                            <div class="step-circle" onclick="showStep(2)">2</div>
+                            <div class="step-line"></div>
+                            <div class="step-circle" onclick="showStep(3)">3</div>
+                        </div>
+                
+                        <!-- Process Steps -->
+                        <div class="process-steps" id="process-steps">
+                            <!-- Step 1 -->
+                            <div class="process-step active" id="step-1">
+                                <div class="process-step-text">
+                                    <div class="process-title">Step 1: Choose Your Product</div>
+                                    <div class="process-description">Browse our catalog to select the perfect item
+                                        for your needs.</div>
+                                </div>
+                                <img src="https://cdni.iconscout.com/illustration/premium/thumb/online-business-consultant-illustration-download-in-svg-png-gif-file-formats--financial-consultation-investment-counselor-advice-consulting-pack-illustrations-4694343.png?f=webp" alt="Step 1 Image">
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="process-step" id="step-2">
+                                <div class="process-step-text">
+                                    <div class="process-title">Step 2: Place Your Order</div>
+                                    <div class="process-description">Add the items to your cart and proceed to
+                                        checkout with ease.</div>
+                                </div>
+                                <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/place-order-2763083-2294493.png" alt="Step 2 Image">
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="process-step" id="step-3">
+                                <div class="process-step-text">
+                                    <div class="process-title">Step 3: Enjoy Our Work Cheers</div>
+                                    <div class="process-description">Sit back and relax as your order is delivered
+                                        to your doorstep.</div>
+                                </div>
+                                <img src="https://img.freepik.com/free-vector/hand-drawn-hygge-indoors-furniture_23-2148662306.jpg" alt="Step 3 Image">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <script>
+                    // Show the process container with a smooth scroll effect when the page loads
+                    window.addEventListener("scroll", function () {
+                        const processContainer = document.getElementById("process-container");
+                        const rect = processContainer.getBoundingClientRect();
+                        if (rect.top < window.innerHeight && rect.bottom >= 0) {
+                            processContainer.classList.add("visible");
+                        }
+                    });
+                
+                    // Show step functionality
+                    function showStep(step) {
+                        // Hide all steps and remove 'active' from all circles
+                        const steps = document.querySelectorAll('.process-step');
+                        const circles = document.querySelectorAll('.step-circle');
+                
+                        steps.forEach((el) => el.classList.remove('active'));
+                        circles.forEach((el) => el.classList.remove('active'));
+                
+                        // Show the selected step and mark the corresponding circle as active
+                        document.getElementById(`step-${step}`).classList.add('active');
+                        circles[step - 1].classList.add('active');
+                
+                        // Scroll to top of the process steps
+                        document.getElementById('process-steps').classList.add('active');
+                    }
+                
+                    // Automatically change steps every 5 seconds
+                    let currentStep = 1;
+                    const totalSteps = 3;
+                    setInterval(() => {
+                        currentStep = (currentStep % totalSteps) + 1;
+                        showStep(currentStep);
+                    }, 5000); // Change step every 5 seconds
+                </script>
+
                     <style>
                         /* Styling for the feedback section */
                         .feedback-container {
@@ -1688,7 +1973,7 @@
                             color: #fff;
                             padding: 10px 0;
                             padding-top: 15px !important;
-                            font-family: Arial, sans-serif;
+                            font-family: "Playfair Display", serif;
                         }
 
                         .footer-content {
