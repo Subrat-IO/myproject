@@ -399,9 +399,9 @@
                 rel="stylesheet">
 
             </head>
-            <section>
+            <section class="icon-slider-section">
                 <h1 class="highlighted-text"
-                    style="font-size: 16px; text-align: center; color: red;  font-weight: 100; font-family: Roboto, Helvetica, sans-serif; margin-top: 30px;">
+                    style="font-size: 16px; text-align: center; color: red; font-weight: 100; font-family: Roboto, Helvetica, sans-serif; margin-top: 30px;">
                     WHY WE ARE THE BEST
                 </h1>
                 <div class="icon-slider-container">
@@ -445,7 +445,7 @@
                                 alt="No Hidden Charges">
                             <p>No Hidden Charges</p>
                         </div>
-
+            
                         <!-- Duplicate items for smooth scrolling -->
                         <div class="icon-item">
                             <img src="quality-removebg-preview.png" alt="Quality">
@@ -463,11 +463,11 @@
                             <img src="https://thumbs.dreamstime.com/b/agile-flexible-297101689.jpg" alt="Custom">
                             <p>Custom Solutions</p>
                         </div>
-                        <!-- Add more duplicates as needed -->
+                        <!-- Add duplicates as needed -->
                     </div>
                 </div>
             </section>
-
+            
             <style>
                 /* General Styling */
                 .icon-slider-container {
@@ -476,54 +476,79 @@
                     margin: auto;
                     position: relative;
                     padding: 20px 0;
+                    opacity: 0;
+                    transform: translateY(20px);
+                    transition: opacity 1s ease, transform 1s ease;
                 }
-
+            
+                .icon-slider-container.visible {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            
                 .icon-slider {
                     display: flex;
                     align-items: center;
                     gap: 40px;
                     animation: scroll 8s linear infinite;
                 }
-
+            
                 .icon-item {
                     text-align: center;
                     min-width: 120px;
                 }
-
+            
                 .icon-item img {
                     width: 91px;
                     height: 91px;
                     object-fit: cover;
                 }
-
+            
                 .icon-item p {
                     margin-top: 8px;
                     font-size: 14px;
                     color: #333;
                 }
-
+            
                 /* Auto-scrolling animation */
                 @keyframes scroll {
                     0% {
                         transform: translateX(0);
                     }
-
                     100% {
                         transform: translateX(-50%);
                     }
                 }
-
+            
                 /* Responsive adjustments */
                 @media (max-width: 768px) {
                     .icon-item {
                         min-width: 100px;
                     }
-
+            
                     .icon-item p {
                         font-size: 12px;
                     }
                 }
             </style>
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const section = document.querySelector(".icon-slider-container");
+            
+                    const observer = new IntersectionObserver(
+                        ([entry]) => {
+                            if (entry.isIntersecting) {
+                                section.classList.add("visible");
+                            }
+                        },
+                        { threshold: 0.1 }
+                    );
+            
+                    observer.observe(section);
+                });
+            </script>
+            
 
 
 
