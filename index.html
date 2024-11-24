@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mirror Space | Best Interior Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,6 +77,7 @@
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             position: relative;
             z-index: 10;
+            width: 100%;
 
             border-bottom: 1px solid #eee;
         }
@@ -169,6 +172,8 @@
             left: 0;
         }
 
+
+
         .slide-menu a {
             text-decoration: none;
             color: #333;
@@ -227,8 +232,10 @@
 
     </div>
 
+
+<div class="sticky-top">
     <!-- Main Navigation -->
-    <nav>
+    <nav class="fixed">
         <div class="nav__logo">
             <img src="ioebnen-removebg-preview.png" alt="logo" />
             <div>
@@ -259,6 +266,7 @@
         <!-- Mobile Menu Icon -->
         <span class="mobile-menu-icon" onclick="toggleMenu()">&#9776;</span>
     </nav>
+</div>
 
     <!-- Slide-in Menu (Mobile) -->
     <div class="slide-menu" id="slideMenu">
@@ -289,6 +297,7 @@
             const slideMenu = document.getElementById('slideMenu');
             slideMenu.classList.toggle('open');
         }
+        
     </script>
     <style>
         /* Global Styles */
@@ -2069,5 +2078,7 @@
                     </style>
 
                 </body>
+                <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 
 </html>
