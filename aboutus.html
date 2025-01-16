@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="about.css" />
+    <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -16,193 +16,7 @@
     <title>MIRROR SPACE | Simply Home</title>
  <!-- Add this code to your HTML file -->
 
-  <style>
-        /* Global Styles */
-        body {
-            font-family: 'Raleway', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-
-        /* Top Links */
-        .top-links {
-            display: flex;
-            justify-content: space-between;
-            padding: 15px 5%;
-            background-color: #fff;
-            font-size: 11px;
-            color: #555;
-            border-bottom: 1px solid #eee;
-        }
-
-        .top-links .left,
-        .top-links .right {
-            display: flex;
-            gap: 35px;
-            font-weight: 100;
-
-        }
-
-        .top-links a {
-            text-decoration: none;
-            color: #555;
-        }
-
-        /* Navbar Styles */
-        nav {
-            background-color: white;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 0 5%;
-            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-            position: relative;
-            z-index: 10;
-            width: 100%;
-
-            border-bottom: 1px solid #eee;
-        }
-
-        .nav__logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .nav__logo img {
-            width: 50px;
-            margin-right: 10px;
-        }
-
-        .nav__logo h4 {
-            font-size: 1rem;
-            letter-spacing: 2px;
-            color: rgb(102, 82, 46);
-        }
-
-        .nav__logo p {
-            font-size: 11px;
-            margin: 0;
-            color: gray;
-        }
-
-        ul.nav__links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            margin: 0;
-            padding: 0;
-            gap: 20px;
-            font-weight: 100;
-
-        }
-
-        .center-links a {
-            text-decoration: none !important;
-            color: red;
-        }
-
-        ul.nav__links li a {
-            text-decoration: none;
-            font-size: 13px;
-            color: black;
-            font-weight: bold;
-            font-weight: 200;
-
-        }
-
-        ul.nav__links li a:hover {
-            color: #1abc9c;
-        }
-
-        /* Center Links */
-        .center-links {
-            display: flex;
-            gap: 20px;
-            font-size: 13px;
-            color: #555;
-        }
-
-        /* Responsive Menu */
-        .mobile-menu-icon {
-            display: none;
-            font-size: 20px;
-            cursor: pointer;
-            color: black;
-        }
-
-        /* Slide-in menu for mobile */
-        .slide-menu {
-            position: fixed;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background-color: white;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
-            transition: left 0.3s ease;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            z-index: 20;
-            overflow-y: auto;
-        }
-
-        /* Open slide-menu */
-        .slide-menu.open {
-            left: 0;
-        }
-
-
-
-        .slide-menu a {
-            text-decoration: none;
-            color: #333;
-            font-weight: bold;
-            padding: 10px 0;
-        }
-
-        /* Close button styles */
-        .close-button {
-            font-size: 24px;
-            cursor: pointer;
-            align-self: flex-end;
-            color: #333;
-        }
-
-        /* Responsive Styling */
-        @media (max-width: 768px) {
-
-            ul.nav__links,
-            .center-links {
-                display: none;
-            }
-
-            .mobile-menu-icon {
-                display: block;
-            }
-
-            /* Show only the first and last link in top-links */
-            .top-links .left a:not(:first-child),
-            .top-links .right a:not(:last-child) {
-                display: none;
-            }
-
-            .slide-menu ul {
-                list-style: none;
-                padding: 0;
-                margin-top: 20px;
-            }
-        }
-    </style>
+ 
 </head>
 
 <body>
@@ -279,16 +93,535 @@
         </ul>
     </div>
 
-    <!-- JavaScript for Menu Toggle -->
+  
+    <script src="index.js"></script>
+
+
+</head>
+
+<body>
+  <!-- Image Slider -->
+<div class="slider-container">
+  <div class="slide-wrapper">
+      <div class="slide">
+          <img src="https://github.com/Subrat-IO/myproject/blob/main/pexels-falling4utah-2724749.jpg?raw=true" alt="Image 1">
+      </div>
+      <div class="slide">
+          <img src="https://github.com/Subrat-IO/myproject/blob/main/pexels-pixabay-161758.jpg?raw=true" alt="Image 2">
+      </div>
+      <div class="slide">
+          <img src="https://github.com/Subrat-IO/myproject/blob/main/pexels-vika-glitter-392079-1648771.jpg?raw=true" alt="Image 3">
+      </div>
+  </div>
+  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+  <button class="next" onclick="moveSlide(1)">&#10095;</button>
+</div>
+
+        <!-- Button to Open the Modal -->
+        <div class="form-container">
+            <button id="openModal" class="open-modal">Book Now</button>
+        </div>
+
+        <!-- Modal Structure -->
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Booking Form</h2>
+              <form action="https://www.bricknbar.com/public.html/form/send_form.php" method="POST" id="form" class="contact-form">
+                    <input type="text" name="full_name" placeholder="Full Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <input type="tel" name="contact_no" placeholder="Contact Number" required>
+                    <button type="submit" class="book-now">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </header>
+
+    <section>
+        <h1 class="imagetext"> SOME OF OUR<span class="highl">HIGHLIGHT</span>SERVICES</h1>
+
+      
+        
+        <div class="our">
+            <div class="image-container">
+              <img class="ading-new" src="https://freshysites.com/wp-content/uploads/interior-design-living-room.jpg" alt="">
+            </div>
+            <div class="title-our">
+              <h3>   Stay updated with trending home interior designs!</h3>
+              <div class="scroll-container">
+                <div class="scroll-content">
+               
+                  <p>Modular Kitchens</p>
+                  <p>Living Room Interiors</p>
+                  <p>Bedroom Solutions</p>
+                  <p>Bathroom Remodeling</p>
+                  <p>Wardrobe Designs</p>
+                  <p>Office Interiors</p>
+                   <p>Living Room Interiors</p>
+                  <p>Bedroom Solutions</p>
+                  <p>House Interiors</p>
+                  <p>CUSTOMIZED INTERIOR SERVICES</p>
+                  <p>Hall Interiors</p>
+                  <p>REMODELLINGS</p>
+                  <p>RESIDENTIAL INTERIOR</p>
+             
+                </div>
+              </div>
+            </div>
+          </div>
+        
+        <div class="our">
+
+            <div class="title-our">
+                <h3 style="color: #0056b3;">Warranty built upon confidence</h3>
+
+                <p style="color: rgb(13, 12, 12); font-size: 17px;">Here's a curated list of top interior design styles in India that you should watch out for when designing your dream home..</p>
+
+
+            </div>
+            <div class="image-container">
+                <img class="ading-new" src="https://www.archizy.com/media/Vover%20Image/29.jpg" alt="">
+              </div>
+          </div>
+
+
+        </div>
+
+        <section class="image-row">
+            <div class="image-container">
+                <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true" alt="">
+                <div class="image-overlay">BATHROOM INTERIORS</div>
+            </div>
+            <div class="image-container">
+                <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true" alt="">
+                <div class="image-overlay">KITCHEN INTERIORS</div>
+            </div>
+            <div class="image-container">
+                <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true" alt="">
+                <div class="image-overlay">OFFICE INTERIOR</div>
+            </div>
+            <div class="image-container">
+                <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true" alt="">
+                <div class="image-overlay">HOUSE INTERIOR</div>
+            </div>
+            <div class="image-container">
+                <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true" alt="">
+                <div class="image-overlay">CUSTOMIZED INTERIOR SERVICES</div>
+            </div>
+            <div class="image-container">
+                <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true" alt="">
+                <div class="image-overlay">REMODELLINGS</div>
+            </div>
+            <div class="image-container">
+                <img src="https://github.com/Subrat-IO/myproject/blob/main/COMMERCIAL.jpeg?raw=true" alt="">
+                <div class="image-overlay">COMMERCIAL INTERIOR</div>
+            </div>
+            <div class="image-container">
+                <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true" alt="">
+                <div class="image-overlay">RESIDENTIAL INTERIOR</div>
+            </div>
+            <div class="image-container">
+                <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true" alt="">
+                <div class="image-overlay">HALL INTERIOR</div>
+            </div>
+        </section>
+    </section>
+
+
+            <section class="bottom-section">
+                <div class="left">
+                    <h2><span class="left-h2">Our interior design services </span><br>are tailored to your space. Over 100,000 designs completed for happy clients.</h2><br>
+                    <!-- <p>Let your designer guide you to a design that meets your functional needs and suits your unique style. See it come to life with a 3D rendering of the design in your actual space.</p> -->
+                    <!-- <p>Our designers source from 100+ home brands so no two spaces are ever alike. Leverage Havenly’s proprietary platform with a simple consolidated checkout and never overpay with our price guarantee.</p> -->
+                </div>
+                <div class="right">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2022/12/GJ/KP/YA/143545158/residential-interior-designers-500x500.jpg" alt="">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2024/10/457840258/CY/GP/QX/146127363/modern-interior-designing.png" alt="">
+                    <img src="https://5.imimg.com/data5/SELLER/Default/2024/1/380133402/OH/YS/ST/206760310/modern-interior-design-service-500x500.jpg" alt="">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3qw_qFPqAm8vOCoCSRLc6jeaek_cUmgHl5_337jkAkJnzWZBkAzjle5GREnfkwRPYfYQ&usqp=CAU" alt=""> 
+                </div>
+            </section>
+
+
+            <section class="bottom-section2">
+                    <div class="image-content">
+                        <img src="https://www.ulcdn.net/media/collection%20and%20listing/Lighting.jpg?1684236744" alt="">
+                        <div class="content">
+                            <h2>Interior design made simple</h2>
+                        </div>
+                    </div>
+            </section>
+
+
+
+            <section class="video-cards">
+                <div class="cards-container">
+                    <div class="card">
+                        <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" frameborder="0"></iframe>
+                      
+                    </div>
+                    <div class="card"> 
+                        <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" frameborder="0"></iframe>
+                       
+                    </div>
+                    <div class="card">
+                         <iframe src="https://www.youtube.com/embed/3JZ_D3ELwOQ" frameborder="0"></iframe>
+                       
+                    </div>
+
+                </div>
+
+
+            </section>
+ 
+
+
+                    <!-- Footer Section -->
+                    <footer class="footer-container">
+                        <div class="footer-content">
+                            <!-- About Section -->
+                            <div class="footer-section">
+                                <h4>About Mirror Space</h4>
+                                <p>At Mirror Space, we are dedicated to providing innovative interior solutions that
+                                    elevate
+                                    your space. From modular designs to customized solutions, we aim to bring your
+                                    vision to
+                                    life.</p>
+                            </div>
+
+                            <!-- Quick Links Section -->
+                            <div class="footer-section">
+                                <h4>Quick Links</h4>
+                                <ul>
+                                    <li><a href="#">Home</a></li>
+                                    <li><a href="#">Our Services</a></li>
+                                    <li><a href="#">About Us</a></li>
+                                    <li><a href="#">Contact</a></li>
+                                    <li><a href="#">FAQs</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Customer Service Section -->
+                            <div class="footer-section">
+                                <h4>Customer Service</h4>
+                                <ul>
+                                    <li><a href="#">Returns & Refunds</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Terms of Service</a></li>
+                                    <li><a href="#">Help & Support</a></li>
+                                </ul>
+                            </div>
+
+                            <!-- Contact Section -->
+                            <div class="footer-section">
+                                <h4>Contact Us</h4>
+                                <p>Email: mirrorspace2024@gmail.com</p>
+
+
+
+                                <p>Phone:<a href="tel:+919777772782" style="text-decoration: none; color: #eee;">
+                                        +919777772782</a></p>
+                                <div class="social-icons" style="padding-top: 20px;">
+                                    <a href="#"><img src="https://www.svgrepo.com/show/521654/facebook.svg"
+                                            alt="Facebook"></a>
+                                    <a href="#"><img src="https://www.svgrepo.com/show/521900/twitter.svg"
+                                            alt="Twitter"></a>
+                                    <a href="#"><img src="https://www.svgrepo.com/show/521711/instagram.svg"
+                                            alt="Instagram"></a>
+                                    <a href="#"><img src="https://www.svgrepo.com/show/521725/linkedin.svg"
+                                            alt="LinkedIn"></a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer Bottom -->
+                        <div class="footer-bottom">
+                            <p>&copy; 2024 Mirror Space. All Rights Reserved.</p>
+                            <p>Designed with ❤️ by Mirror Space Team</p>
+                        </div>
+                    </footer>
+
+                 
+ <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</body>
+    
     <script>
         function toggleMenu() {
-            const slideMenu = document.getElementById('slideMenu');
-            slideMenu.classList.toggle('open');
-        }
-        
+  const slideMenu = document.getElementById("slideMenu");
+  slideMenu.classList.toggle("open");
+}
+
+// ------------------------
+
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("slide");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {
+    slideIndex = 1;
+  }
+  slides[slideIndex - 1].style.display = "block";
+  setTimeout(showSlides, 10000); // Change image every 10 seconds
+}
+
+function moveSlide(n) {
+  slideIndex += n - 1; // Adjust the index for navigation
+  showSlides();
+}
+
+//   ------------------------
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("openModal");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal
+btn.onclick = function () {
+  modal.style.display = "block";
+};
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const observerOptions = {
+    root: null, // Use the viewport as the container
+    threshold: 0.1, // Trigger when 10% of the element is visible
+  };
+
+  const revealOnScroll = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target); // Stop observing after it's visible
+      }
+    });
+  };
+
+  const observer = new IntersectionObserver(revealOnScroll, observerOptions);
+
+  // Select all the text sections
+  document.querySelectorAll(".title-our").forEach((element) => {
+    element.classList.add("hidden"); // Start hidden
+    observer.observe(element); // Observe each element
+  });
+});
+
     </script>
     <style>
-        @import url("https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Poppins:wght@400;500;600&display=swap");
+        body {
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* Top Links */
+.top-links {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 5%;
+    background-color: #fff;
+    font-size: 11px;
+    color: #555;
+    border-bottom: 1px solid #eee;
+}
+
+.top-links .left,
+.top-links .right {
+    display: flex;
+    gap: 35px;
+    font-weight: 100;
+
+}
+
+.top-links a {
+    text-decoration: none;
+    color: #555;
+}
+
+/* Navbar Styles */
+nav {
+    background-color: white;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+    width: 100%;
+
+    border-bottom: 1px solid #eee;
+}
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+}
+
+.nav__logo img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.nav__logo h4 {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    color: rgb(102, 82, 46);
+}
+
+.nav__logo p {
+    font-size: 11px;
+    margin: 0;
+    color: gray;
+}
+
+ul.nav__links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    gap: 20px;
+    font-weight: 100;
+
+}
+
+.center-links a {
+    text-decoration: none !important;
+    color: red;
+}
+
+ul.nav__links li a {
+    text-decoration: none;
+    font-size: 13px;
+    color: black;
+    font-weight: bold;
+    font-weight: 200;
+
+}
+
+ul.nav__links li a:hover {
+    color: #1abc9c;
+}
+
+/* Center Links */
+.center-links {
+    display: flex;
+    gap: 20px;
+    font-size: 13px;
+    color: #555;
+}
+
+/* Responsive Menu */
+.mobile-menu-icon {
+    display: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: black;
+}
+
+/* Slide-in menu for mobile */
+.slide-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: left 0.3s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    z-index: 20;
+    overflow-y: auto;
+}
+
+/* Open slide-menu */
+.slide-menu.open {
+    left: 0;
+}
+
+
+
+.slide-menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    padding: 10px 0;
+}
+
+/* Close button styles */
+.close-button {
+    font-size: 24px;
+    cursor: pointer;
+    align-self: flex-end;
+    color: #333;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+
+    ul.nav__links,
+    .center-links {
+        display: none;
+    }
+
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    /* Show only the first and last link in top-links */
+    .top-links .left a:not(:first-child),
+    .top-links .right a:not(:last-child) {
+        display: none;
+    }
+
+    .slide-menu ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+}
+
+
+
+
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital@0;1&family=Poppins:wght@400;500;600&display=swap");
 
 :root {
   --primary-color: #f5f4f2;
@@ -305,7 +638,7 @@
   margin: 0;
   box-sizing: border-box;
 }
-.link a{
+.link a{ 
   color: rgb(0, 0, 0) !important;
 }
 .link a:hover{
@@ -808,28 +1141,7 @@ h1:hover, h4:hover, p:hover {
                 transform: translate(-50%, -50%); /* Center the modal */
             }
         }
-    </style>
-</head>
 
-<body>
-  <!-- Image Slider -->
-<div class="slider-container">
-  <div class="slide-wrapper">
-      <div class="slide">
-          <img src="https://github.com/Subrat-IO/myproject/blob/main/pexels-falling4utah-2724749.jpg?raw=true" alt="Image 1">
-      </div>
-      <div class="slide">
-          <img src="https://github.com/Subrat-IO/myproject/blob/main/pexels-pixabay-161758.jpg?raw=true" alt="Image 2">
-      </div>
-      <div class="slide">
-          <img src="https://github.com/Subrat-IO/myproject/blob/main/pexels-vika-glitter-392079-1648771.jpg?raw=true" alt="Image 3">
-      </div>
-  </div>
-  <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
-  <button class="next" onclick="moveSlide(1)">&#10095;</button>
-</div>
-
-<style>
   /* Image Slider Styles */
 .slider-container {
     width: 100%; /* Full width */
@@ -895,384 +1207,682 @@ h1:hover, h4:hover, p:hover {
     }
 }
 
-</style>
-
-<script>
-  let slideIndex = 0;
-  showSlides();
-
-  function showSlides() {
-      let i;
-      let slides = document.getElementsByClassName("slide");
-      for (i = 0; i < slides.length; i++) {
-          slides[i].style.display = "none";
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) { slideIndex = 1 }
-      slides[slideIndex - 1].style.display = "block";
-      setTimeout(showSlides, 10000); // Change image every 10 seconds
-  }
-
-  function moveSlide(n) {
-      slideIndex += n - 1; // Adjust the index for navigation
-      showSlides();
-  }
-</script>
 
 
-        <!-- Button to Open the Modal -->
-        <div class="form-container">
-            <button id="openModal" class="open-modal">Book Now</button>
-        </div>
 
-        <!-- Modal Structure -->
-        <div id="myModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Booking Form</h2>
-              <form action="https://www.bricknbar.com/public.html/form/send_form.php" method="POST" id="form" class="contact-form">
-                    <input type="text" name="full_name" placeholder="Full Name" required>
-                    <input type="email" name="email" placeholder="Email" required>
-                    <input type="tel" name="contact_no" placeholder="Contact Number" required>
-                    <button type="submit" class="book-now">Book Now</button>
-                </form>
-            </div>
-        </div>
-    </header>
+.slider-container {
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height */
+    position: relative;
+    overflow: hidden;
+}
 
-    <section>
-        <h1 class="imagetext"> SOME OF OUR <span class="highl">HIGHLIGHT</span>SERVICES</h1>
-        <section class="image-row">
-            <div class="image-container">
-                <img src="https://github.com/Subrat-IO/myproject/blob/main/bathroom-2094716.jpg?raw=true" alt="">
-                <div class="image-overlay">BATHROOM INTERIORS</div>
-            </div>
-            <div class="image-container">
-                <img src="https://github.com/Subrat-IO/myproject/blob/main/modular1.jpg?raw=true" alt="">
-                <div class="image-overlay">KITCHEN INTERIORS</div>
-            </div>
-            <div class="image-container">
-                <img src="https://github.com/Subrat-IO/myproject/blob/main/Linkedin-Office-02.jpg?raw=true" alt="">
-                <div class="image-overlay">OFFICE INTERIOR</div>
-            </div>
-            <div class="image-container">
-                <img src="https://github.com/Subrat-IO/myproject/blob/main/interior-design-8477524.jpg?raw=true" alt="">
-                <div class="image-overlay">HOUSE INTERIOR</div>
-            </div>
-            <div class="image-container">
-                <img src="https://github.com/Subrat-IO/myproject/blob/main/Kitchen%20cabinet%20with%20under%20strip%20light.jpeg?raw=true" alt="">
-                <div class="image-overlay">CUSTOMIZED INTERIOR SERVICES</div>
-            </div>
-            <div class="image-container">
-                <img src="https://github.com/Subrat-IO/myproject/blob/main/eae02d02870f51aaa80662bd7cb15f55.jpg?raw=true" alt="">
-                <div class="image-overlay">REMODELLINGS</div>
-            </div>
-            <div class="image-container">
-                <img src="https://github.com/Subrat-IO/myproject/blob/main/COMMERCIAL.jpeg?raw=true" alt="">
-                <div class="image-overlay">COMMERCIAL INTERIOR</div>
-            </div>
-            <div class="image-container">
-                <img src="https://github.com/Subrat-IO/myproject/blob/main/apartment-2094718.jpg?raw=true" alt="">
-                <div class="image-overlay">RESIDENTIAL INTERIOR</div>
-            </div>
-            <div class="image-container">
-                <img src="https://github.com/Subrat-IO/myproject/blob/main/Luxurious%20home%20decor_.jpeg?raw=true" alt="">
-                <div class="image-overlay">HALL INTERIOR</div>
-            </div>
-        </section>
-    </section>
+.slide-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%; /* Ensure the slides fill the container */
+}
+
+.slide {
+    min-width: 100%;
+    height: 100%; /* Ensure the slide takes full height */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%; /* Full height */
+    object-fit: cover;
+    pointer-events: none !important; /* Disable any hover effect */
+}
+
+/* Remove hover effect globally for all elements inside slider */
+.slide img:hover {
+    transform: none !important; /* Prevent any transformation on hover */
+    filter: none !important; /* Remove any filter effect */
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    font-size: 18px;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .slider-container {
+        height: 70vh; /* Adjust height for mobile */
+    }
+
+    .prev, .next {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
 
 
-<style>
-    /* Styling for the section */
+
+
+.remain {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    width: 80%;
+}
+
+/* Description section styling */
+.description {
+    width: 60%;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #2c3e50;
+}
+
+/* Cool effect for headings */
+.auto-typing {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 32px;
+    color: #1abc9c;
+    border-right: 3px solid rgba(255, 255, 255, 0.75);
+    animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+/* Animation for auto-typing effect */
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #1abc9c; }
+}
+
+/* Styling for the images */
+.imageint {
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imageint img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imageint img:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Scroll effect */
+body::-webkit-scrollbar {
+    width: 10px;
+}
+
+body::-webkit-scrollbar-track {
+    background: #96b3c0;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #1abc9c;
+    border-radius: 10px;
+    border: 2px solid #a1c4fd;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
     .remain {
-        display: flex;
-        justify-content: space-between;
-        gap: 20px;
-        padding: 20px;
-        background: rgba(255, 255, 255, 0.8);
-        border-radius: 15px;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-        margin: auto;
-        width: 80%;
-    }
-
-    /* Description section styling */
-    .description {
-        width: 60%;
-        font-size: 18px;
-        line-height: 1.6;
-        color: #2c3e50;
-    }
-
-    /* Cool effect for headings */
-    .auto-typing {
-        font-family: 'Roboto Mono', monospace;
-        font-size: 32px;
-        color: #1abc9c;
-        border-right: 3px solid rgba(255, 255, 255, 0.75);
-        animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite;
-    }
-
-    /* Animation for auto-typing effect */
-    @keyframes typing {
-        from { width: 0; }
-        to { width: 100%; }
-    }
-
-    @keyframes blink-caret {
-        from, to { border-color: transparent; }
-        50% { border-color: #1abc9c; }
-    }
-
-    /* Styling for the images */
-    .imageint {
-        width: 35%;
-        display: flex;
+        flex-direction: column;
         align-items: center;
-        justify-content: center;
     }
-
+    .description, .imageint {
+        width: 100%;
+    }
     .imageint img {
         width: 100%;
-        height: auto;
-        border-radius: 15px;
-        box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
+}
 
-    .imageint img:hover {
-        transform: scale(1.05);
-        box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.2);
+
+
+.footer-container {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    padding-top: 15px !important;
+    font-family: "Playfair Display", serif;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: auto;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #ffbd59;
+    /* Highlight color */
+}
+
+.footer-section p,
+.footer-section ul {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    color: #ffbd59;
+}
+
+.social-icons a {
+    display: inline-block;
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+.social-icons img {
+    width: 100%;
+    height: auto;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding-top: 10px;
+    font-size: 14px;
+    border-top: 1px solid #444;
+    color: #b0b0b0;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+.footer-bottom p a {
+    color: #ffbd59;
+    text-decoration: none;
+}
+
+.footer-bottom p a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
     }
+}
 
-    /* Scroll effect */
-    body::-webkit-scrollbar {
-        width: 10px;
-    }
+.our {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.1px solid transparent;
+  gap: 30px; 
+  padding: 30px;
+  margin: 30px;
+  background-color: #e5ebee;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05), 0 6px 20px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden; 
+}
 
-    body::-webkit-scrollbar-track {
-        background: #96b3c0;
-    }
+/* Styling for the image container */
+.image-container {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  height: 350px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-    body::-webkit-scrollbar-thumb {
-        background-color: #1abc9c;
-        border-radius: 10px;
-        border: 2px solid #a1c4fd;
-    }
+/* Image styling */
+.ading-new {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
-    /* Responsive styling */
-    @media (max-width: 768px) {
-        .remain {
-            flex-direction: column;
-            align-items: center;
-        }
-        .description, .imageint {
-            width: 100%;
-        }
-        .imageint img {
-            width: 100%;
-        }
-    }
-</style>
+.image-container:hover .ading-new {
+  transform: scale(1.05); /* Zooms in slightly */
+  opacity: 0.9;
+}
+
+/* Content section */
+.title-our {
+  flex: 1;
+  max-width: 50%;
+  font-family: 'Raleway', sans-serif;
+  color: #333;
+
+}
 
 
-    <script>
-        // Get the modal
-        var modal = document.getElementById("myModal");
+/* Styling for the heading */
+.title-our h3 {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  color: rgb(87, 76, 76) ;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
 
-        // Get the button that opens the modal
-        var btn = document.getElementById("openModal");
+/* Container for the scrolling text */
+.scroll-container {
+  position: relative;
+  overflow: hidden; 
+  height: 150px;
+  text-align: center; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        // When the user clicks the button, open the modal
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-    <!-- Footer Section -->
- <!-- Footer Section -->
+/* List of services */
+.scroll-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%; 
+  animation: scroll-up 10s linear infinite; 
  
+}
+
+@keyframes scroll-up {
+  0% {
+    top: 100%; /* Start below the container */
+  }
+  100% {
+    top: -100%; /* End above the container */
+  }
+}
 
 
-                    <!-- Footer Section -->
-                    <footer class="footer-container">
-                        <div class="footer-content">
-                            <!-- About Section -->
-                            <div class="footer-section">
-                                <h4>About Mirror Space</h4>
-                                <p>At Mirror Space, we are dedicated to providing innovative interior solutions that
-                                    elevate
-                                    your space. From modular designs to customized solutions, we aim to bring your
-                                    vision to
-                                    life.</p>
-                            </div>
+.title-our p {
+  font-size: 20px;
+  line-height: 1.4;
+  color: rgb(87 110 41);
+  letter-spacing: 0.4px;
+  transition: opacity 0.8s ease 0.3s, transform 0.5s ease 0.3s; /* Smooth delay */
+}
 
-                            <!-- Quick Links Section -->
-                            <div class="footer-section">
-                                <h4>Quick Links</h4>
-                                <ul>
-                                    <li><a href="#">Home</a></li>
-                                    <li><a href="#">Our Services</a></li>
-                                    <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Contact</a></li>
-                                    <li><a href="#">FAQs</a></li>
-                                </ul>
-                            </div>
+/* Hover effect on the title section */
+.title-our:hover h3 {
+  color: #0056b3; 
+  transform: scale(1.05); 
+}
 
-                            <!-- Customer Service Section -->
-                            <div class="footer-section">
-                                <h4>Customer Service</h4>
-                                <ul>
-                                    <li><a href="#">Returns & Refunds</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                    <li><a href="#">Terms of Service</a></li>
-                                    <li><a href="#">Help & Support</a></li>
-                                </ul>
-                            </div>
+/* Content reveal for paragraph text */
+.our:hover .title-our p {
+  opacity: 1; /* Show the paragraph when hovered */
+  transform: scale(1.05);
+}
 
-                            <!-- Contact Section -->
-                            <div class="footer-section">
-                                <h4>Contact Us</h4>
-                                <p>Email: mirrorspace2024@gmail.com</p>
+/* Responsive design */
+@media (max-width: 768px) {
+  .our {
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .image-container,
+  .title-our {
+    max-width: 100%;
+  }
+  .image-container{
+    order: -1;
+  }
+}
+
+/* Styling the section */
+.bottom-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  /* height: 500px; */
+  background-color: #e5ebee;
+  padding: 20px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05), 0 6px 20px rgba(0, 0, 0, 0.05);
+  border: 1px solid transparent;
+  margin: 20px;
+
+}
+
+/* Left content section */
+.bottom-section .left {
+  flex: 1;
+ 
+  margin-left: 50px;
+  font-family: 'Raleway', sans-serif;
+  color:  rgb(13, 12, 12);
+}
+.left h2:hover{
+  transform: scale(1.05);
+  color: #0056b3;
+}
+.left p:hover{
+  transform: scale(1.05);
+}
+
+.bottom-section .left h2 {
+  font-size: 25px;
+  line-height: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+  color:  rgb(87, 76, 76) ;  
+  transition: 0.3s ease, transform 0.3s ease;
+}
+.left-h2{
+    font-size: 40px;
+}
+
+.bottom-section .left p {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  transition:0.3s ease, transform 0.3s ease;
+}
+/* Right image section */
+.bottom-section .right {
+  /* margin-top: 50px; */
+  display: grid;
+  grid-template-columns: repeat(2, 0.1fr);
+  grid-gap: 10px; 
+}
+
+.bottom-section .right img {
+  width: 250px; 
+  height: auto;
+  border-radius: 5px; 
+  object-fit: cover; 
+  transition: o.3 ease opacity 0.3 ease;
+}
+.right img:hover{
+  transform: scale(1.10);
+  opacity: 0.9;
+}
+
+/* Media Query for responsiveness */
+@media (max-width: 1024px) {
+  .bottom-section {
+    gap: 20px; 
+  }
+
+  .bottom-section .left {
+    margin-left: 0;
+    text-align: center; 
+  }
+
+  .bottom-section .left h2 {
+    font-size: 20px;
+  }
+
+  .bottom-section .left p {
+    font-size: 15px; 
+  }
+
+  .bottom-section .right {
+    margin-top: 20px; 
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .bottom-section .right img {
+    width: 180px; 
+  }
+}
+
+@media (max-width: 768px) {
+  .bottom-section {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .bottom-section .left h2 {
+    font-size: 20px; 
+  }
+
+  .bottom-section .left p {
+    font-size: 15px; 
+  }
+
+  .bottom-section .right {
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 10px;
+  }
+
+  .bottom-section .right img {
+   
+    height: auto; 
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom-section {
+    padding: 5px;
+  }
+
+  .bottom-section .left h2 {
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .bottom-section .left p {
+    font-size: 14px;
+  }
+
+  .bottom-section .right img {
+    border-radius: 3px; 
+  }
+}
+
+
+/* Section styling */
+.bottom-section2 {
+  /* height: 400px;  */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  margin: 20px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+
+.image-content {
+  position: relative;
+  width: 100%;
+
+}
+
+
+.image-content img {
+  width: 100%;
+
+  object-fit: cover;
+  border-radius: 10px; 
+  filter: brightness(80%); 
+  /* transition: filter 0.3s ease;  */
+}
+
+/* Text content styling */
+.image-content .content {
+  position: absolute;
+  top: 50%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+  text-align: center;
+  color: white; 
+}
+
+.image-content .content h2 {
+  font-size: 34px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.image-content:hover .content h2 {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+  .bottom-section2 {
+    height: 250px;
+    margin: 10px;
+  }
+
+  .image-content .content h2 {
+    font-size: 24px; 
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 480px) {
+  .bottom-section2 {
+    height: 200px; 
+    margin: 5px;
+    border-radius: 5px;
+  }
+
+  .image-content .content h2 {
+    font-size: 20px; 
+    letter-spacing: 0.5px; 
+  }
+
+  .image-content img {
+    border-radius: 5px;
+  }
+}
 
 
 
-                                <p>Phone:<a href="tel:+919777772782" style="text-decoration: none; color: #eee;">
-                                        +919777772782</a></p>
-                                <div class="social-icons" style="padding-top: 20px;">
-                                    <a href="#"><img src="https://www.svgrepo.com/show/521654/facebook.svg"
-                                            alt="Facebook"></a>
-                                    <a href="#"><img src="https://www.svgrepo.com/show/521900/twitter.svg"
-                                            alt="Twitter"></a>
-                                    <a href="#"><img src="https://www.svgrepo.com/show/521711/instagram.svg"
-                                            alt="Instagram"></a>
-                                    <a href="#"><img src="https://www.svgrepo.com/show/521725/linkedin.svg"
-                                            alt="LinkedIn"></a>
-                                </div>
-                            </div>
-                        </div>
+.video-cards {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
 
-                        <!-- Footer Bottom -->
-                        <div class="footer-bottom">
-                            <p>&copy; 2024 Mirror Space. All Rights Reserved.</p>
-                            <p>Designed with ❤️ by Mirror Space Team</p>
-                        </div>
-                    </footer>
+.cards-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+ }
 
-                    <style>
-                        /* Footer Container */
-                        .footer-container {
-                            background-color: #333;
-                            color: #fff;
-                            padding: 10px 0;
-                            padding-top: 15px !important;
-                            font-family: "Playfair Display", serif;
-                        }
+.card {
+  flex: 1;
+  /* max-width: calc(33.33% - 20px);  */
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-                        .footer-content {
-                            display: flex;
-                            justify-content: space-between;
-                            max-width: 1200px;
-                            margin: auto;
-                            flex-wrap: wrap;
-                            gap: 20px;
-                        }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
 
-                        .footer-section {
-                            flex: 1;
-                            min-width: 200px;
-                        }
+.card iframe {
+  width: 100%;
+  height: 200px;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
 
-                        .footer-section h4 {
-                            font-size: 18px;
-                            margin-bottom: 10px;
-                            color: #ffbd59;
-                            /* Highlight color */
-                        }
+.card h3 {
+  margin: 10px 0 5px;
+  color: #0056b3;
+  font-size: 18px;
+}
 
-                        .footer-section p,
-                        .footer-section ul {
-                            font-size: 14px;
-                            line-height: 1.6;
-                        }
+.card p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+}
 
-                        .footer-section ul {
-                            list-style: none;
-                            padding: 0;
-                        }
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cards-container {
+      flex-direction: column;
+      align-items: center;
+  }
 
-                        .footer-section ul li {
-                            margin-bottom: 8px;
-                        }
+  .card {
+      max-width: 100%;
+  }
+}
 
-                        .footer-section ul li a {
-                            color: #b0b0b0;
-                            text-decoration: none;
-                        }
-
-                        .footer-section ul li a:hover {
-                            color: #ffbd59;
-                        }
-
-                        .social-icons a {
-                            display: inline-block;
-                            margin-right: 10px;
-                            width: 24px;
-                            height: 24px;
-                        }
-
-                        .social-icons img {
-                            width: 100%;
-                            height: auto;
-                        }
-
-                        /* Footer Bottom */
-                        .footer-bottom {
-                            text-align: center;
-                            padding-top: 10px;
-                            font-size: 14px;
-                            border-top: 1px solid #444;
-                            color: #b0b0b0;
-                        }
-
-                        .footer-bottom p {
-                            margin: 5px 0;
-                        }
-
-                        .footer-bottom p a {
-                            color: #ffbd59;
-                            text-decoration: none;
-                        }
-
-                        .footer-bottom p a:hover {
-                            text-decoration: underline;
-                        }
-
-                        /* Responsive Design */
-                        @media (max-width: 768px) {
-                            .footer-content {
-                                flex-direction: column;
-                                text-align: center;
-                            }
-                        }
-                    </style>
- <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-
-</body>
+    </style>
 </html>
